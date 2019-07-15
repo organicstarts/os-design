@@ -1,12 +1,122 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Webpack App</title>
   </head>
   <body>
-      <div id="root"><button class="ui primary button">
-          Primary Button
-        </button></div>
+    <nav class="site-header sticky-top py-1">
+      <div
+        class="container d-flex flex-column flex-md-row justify-content-between"
+      >
+        <a class="py-2" href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="d-block mx-auto"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+            <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+            <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+            <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+            <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+            <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+          </svg>
+        </a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
+      </div>
+    </nav>
+    <div class="container my-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <div class="ui segment">
+              <div class="ui card">
+                <div class="image">
+                  <img src="https://i.stack.imgur.com/l60Hf.png" />
+                </div>
+                <div class="content">
+                  <a class="header">Kristy</a>
+                  <div class="meta">
+                    <span class="date">Joined in 2013</span>
+                  </div>
+                  <div class="description">
+                    Kristy is an art director living in New York.
+                  </div>
+                </div>
+                <div class="extra content">
+                  <a>
+                    <i class="user icon"></i>
+                    22 Friends
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-8">
+            <div class="ui segment">
+              <button class="btn btn-primary btn-lg btn-block">
+                btn-primary Button
+              </button>
+              <button class="btn btn-secondary btn-lg btn-block">
+                btn-secondary Button
+              </button>
+              <button class="btn btn-success btn-lg btn-block">
+                btn-success Button
+              </button>
+              <button class="btn btn-danger btn-lg btn-block">
+                btn-danger Button
+              </button>
+              <button class="btn btn-warning btn-lg btn-block">
+                btn-warning Button
+              </button>
+              <button class="btn btn-info btn-lg btn-block">
+                btn-info Button
+              </button>
+              <button class="btn btn-light btn-lg btn-block">
+                btn-light Button
+              </button>
+              <button class="btn btn-dark btn-lg btn-block">
+                btn-dark Button
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container my-5">
+        <div class="row">
+          <div class="col">
+            <h1 class="display-1">Display 1</h1>
+            <h1 class="display-2">Display 2</h1>
+            <h1 class="display-3">Display 3</h1>
+            <h1 class="display-4">Display 4</h1>
+          </div>
+          <div class="col">
+            <h1>h1. Bootstrap heading</h1>
+            <h2>h2. Bootstrap heading</h2>
+            <h3>h3. Bootstrap heading</h3>
+            <h4>h4. Bootstrap heading</h4>
+            <h5>h5. Bootstrap heading</h5>
+            <h6>h6. Bootstrap heading</h6>
+          </div>
+        </div>
+      </div>
+      <div id="root"></div>
+    </div>
   </body>
 </html>

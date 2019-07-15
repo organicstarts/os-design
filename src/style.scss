@@ -1,8 +1,10 @@
 $body-bg: #f5f5f5;
 $enable-responsive-font-sizes: true;
-$theme-colors: (
-  "os-green": #94C120,
-  "os-orange": #FFCA28
-);
+$theme-colors: ("os-green": #94C120,
+"os-orange": #FFCA28);
+
+.site-header {
+    background-color: rgba(0, 0, 0, .85)
+}
 
 @import "~bootstrap/scss/bootstrap";
