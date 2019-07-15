@@ -1,0 +1,8 @@
+$body-bg: #f5f5f5;
+$enable-responsive-font-sizes: true;
+$theme-colors: (
+  "os-green": #94C120,
+  "os-orange": #FFCA28
+);
+
+@import "~bootstrap/scss/bootstrap";
