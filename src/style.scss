@@ -2,7 +2,9 @@ $body-bg: #f5f5f5;
 $enable-responsive-font-sizes: true;
 $theme-colors: ("os-green": #94C120,
 "os-orange": #FFCA28);
-
+body {
+  min-width: 320px;
+}
 .site-header {
     background-color: rgba(0, 0, 0, .85)
 }
