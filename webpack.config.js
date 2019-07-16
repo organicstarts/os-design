@@ -10,7 +10,9 @@ module.exports = {
   ],
   output: {
     filename: "main.js",
-    path: resolve("dist")
+    path: resolve("dist"),
+    libraryTarget: "var",
+    library: "organicStart"
   },
   module: {
     rules: [
