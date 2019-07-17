@@ -40,10 +40,10 @@ export function footer(store) {
   let storeColor = "";
   switch (store) {
     case "os":
-      storeColor = "os-green";
+      storeColor = "moss";
       break;
     case "osw":
-      storeColor = "os-orange";
+      storeColor = "mustard";
       break;
     default:
       storeColor = "store-color";
@@ -51,24 +51,6 @@ export function footer(store) {
   }
   $("body").append(footerTemplate(storeColor));
 }
-
-/* <footer class="">
-    <nav class="row">
-        <ul class="col nav flex-column">
-            <li class="nav-item">
-                <h5>Test</h5>
-            </li>
-            <li class="nav-item">
-                <a href="#">Test</a>
-            </li>
-        </ul>
-        <ul class="col nav flex-column">
-            <li class="nav-item">
-                <a href="#">Test</a>
-            </li>
-        </ul>
-    </nav>
-</footer> */
 
 function footerTemplate(storeColor) {
   let footerArray = [
