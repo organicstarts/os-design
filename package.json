@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "live": "webpack-dev-server --config webpack.config.js --hot"
+    "live": "webpack-dev-server --config webpack.config.js --open"
   },
   "author": "",
   "license": "ISC",

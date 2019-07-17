@@ -97,5 +97,8 @@ module.exports = {
       inject: "body"
     })
   ],
+  devServer: {
+    contentBase: resolve('dist')
+  },
   watch: true
 };

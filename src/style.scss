@@ -1,16 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One|Nunito|Open+Sans&display=swap');
 
-
-$body-bg: #f5f5f5;
 $enable-responsive-font-sizes: true;
-$theme-colors:('os-green': #94C120,
-'os-orange': #FFCA28);
-$header-font: 'Fredoka One',
-cursive;
-$subheader-font: 'Nunito',
-sans-serif;
-$p-font: 'Open Sans',
-sans-serif;
+$theme-colors:('moss': #94C120, 'mustard': #FFCA28);
+$header-font: 'Fredoka One', cursive;
+$subheader-font: 'Nunito', sans-serif;
+$p-font: 'Open Sans', sans-serif;
 
 @import "~bootstrap/scss/bootstrap";
 
