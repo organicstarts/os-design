@@ -2,4 +2,10 @@
      User Global Variables
 *******************************/
 
+@moss: #94C120;
+@mustard: #FFCA28;
+
 @fontPath  : '../../default/assets/fonts';
+
+@primaryColor   : @moss;
+@secondaryColor : @mustard;
