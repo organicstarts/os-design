@@ -43,6 +43,32 @@
       </div>
     </nav>
     <div class="container my-5">
+      <article>
+        <h1>Material Shadows</h1>
+        <p class="my-3">We added a SASS mixin <code>BoxShadow(dp)</code> to match Google's material design elevation system shadows. </p>
+        <div class="row">
+          <div class="col">
+            <section class="ui segment">Segment using <strong>BoxShadow(1)</strong></section>
+          </div>
+          <div class="col">
+            <section class="ui lifted segment">Lifted Segment using <strong>BoxShadow(6)</strong></section>
+          </div>
+          <div class="col">
+            <section class="ui raised segment">Raised Segment using <strong>BoxShadow(12)</strong></section>
+          </div>
+          <div class="col">
+            <section class="ui boosted segment">Boosted Segment using <strong>BoxShadow(24)</strong></section>
+          </div>
+        </div>
+        <!--<section class="ui basic segment">Basic Segment</section>
+        <section class="ui raised segment">Raised Segment</section>
+        <section class="ui piled segment">Piled Segment</section>
+        <section class="ui stacked segment">Stacked Segment</section>
+        <section class="ui tall stacked segment">Tall Stacked Segment</section>
+        <section class="ui placeholder segment">Placeholder Segment</section>-->
+      </article>
+    </div>
+    <div class="container my-5">
       <div class="container">
         <div class="row">
           <div class="col-4">
@@ -125,6 +151,7 @@
     <script src="main.js"></script>
     <script type="text/javascript">
       window.onload = function() {
+        window.organicStart.navbar("os");
         window.organicStart.footer("os");
         window.organicStart.getArticles();
       };
