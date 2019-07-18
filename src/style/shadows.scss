@@ -1,18 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Nunito|Open+Sans&display=swap');
-
-
-$body-bg: #e5e5e5;
-$enable-responsive-font-sizes: true;
-$theme-colors:('moss': #94C120, 'mustard': #FFCA28);
-$header-font: 'Fredoka One',
-cursive;
-$subheader-font: 'Nunito',
-sans-serif;
-$p-font: 'Open Sans',
-sans-serif;
-
-@import "~bootstrap/scss/bootstrap";
-
 /*
  * Material Design Shadows
  * @serglo/material-design-shadows.css
@@ -24,7 +9,7 @@ sans-serif;
  * SASS Mixin developed by ozgurg and MonsieurMan.
  *
  */
-@mixin BoxShadow ($dp) {
+ @mixin BoxShadow ($dp) {
     @if $dp==0 {
         box-shadow: none
     }
@@ -71,65 +56,5 @@ sans-serif;
 
     @else {
         @error "Invalid argument for $dp: {"+$dp+"}, look at the method definition for possible values";
-    }
-}
-
-html,
-body {
-    font-size: 16px;
-}
-
-body {
-    min-width: 320px;
-    font-family: $p-font;
-}
-
-h1 {
-    font-family: $header-font
-}
-
-h2 {
-    font-family: $subheader-font
-}
-
-p {
-    font-family: $p-font
-}
-
-.site-header {
-    background-color: rgba(0, 0, 0, .85)
-}
-
-/* Segments */
-.ui {
-    &.segment {
-        border: none;
-        @include BoxShadow(1);
-
-        &.lifted {
-            @include BoxShadow(6);
-        }
-
-        &.raised {
-            @include BoxShadow(12);
-        }
-
-        &.boosted {
-            @include BoxShadow(24);
-        }
-    }
-}
-
-@each $name,
-$color in $theme-colors {
-    footer.#{$name} {
-        background-color: #{$color}
-    }
-}
-
-@each $name,
-$color in $theme-colors {
-    header.#{$name} {
-        background-color: #{$color}
     }
 }
