@@ -7,7 +7,8 @@ export function sidebar() {
   document.addEventListener("DOMContentLoaded", () => {
     const menu = new Mmenu("#my-menu", {
       slidingSubmenus: false,
-      extensions: ["theme-dark"]
+      extensions: ["theme-dark"],
+
     });
   });
 }
@@ -25,7 +26,7 @@ export function navbar(store) {
       storeColor = "store-color";
       break;
   }
-  $("body").prepend(navbarTemplate(storeColor, store));
+  $("#my-page").prepend(navbarTemplate(storeColor, store));
 }
 
 function navbarTemplate(storeColor, store) {

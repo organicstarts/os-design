@@ -55,6 +55,7 @@ $header-font: 'Fredoka One', cursive;
 $subheader-font: 'Nunito', sans-serif;
 
 @import "~bootstrap/scss/bootstrap";
+@import "~mmenu-js/src/mmenu";
 @import "./style/init";
 
 /* 
@@ -107,6 +108,11 @@ button, .button, .btn {
 }
 @each $name, $color in $theme-colors {
   footer.#{$name} {
+      background-color: #{$color}
+  }
+}
+@each $name, $color in $theme-colors {
+  header.#{$name} {
       background-color: #{$color}
   }
 }
