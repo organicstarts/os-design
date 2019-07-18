@@ -1,5 +1,6 @@
 import bootstrap from "bootstrap/dist/js/bootstrap.bundle";
+import mmenu from "mmenu-js/dist/mmenu";
 import { footer, getArticles } from "./components/footer/footer";
-import { navbar } from "./components/navbar/navbar"
+import { navbar, sidebar } from "./components/navbar/navbar";
 
-export { footer, bootstrap, getArticles, navbar };
+export { mmenu, footer, bootstrap, getArticles, navbar, sidebar };

@@ -1,5 +1,17 @@
 import $ from "jquery";
 
+export function sidebar() {
+  Mmenu.configs.classNames.selected = "active";
+  Mmenu.configs.offCanvas.page.selector = "#my-page";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const menu = new Mmenu("#my-menu", {
+      slidingSubmenus: false,
+      extensions: ["theme-dark"]
+    });
+  });
+}
+
 export function navbar(store) {
   let storeColor = "";
   switch (store) {
@@ -13,20 +25,36 @@ export function navbar(store) {
       storeColor = "store-color";
       break;
   }
-  $("body").prepend(navbarTemplate(storeColor));
+  $("body").prepend(navbarTemplate(storeColor, store));
 }
 
-function navbarTemplate(storeColor) {
+function navbarTemplate(storeColor, store) {
   return `
-    <header>
-  <div class="pusher" itemscope="itemscope" itemtype="http://schema.org/WebPageElement">
-    <div class="ui small borderless inverted ${storeColor} main menu d-print-none">
-        <nav class="container">
-            <a class="item" href="https://organicstart.com">Retail</a>
-            <a class="item" href="https://blog.organicstart.com">Blog</a>
-            <a class="active item" href="https://support.organicstart.com/hc/en-us">Support</a>
+    <header class="${storeColor}">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <ul class="navbar-nav">
+            <li class="nav-item ${store === "os" ? "active" : ""}">
+              <a class="nav-link text-white" href="https://organicstart.com">
+                Retail
+              </a>
+            </li>
+            <li class="nav-item ${store === "blog" ? "active" : ""}">
+              <a class="nav-link text-white" href="https://blog.organicstart.com">
+                Blog
+              </a>
+            </li>
+            <li class="nav-item ${store === "support" ? "active" : ""}">
+              <a
+                class="active nav-link text-white"
+                href="https://support.organicstart.com/hc/en-us"
+              >
+                Support
+              </a>
+            </li>
+          </ul>
         </nav>
-    </div>
-   
-    </header>`;
+      </div>
+    </header>
+  `;
 }
