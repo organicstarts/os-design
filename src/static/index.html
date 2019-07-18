@@ -44,23 +44,30 @@
     </nav>
     <article class="container my-5">
       <header>
-        <h1>Typography</h1>
-        <p class="my-3">Fluid Typography is enabled by default. Always reference <a href="https://material.io/design/typography/the-type-system.html" target="_new">the type scale</a> and <a href="https://material.io/design/typography/understanding-typography.html" target="_new">understand typography</a>.<br>Semantic-UI has an unconventional 14px base font-size which has always caused typography inconsistencies, default is now the proper 16px.</p>
+        <h1 class="h2">Typography</h1>
+        <p class="my-3">
+          Fluid Typography is enabled by default. Always reference <a href="https://material.io/design/typography/the-type-system.html" target="_new">the type scale</a> and <a href="https://material.io/design/typography/understanding-typography.html" target="_new">understand typography</a>.<br>
+        </p>
+        <h2>Headers</h2>
+        <p>
+          We are using the <code>'Nunito'</code> font family and paragraphs are using the <code>'Open Sans'</code> font family.<br>
+          We can use the <code>display</code> class or <code>display-#</code> classes to use our display (cursive) font which is the <code>'Fredoka One'</code> font family.
+        </p>
       </header>
       <section class="row">
-        <div class="col">
+        <div class="col-12 col-lg-6">
           <h1 class="display-1">Display 1</h1>
           <h1 class="display-2">Display 2</h1>
           <h1 class="display-3">Display 3</h1>
           <h1 class="display-4">Display 4</h1>
         </div>
-        <div class="col">
-          <h1>h1. Bootstrap heading</h1>
-          <h2>h2. Bootstrap heading</h2>
-          <h3>h3. Bootstrap heading</h3>
-          <h4>h4. Bootstrap heading</h4>
-          <h5>h5. Bootstrap heading</h5>
-          <h6>h6. Bootstrap heading</h6>
+        <div class="col-12 col-lg-6">
+          <h1>H1 Headline</h1>
+          <h2>H2 Headline</h2>
+          <h3>H3 Headline <small>Subheader</small></h3>
+          <h4>H4 Headline <small>Subheader</small></h4>
+          <h5>H5 Headline <small>Subheader</small></h5>
+          <h6>H6 Headline <small>Subheader</small></h6>
         </div>
       </section>
     </article>
@@ -71,16 +78,16 @@
         <p class="my-3">We added a SASS mixin <code>BoxShadow(dp)</code> to match material design elevation shadows. Always reference <a href="https://material.io/design/environment/elevation.html#elevation-in-material-design" target="_new">elevation rules</a>.</p>
       </header>
       <section class="row">
-        <div class="col">
+        <div class="col-12 col-md-3">
           <section class="ui segment" style="min-height:150px;"><p class="text-center">Segment using<br><code>BoxShadow(1)</code>.<br><br>Alternatively you can use<br><code>ui segment</code> classes.</code></p></section>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-3">
           <section class="ui lifted segment" style="min-height:150px;"><p class="text-center">Lifted Segment using<br><code>BoxShadow(6)</code>.<br><br>Alternatively you can use<br><code>ui lifted segment</code> classes.</code></p></section>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-3">
           <section class="ui raised segment" style="min-height:150px;"><p class="text-center">Raised Segment using<br><code>BoxShadow(12)</code>.<br><br>Alternatively you can use<br><code>ui raised segment</code> classes.</code></p></section>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-3">
           <section class="ui boosted segment" style="min-height:150px;"><p class="text-center">Boosted Segment using<br><code>BoxShadow(24)</code>.<br><br>Alternatively you can use<br><code>ui bosted segment</code> classes.</code></p></section>
         </div>
       </section>
