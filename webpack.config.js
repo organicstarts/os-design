@@ -5,7 +5,7 @@ const resolve = dir => path.join(__dirname, "./", dir);
 module.exports = {
   entry: [
     resolve("src/semantic/src/semantic.less"),
-    resolve("src/style.scss"),
+    resolve("src/index.scss"),
     resolve("src/index.js")
   ],
   output: {
