@@ -1,6 +1,19 @@
 import $ from "jquery";
 
 export function sidebar() {
+  $("#my-page").prepend(`<nav id="my-menu" class="primary sidebar mm-menu mm-menu_offcanvas mm-menu_theme-dark" aria-hidden="true">
+  <ul>
+    <li class="active"><a href="/">Home</a></li>
+    <li><span>About us</span>
+      <ul>
+        <li><a href="/about/history/">History</a></li>
+        <li><a href="/about/team/">The team</a></li>
+        <li><a href="/about/address/">Our address</a></li>
+      </ul>
+    </li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+</nav>`)
   Mmenu.configs.classNames.selected = "active";
   Mmenu.configs.offCanvas.page.selector = "#my-page";
 
@@ -35,6 +48,13 @@ function navbarTemplate(storeColor, store) {
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="navbar-nav">
+          <li class="nav-item" id="my-header">
+            <a class="mburger mburger--collapse" href="#my-menu">
+             <b></b>
+             <b></b>
+             <b></b>
+          </a>
+        </li>
             <li class="nav-item ${store === "os" ? "active" : ""}">
               <a class="nav-link text-white" href="https://organicstart.com">
                 Retail
