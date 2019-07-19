@@ -48,7 +48,7 @@ sans-serif,
 "Segoe UI Emoji",
 "Segoe UI Symbol" !default;
 
-$body-bg: #f5f5f5; // This will be different for production.
+$body-bg: #fff; // This will be different for production.
 
 $font-family-base: 'Open Sans',
 sans-serif; // This is where we switch the global font-family
@@ -61,9 +61,7 @@ $subheader-font: 'Nunito',
 sans-serif;
 
 @import "~bootstrap/scss/bootstrap";
-@import "~mmenu-js/src/mmenu";
-@import "~mburger-css/src/scss/mburger";
-@import "./style/init";
+@import "../src/style/init";
 
 /* 
  * REM Conversion

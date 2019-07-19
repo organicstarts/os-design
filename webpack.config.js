@@ -1,12 +1,13 @@
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var path = require("path");
 const resolve = dir => path.join(__dirname, "./", dir);
+const site = process.env.SITE;
 
 module.exports = {
   entry: [
-    resolve("src/semantic/src/semantic.less"),
-    resolve("src/index.scss"),
-    resolve("src/index.js")
+    resolve(`${site}/semantic/src/semantic.less`),
+    resolve(`${site}/index.scss`),
+    resolve(`${site}/index.js`)
   ],
   output: {
     filename: "main.js",
@@ -92,7 +93,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve("src/static/index.html"),
+      template: resolve(`${site}/static/index.html`),
       filename: "index.html",
       inject: "body"
     })

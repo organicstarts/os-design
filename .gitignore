@@ -1,7 +1,11 @@
 node_modules
 build
 dist
-src/semantic/*
-!src/semantic/src/
-src/semantic/src/*
-!src/semantic/src/site/
+os/semantic/*
+!os/semantic/src/
+os/semantic/src/*
+!os/semantic/src/site/
+osw/semantic/*
+!osw/semantic/src/
+osw/semantic/src/*
+!osw/semantic/src/site/
