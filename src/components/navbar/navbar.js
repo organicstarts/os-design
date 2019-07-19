@@ -7,7 +7,7 @@ export function sidebar() {
   document.addEventListener("DOMContentLoaded", () => {
     const menu = new Mmenu("#my-menu", {
       slidingSubmenus: false,
-      extensions: ["theme-dark"],
+      extensions: ["pagedim-black"],
 
     });
   });
