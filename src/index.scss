@@ -31,31 +31,38 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-$font-family-sans-serif:
-    // Safari for macOS and iOS (San Francisco)
-    -apple-system,
-    // Chrome < 56 for macOS (San Francisco)
-    BlinkMacSystemFont,
-    // Windows
-    "Segoe UI",
-    // Android
-    "Roboto",
-    // Basic web fallback
-    "Helvetica Neue", Arial, sans-serif,
-    // Emoji fonts
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-sans-serif: // Safari for macOS and iOS (San Francisco)
+-apple-system,
+// Chrome < 56 for macOS (San Francisco)
+BlinkMacSystemFont,
+// Windows
+"Segoe UI",
+// Android
+"Roboto",
+// Basic web fallback
+"Helvetica Neue",
+Arial,
+sans-serif,
+// Emoji fonts
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol" !default;
 
 $body-bg: #f5f5f5; // This will be different for production.
 
-$font-family-base: 'Open Sans', sans-serif; // This is where we switch the global font-family
+$font-family-base: 'Open Sans',
+sans-serif; // This is where we switch the global font-family
 $enable-responsive-font-sizes: true;
 $theme-colors:('moss': #94C120, 'mustard': #FFCA28);
 
-$header-font: 'Fredoka One', cursive;
-$subheader-font: 'Nunito', sans-serif;
+$header-font: 'Fredoka One',
+cursive;
+$subheader-font: 'Nunito',
+sans-serif;
 
 @import "~bootstrap/scss/bootstrap";
 @import "~mmenu-js/src/mmenu";
+@import "~mburger-css/src/scss/mburger";
 @import "./style/init";
 
 /* 
@@ -83,7 +90,9 @@ $subheader-font: 'Nunito', sans-serif;
  * Here we have all of the button styles.
  *
  */
-button, .button, .btn {
+button,
+.button,
+.btn {
     font-size: 0.875rem;
     font-family: $font-family-base;
     font-weight: 600;
@@ -95,24 +104,31 @@ button, .button, .btn {
     &.segment {
         border: none;
         @include BoxShadow(1);
+
         &.lifted {
             @include BoxShadow(6);
         }
+
         &.raised {
             @include BoxShadow(12);
         }
+
         &.boosted {
             @include BoxShadow(24);
         }
     }
 }
-@each $name, $color in $theme-colors {
-  footer.#{$name} {
-      background-color: #{$color}
-  }
+
+@each $name,
+$color in $theme-colors {
+    footer.#{$name} {
+        background-color: #{$color}
+    }
 }
-@each $name, $color in $theme-colors {
-  header.#{$name} {
-      background-color: #{$color}
-  }
+
+@each $name,
+$color in $theme-colors {
+    header.#{$name} {
+        background-color: #{$color}
+    }
 }
