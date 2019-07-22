@@ -93,18 +93,28 @@ sans-serif;
 button,
 .button,
 .btn {
-    font-size: 0.875rem;
+    /*font-size: 0.875rem;*/
     font-family: $font-family-base;
     font-weight: 600;
     text-transform: uppercase;
+    &.btn-moss {
+        color: #fff;
+    }
 }
 
 /* Segments */
 .ui {
-    &.segment {
+    &.segments &.segment {
+        border: none;
+        box-shadow: none;
+    }
+    &.segments, &.segment, &.inverted.segment {
         border: none;
         @include BoxShadow(1);
 
+        &.flat {
+            box-shadow: none;
+        }
         &.lifted {
             @include BoxShadow(6);
         }
@@ -116,6 +126,13 @@ button,
         &.boosted {
             @include BoxShadow(24);
         }
+
+        &.padded {
+            padding: 1.5rem;
+        }
+    }
+    &.segment, &.inverted.segment {
+        padding: 1rem;
     }
 }
 
