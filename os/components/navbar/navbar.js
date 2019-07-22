@@ -1,7 +1,53 @@
 import $ from "jquery";
 
 export function sidebar() {
-  $("#my-page").prepend(`<nav id="my-menu" class="primary sidebar mm-menu mm-menu_offcanvas mm-menu_theme-dark" aria-hidden="true">
+  $("#my-page")
+    .prepend(`<nav id="my-menu" class="primary sidebar mm-menu mm-menu_offcanvas mm-menu_theme-dark" aria-hidden="true">
+      <ul>
+          <li>
+          <a class="nav-link" href="https://organicstart.com">
+            Retail
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="https://blog.organicstart.com">
+            Blog
+          </a>
+        </li>
+        <li >
+          <a
+            class="active nav-link"
+            href="https://support.organicstart.com/hc/en-us"
+          >
+            Support
+          </a>
+        </li>
+        <li class="nav-item" id="my-header">
+        <a class="mburger mburger--collapse" href="#my-accountmenu">Account
+        </a>
+        </li>
+      </ul>
+</nav>`);
+  Mmenu.configs.classNames.selected = "active";
+  Mmenu.configs.offCanvas.page.selector = "#my-page";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const menu = new Mmenu("#my-menu", {
+      navbar: {
+        title: ""
+      },
+      navbars: [{
+        content: ["breadcrumbs", "close"]
+      }],
+      slidingSubmenus: false,
+      extensions: ["fullscreen", "pagedim-black"]
+    });
+  });
+}
+
+export function accountBar() {
+  $("#my-account")
+    .prepend(`<nav id="my-accountmenu" class="primary sidebar mm-menu mm-menu_offcanvas mm-menu_theme-dark" aria-hidden="true">
   <ul>
     <li class="active"><a href="/">Home</a></li>
     <li><span>About us</span>
@@ -13,15 +59,20 @@ export function sidebar() {
     </li>
     <li><a href="/contact/">Contact</a></li>
   </ul>
-</nav>`)
+</nav>`);
   Mmenu.configs.classNames.selected = "active";
-  Mmenu.configs.offCanvas.page.selector = "#my-page";
+  Mmenu.configs.offCanvas.page.selector = "#my-account";
 
   document.addEventListener("DOMContentLoaded", () => {
-    const menu = new Mmenu("#my-menu", {
+    const menu = new Mmenu("#my-accountmenu", {
+      navbar: {
+        title: ""
+      },
+      navbars: [{
+        content: ["close"]
+      }],
       slidingSubmenus: false,
-      extensions: ["pagedim-black"],
-
+      extensions: ["fullscreen", "position-bottom"]
     });
   });
 }
@@ -47,14 +98,16 @@ function navbarTemplate(storeColor, store) {
     <header class="${storeColor}">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <ul class="navbar-nav">
-          <li class="nav-item" id="my-header">
-            <a class="mburger mburger--collapse" href="#my-menu">
-             <b></b>
-             <b></b>
-             <b></b>
-          </a>
-        </li>
+        <a class="mburger mburger--collapse navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" href="#my-menu">
+        
+         <b></b>
+         <b></b>
+         <b></b>
+     
+      </a>
+
+        <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
             <li class="nav-item ${store === "os" ? "active" : ""}">
               <a class="nav-link text-white" href="https://organicstart.com">
                 Retail
@@ -73,7 +126,12 @@ function navbarTemplate(storeColor, store) {
                 Support
               </a>
             </li>
+            <li class="nav-item" id="my-header">
+            <a class="mburger mburger--collapse" href="#my-accountmenu">account
+          </a>
+        </li>
           </ul>
+          </div>
         </nav>
       </div>
     </header>
