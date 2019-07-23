@@ -65,6 +65,9 @@ sans-serif;
 @import "~mburger-css/src/scss/mburger";
 @import "../src/style/init";
 
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
 /* 
  * REM Conversion
  *

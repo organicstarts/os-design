@@ -23,6 +23,10 @@ module.exports = {
         include: [resolve("src")]
       },
       {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"]
+      },
+      {
         test: /\.(scss)$/,
         use: [
           {
@@ -34,10 +38,10 @@ module.exports = {
           {
             loader: "postcss-loader", // Run post css actions
             options: {
-              plugins: function() {
-                // post css plugins, can be exported to postcss.config.js
-                return [require("precss"), require("autoprefixer")];
-              }
+              plugins: [
+                require("precss"), 
+                require("autoprefixer")
+              ]
             }
           },
           {
@@ -53,6 +57,14 @@ module.exports = {
           },
           {
             loader: "css-loader" // translates CSS into CommonJS
+          },
+          {
+            loader: "postcss-loader", // Run post css actions
+            options: {
+              plugins: [
+                require("autoprefixer")
+              ]
+            }
           },
           {
             loader: "less-loader" // compiles Less to CSS
