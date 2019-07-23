@@ -49,7 +49,7 @@ export function footer(store) {
       storeColor = "store-color";
       break;
   }
-  $("body").append(footerTemplate(storeColor));
+  $("#wrapper").append(footerTemplate(storeColor));
 }
 
 function footerTemplate(storeColor) {

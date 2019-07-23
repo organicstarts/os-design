@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 export function sidebar() {
-  $("#my-page")
+  $("#wrapper")
     .prepend(`<nav id="my-menu" class="primary sidebar mm-menu mm-menu_offcanvas mm-menu_theme-dark" aria-hidden="true">
       <ul>
           <li>
@@ -29,7 +29,7 @@ export function sidebar() {
       </ul>
 </nav>`);
   Mmenu.configs.classNames.selected = "active";
-  Mmenu.configs.offCanvas.page.selector = "#my-page";
+  Mmenu.configs.offCanvas.page.selector = "#wrapper";
 
   document.addEventListener("DOMContentLoaded", () => {
     const menu = new Mmenu("#my-menu", {
@@ -90,7 +90,7 @@ export function navbar(store) {
       storeColor = "store-color";
       break;
   }
-  $("#my-page").prepend(navbarTemplate(storeColor, store));
+  $("#wrapper").prepend(navbarTemplate(storeColor, store));
 }
 
 function navbarTemplate(storeColor, store) {
