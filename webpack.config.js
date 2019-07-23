@@ -1,5 +1,8 @@
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-var path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin"); // Simplifies creation of HTML files to serve your webpack bundles
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // Extracts CSS into separate files
+const TerserJSPlugin = require('terser-webpack-plugin'); // Uses terser to minify JavaScript
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // Optimize \ minimize CSS assets
+const path = require("path");
 const resolve = dir => path.join(__dirname, "./", dir);
 const site = process.env.SITE;
 
@@ -15,6 +18,32 @@ module.exports = {
     libraryTarget: "var",
     library: "organicStart"
   },
+  optimization: {
+    minimizer: [
+      new TerserJSPlugin({ // Uses terser to minify JavaScript
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+      }), 
+      new OptimizeCSSAssetsPlugin({ // Optimize \ minimize CSS assets
+        cssProcessorPluginOptions: {
+          preset: ['default', { discardComments: { removeAll: true } }],
+        }
+      })
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({ // Extracts CSS into separate files
+      filename: '[name].css'
+    }),
+    new HtmlWebpackPlugin({ // Simplifies creation of HTML files to serve your webpack bundles
+      template: resolve(`${site}/static/index.html`),
+      filename: "index.html",
+      inject: "body"
+    })
+  ],
   module: {
     rules: [
       {
@@ -24,51 +53,72 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader", "postcss-loader"]
+        use: [
+          //"style-loader",  // Adds CSS to the DOM by injecting a <style> tag
+          {
+            loader: MiniCssExtractPlugin.loader, // Extracts CSS into separate files
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+              reloadAll: true, // Forceful method for Hot Module Reloading (HMR)
+            },
+          },
+          "css-loader", // Interprets @import and url() like import/require() and will resolve them
+          {
+            loader: "postcss-loader", // Process CSS
+            options: {
+              plugins: [
+                require("precss"), // Use Sass-like markup and staged CSS features in CSS
+                require("autoprefixer") // Parse CSS and add vendor prefixes to CSS rules
+              ]
+            }
+          }
+        ]
       },
       {
         test: /\.(scss)$/,
         use: [
+          //"style-loader", // Adds CSS to the DOM by injecting a <style> tag
           {
-            loader: "style-loader" // inject CSS to page
+            loader: MiniCssExtractPlugin.loader, // Extracts CSS into separate files
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+              reloadAll: true, // Forceful method for Hot Module Reloading (HMR)
+            },
           },
+          "css-loader", // Interprets @import and url() like import/require() and will resolve them
           {
-            loader: "css-loader" // translates CSS into CommonJS modules
-          },
-          {
-            loader: "postcss-loader", // Run post css actions
+            loader: "postcss-loader", // Process CSS
             options: {
               plugins: [
-                require("precss"), 
-                require("autoprefixer")
+                require("precss"), // Use Sass-like markup and staged CSS features in CSS
+                require("autoprefixer") // Parse CSS and add vendor prefixes to CSS rules
               ]
             }
           },
-          {
-            loader: "sass-loader" // compiles Sass to CSS
-          }
+          "sass-loader" // Loads a Sass/SCSS file and compiles it to CSS
         ]
       },
       {
         test: /\.less$/,
         use: [
+          //"style-loader", // Adds CSS to the DOM by injecting a <style> tag
           {
-            loader: "style-loader" // creates style nodes from JS strings
+            loader: MiniCssExtractPlugin.loader, // Extracts CSS into separate files
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+              reloadAll: true, // Forceful method for Hot Module Reloading (HMR)
+            },
           },
+          "css-loader", // Interprets @import and url() like import/require() and will resolve them
           {
-            loader: "css-loader" // translates CSS into CommonJS
-          },
-          {
-            loader: "postcss-loader", // Run post css actions
+            loader: "postcss-loader", // Process CSS
             options: {
               plugins: [
-                require("autoprefixer")
+                require("autoprefixer") // Parse CSS and add vendor prefixes to CSS rules
               ]
             }
           },
-          {
-            loader: "less-loader" // compiles Less to CSS
-          }
+          "less-loader" // Compiles Less to CSS
         ]
       },
       {
@@ -103,13 +153,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: resolve(`${site}/static/index.html`),
-      filename: "index.html",
-      inject: "body"
-    })
-  ],
   devServer: {
     contentBase: resolve('dist')
   },
