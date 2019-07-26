@@ -6,6 +6,7 @@ import { footer, getArticles } from "./components/footer/footer";
 import { navbar, sidebar, accountBar } from "./components/navbar/navbar";
 import { carousel } from "./components/carousel/carousel";
 import { getBabyWash } from "./API/babywash";
+import { alert } from "./components/alert/alert"
 export {
   mmenu,
   slick,
@@ -17,5 +18,6 @@ export {
   sidebar,
   accountBar,
   carousel,
-  getBabyWash
+  getBabyWash,
+  alert
 };
