@@ -12,7 +12,7 @@ export function carousel(className) {
         settings: {
           arrows: true,
           centerMode: true,
-          centerPadding: "40px",
+          centerPadding: "45px",
           slidesToShow: 4
         }
       },
@@ -21,7 +21,7 @@ export function carousel(className) {
         settings: {
           arrows: true,
           centerMode: true,
-          centerPadding: "40px",
+          centerPadding: "35px",
           slidesToShow: 3
         }
       },
@@ -30,7 +30,7 @@ export function carousel(className) {
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: "40px",
+          centerPadding: "25px",
           slidesToShow: 2
         }
       },
@@ -39,7 +39,7 @@ export function carousel(className) {
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: "40px",
+          centerPadding: "15px",
           slidesToShow: 1
         }
       }

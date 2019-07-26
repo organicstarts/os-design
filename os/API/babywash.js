@@ -1,7 +1,7 @@
 import $ from "jquery";
 
-export async function getBabyWash() {
-  return await new Promise((resolve, reject) => {
+export function getBabyWash() {
+  return new Promise((resolve, reject) => {
     let babywash = [];
     $.get("http://localhost:3001/os/getcategories")
       .then((resData, status) => {
@@ -83,9 +83,9 @@ function appendInfo(data, htmlArray) {
   const nameObj = spliceName(data.name);
   if (data.is_visible) {
     htmlArray.push(`
-          <div class="ui baby-care text-center card mx-2">
+          <div class="ui baby-care text-center card">
               <a href="https://organicstart.com${data.custom_url}">
-                  <img data-lazy="${data.primary_image.standard_url}"/>
+                  <img data-lazy="${data.primary_image.standard_url}" class="img-fluid center-block"/>
                   <div class="text-wrapper">
                       <div class="center">
                           <p class="brand text-center">${getBrand(
