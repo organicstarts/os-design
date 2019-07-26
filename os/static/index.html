@@ -13,7 +13,10 @@
 <body>
   
   <div id="wrapper">
-      <div id="my-account"></div>
+    <div id="my-account"></div>
+    <section class="container-fluid " id="babywash">
+        <div class="babywash carousel"></div>
+    </section>
     <header class="my-5">
       <h1 class="display-1 text-center"><span class="text-mustard">Organic</span> <span class="text-moss">Start</span>
         Design</h1>
@@ -205,12 +208,14 @@
   </div>
   <script src="main.js"></script>
   <script type="text/javascript">
+   
     window.organicStart.navbar("os");
     window.organicStart.sidebar();
     window.organicStart.accountBar();
     window.onload = function () {
       window.organicStart.footer("os");
       window.organicStart.getArticles();
+      window.organicStart.getBabyWash().then(() => window.organicStart.carousel(".carousel"));
     };
   </script>
 </body>
