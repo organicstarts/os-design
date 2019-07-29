@@ -3,10 +3,14 @@ import mmenu from "mmenu-js/dist/mmenu";
 import slick from "slick-carousel";
 import lazyload from "vanilla-lazyload";
 import { footer, getArticles } from "./components/footer/footer";
-import { navbar, sidebar, accountBar } from "./components/navbar/navbar";
+import { navbar } from "./components/navbar/navbar";
+import { sidebar } from "./components/navbar/sidebar";
+import { accountBar } from "./components/navbar/accountbar";
 import { carousel } from "./components/carousel/carousel";
 import { getBabyWash } from "./API/babywash";
-import { alert } from "./components/alert/alert"
+import { populateSideNav, populateAccountNav } from "./populateHTML/populateNav";
+import { alert } from "./components/alert/alert";
+
 export {
   mmenu,
   slick,
@@ -19,5 +23,7 @@ export {
   accountBar,
   carousel,
   getBabyWash,
+  populateSideNav,
+  populateAccountNav,
   alert
 };
