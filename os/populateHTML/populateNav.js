@@ -57,7 +57,7 @@ export function populateAccountNav(id, email) {
       </ul> 
     </nav>`);
   } else {
-    $("#my-account")
+    $(`#${id}`)
       .append(`<nav id="my-accountmenu" class="primary sidebar mm-menu  mm-menu_theme-dark" aria-hidden="true">
         <ul class="text-center">
         <li>
