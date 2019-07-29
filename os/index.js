@@ -7,7 +7,7 @@ import { navbar } from "./components/navbar/navbar";
 import { sidebar } from "./components/navbar/sidebar";
 import { accountBar } from "./components/navbar/accountbar";
 import { carousel } from "./components/carousel/carousel";
-import { getBabyWash } from "./API/babywash";
+import { getItems } from "./API/getItems";
 import { populateSideNav, populateAccountNav } from "./populateHTML/populateNav";
 import { alert } from "./components/alert/alert";
 
@@ -22,7 +22,7 @@ export {
   sidebar,
   accountBar,
   carousel,
-  getBabyWash,
+  getItems,
   populateSideNav,
   populateAccountNav,
   alert

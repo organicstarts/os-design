@@ -1,8 +1,15 @@
 import $ from "jquery";
 
-export function getBabyWash() {
+export function getItems() {
   return new Promise((resolve, reject) => {
     let babywash = [];
+    let diaper = [];
+    let oil = [];
+    let lotion = [];
+    let dental = [];
+    let sunscreen = [];
+    let repellant = [];
+    let balm = [];
     $.get("http://localhost:3001/os/getcategories")
       .then((resData, status) => {
         for (let res in resData) {
@@ -10,30 +17,30 @@ export function getBabyWash() {
             if (!data.name.includes("Organic Start")) {
               data.categories.map(categoryNum => {
                 switch (categoryNum) {
-                  // case 97:
-                  //   appendInfo(data, diaper);
-                  //   break;
+                  case 97:
+                    appendInfo(data, diaper);
+                    break;
                   case 102:
                     appendInfo(data, babywash);
                     break;
-                  // case 103:
-                  //   appendInfo(data, oil);
-                  //   break;
-                  // case 104:
-                  //   appendInfo(data, lotion);
-                  //   break;
-                  // case 105:
-                  //   appendInfo(data, dental);
-                  //   break;
-                  // case 106:
-                  //   appendInfo(data, sunscreen);
-                  //   break;
-                  // case 107:
-                  //   appendInfo(data, repellant);
-                  //   break;
-                  // case 108:
-                  //   appendInfo(data, balm);
-                  //   break;
+                  case 103:
+                    appendInfo(data, oil);
+                    break;
+                  case 104:
+                    appendInfo(data, lotion);
+                    break;
+                  case 105:
+                    appendInfo(data, dental);
+                    break;
+                  case 106:
+                    appendInfo(data, sunscreen);
+                    break;
+                  case 107:
+                    appendInfo(data, repellant);
+                    break;
+                  case 108:
+                    appendInfo(data, balm);
+                    break;
                   default:
                     break;
                 }
@@ -44,6 +51,13 @@ export function getBabyWash() {
       })
       .then(x => {
         $(babywash.join("")).appendTo("#babywash .babywash");
+        $(oil.join("")).appendTo("#oil .oil");
+        $(lotion.join("")).appendTo("#lotion .lotion");
+        $(dental.join("")).appendTo("#dental .dental");
+        $(sunscreen.join("")).appendTo("#sunscreen .sunscreen");
+        $(repellant.join("")).appendTo("#repellant .repellant");
+        $(diaper.join("")).appendTo("#diapers .diapers");
+        $(balm.join("")).appendTo("#balms .balms");
         resolve();
       });
   });
@@ -85,7 +99,9 @@ function appendInfo(data, htmlArray) {
     htmlArray.push(`
           <div class="ui baby-care text-center card">
               <a href="https://organicstart.com${data.custom_url}">
-                  <img data-lazy="${data.primary_image.standard_url}" class="img-fluid center-block"/>
+                  <img src="${
+                    data.primary_image.standard_url
+                  }" class="img-fluid center-block"/>
                   <div class="text-wrapper">
                       <div class="center">
                           <p class="brand text-center">${getBrand(
