@@ -51,7 +51,7 @@ function navbarTemplate(storeColor, store) {
           </ul>
           </div>
 
-          <a class="float-right pt-2 mburger mburger--collapse navbar-toggler" href="#my-accountmenu">  
+          <a class="float-right nav-link" href="#my-accountmenu">  
             <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
           </a>
         </nav>
