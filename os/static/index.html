@@ -14,8 +14,14 @@
   
   <div id="wrapper">
     <div id="my-account"></div>
-    <section class="container-fluid" style="max-height: 600px;" id="babywash">
+    <section class="container-fluid" style="min-height: 350px; max-height: 600px;" id="babywash">
         <div class="babywash carousel my-5"></div>
+    </section>
+    <section class="container-fluid" style="min-height: 350px; max-height: 600px;" id="oil">
+        <div class="oil carousel my-5"></div>
+    </section>
+    <section class="container-fluid" style="min-height: 350px; max-height: 600px;" id="dental">
+        <div class="dental carousel my-5"></div>
     </section>
     <header class="py-5">
       <h1 class="display-1 text-center"><span class="text-mustard">Organic</span> <span class="text-moss">Start</span>
@@ -217,7 +223,7 @@
       // window.organicStart.alert()
       window.organicStart.footer("os");
       window.organicStart.getArticles();
-      window.organicStart.getBabyWash().then(() => window.organicStart.carousel(".carousel"));
+      window.organicStart.getItems().then(() => window.organicStart.carousel(".carousel"));
     };
   </script>
 </body>
