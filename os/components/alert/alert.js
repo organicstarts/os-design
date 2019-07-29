@@ -1,7 +1,7 @@
 import $ from "jquery"
 
 export function alert() {
-    $.get("https://ipapi.co/8.8.8.8/json/").then(res => {
+    $.get("https://ipapi.co/json").then(res => {
         if (res.country === "US") {
           $("body").append(`
               <div class="modal fade" id="alertModalCenter" tabindex="-1" role="dialog" aria-labelledby="alertModalCenterTitle" aria-hidden="true">

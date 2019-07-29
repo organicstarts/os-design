@@ -8,21 +8,26 @@
  @function StripUnit($value) {
     @return $value / ($value * 0 + 1);
 }
-@mixin FluidType($min-vw, $max-vw, $min-font-size, $max-font-size) {
+@mixin FluidType($min-vw, $max-vw, $min-font-size, $max-font-size, $min-letter-spacing, $max-letter-spacing) {
     $u1: unit($min-vw);
     $u2: unit($max-vw);
     $u3: unit($min-font-size);
     $u4: unit($max-font-size);
+    $u5: unit($min-letter-spacing);
+    $u6: unit($max-letter-spacing);
 
-    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 { // and $u1 == $u5 and $u1 == $u6 {
         & {
-        font-size: $min-font-size;
-        @media screen and (min-width: $min-vw) {
-            font-size: calc(#{$min-font-size} + #{StripUnit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{StripUnit($max-vw - $min-vw)}));
-        }
-        @media screen and (min-width: $max-vw) {
-            font-size: $max-font-size;
-        }
+            font-size: $min-font-size;
+            letter-spacing: $min-letter-spacing;
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{StripUnit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{StripUnit($max-vw - $min-vw)}));
+                letter-spacing: calc(#{$min-letter-spacing} + #{StripUnit($max-letter-spacing - $min-letter-spacing)} * ((100vw - #{$min-vw}) / #{StripUnit($max-vw - $min-vw)}));
+            }
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+                letter-spacing: $max-letter-spacing;
+            }
         }
     }
 }
@@ -50,27 +55,27 @@
  }
  
  h1, .h1 {
-     @include FluidType(320px, 1440px, 36px, 72px);
+     @include FluidType(320px, 1440px, 36px, 72px, 0rem, -0.09375rem);
      font-weight: 300;
  }
  h2, .h2 {
-     @include FluidType(320px, 1440px, 30px, 60px);
+     @include FluidType(320px, 1440px, 30px, 60px, 0rem, -0.09375rem);
      font-weight: 300;
  }
  h3, .h3 { 
-     @include FluidType(320px, 1440px, 24px, 48px);
+     @include FluidType(320px, 1440px, 24px, 48px, 0rem, -0.09375rem);
      font-weight: 400;
  }
  h4, .h4 {
-     @include FluidType(320px, 1440px, 22px, 34px);
+     @include FluidType(320px, 1440px, 22px, 34px, 0rem, -0.09375rem);
      font-weight: 400;
  }
  h5, .h5 {
-     @include FluidType(320px, 1440px, 20px, 24px);
+     @include FluidType(320px, 1440px, 20px, 24px, 0rem, -0.09375rem);
      font-weight: 600;
  }
  h6, .h6 {
-     @include FluidType(320px, 1440px, 18px, 20px);
+     @include FluidType(320px, 1440px, 18px, 20px, 0rem, -0.09375rem);
      font-weight: 600;
  }
  
@@ -78,16 +83,16 @@
      font-family: $header-font
  }
  .display-1 {
-     @include FluidType(320px, 1440px, 48px, 96px);
+     @include FluidType(320px, 1440px, 48px, 96px, 0px, -1.5px);
  }
  .display-2 {
-     @include FluidType(320px, 1440px, 42px, 84px);
+     @include FluidType(320px, 1440px, 42px, 84px, 0rem, -0.09375rem);
  }
  .display-3 {
-     @include FluidType(320px, 1440px, 36px, 72px);
+     @include FluidType(320px, 1440px, 36px, 72px, 0rem, -0.09375rem);
  }
  .display-4 {
-     @include FluidType(320px, 1440px, 30px, 60px);
+     @include FluidType(320px, 1440px, 30px, 60px, 0rem, -0.09375rem);
  }
  
  /*
