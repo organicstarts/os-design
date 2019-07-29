@@ -59,11 +59,18 @@ export function populateAccountNav(id, email) {
   } else {
     $(`#${id}`)
       .append(`<nav id="my-accountmenu" class="primary sidebar mm-menu  mm-menu_theme-dark" aria-hidden="true">
-        <ul class="text-center">
-        <li>
-           <a class="nav-link" href="https://organicstart.com">
-            <i class="fa fa-user-circle fa-5x"></i>
-           </a> 
+         <div class="row text-center">
+             <a class="col-6" href="https://organicstart.com">
+              <i class="fa fa-star fa-2x"></i>
+             </a> 
+             <a class="col-3" href="https://organicstart.com">
+              <i class="fa fa-user-circle fa-5x"></i>
+             </a> 
+             <a class="col-3" href="https://organicstart.com">
+              <i class="fa fa-question-circle fa-2x"></i>
+             </a> 
+
+        <ul class="mt-3">        
           <li>
               <a class="nav-link" href="https://organicstart.com">
                Login
@@ -75,6 +82,7 @@ export function populateAccountNav(id, email) {
               </a>
           </li>
       </ul> 
+      </div>
     </nav>`);
   }
 }
