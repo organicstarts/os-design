@@ -10,12 +10,31 @@
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Nunito:300,400,600|Open+Sans:300,400,600&display=swap"
     rel="stylesheet">
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
   <div id="wrapper">
     <div id="my-account"></div>
-    <!--<nav class="main-menu fixed-top bg-transparent py-3 py-lg-5 px-3 px-xl-5">
+    <script>
+      $(document).ready(function() {
+        $(window).scroll(function() {
+          console.log(this.scrollY);
+          if(this.scrollY >= 50) {
+            $("#primary").removeClass('position-absolute').addClass('bg-white').addClass('fixed-top');
+
+            $("#primary").addClass('slide-down');
+            $("#primary").removeClass('fade-up');
+          } else {
+            $("#primary").addClass('position-absolute').removeClass('bg-white').removeClass('fixed-top');
+
+            $("#primary").removeClass('slide-down');
+            $("#primary").addClass('fade-up');
+          }
+        });
+      });
+    </script>
+    <nav id="primary" class="main-menu py-3 py-lg-5 px-3 px-xl-5 position-absolute">
       <div class="container-fluid">
         <div class="row justify-content-center align-items-center">
           <div class="col-2 m-0">
@@ -62,7 +81,7 @@
           </div>
         </div>
       </div>
-    </nav>-->
+    </nav>
     <div class="home jumbotron overflow-hidden d-flex justify-content-center align-items-end text-center">
       <h1 class="display-4">Home to the world's best organic baby products.</h1>
     </div>
@@ -315,13 +334,13 @@
     window.organicStart.populateAccountNav("my-account", null);
     window.organicStart.sidebar();
     window.organicStart.accountBar();
-    window.organicStart.navbar('os');
+    //window.organicStart.navbar('os');
     // $(document).ready(function() {
     //   window.organicstart.carousel('.category.carousel');
     // });
     window.onload = function () {
       // window.organicStart.alert()
-      window.organicStart.scrollNav();
+      //window.organicStart.scrollNav();
       window.organicStart.footer("os");
       window.organicStart.getArticles();
       window.organicStart.getItems().then(() => window.organicStart.carousel(".carousel"));

@@ -31,7 +31,7 @@
 }
 
 // Yvan's Navbar
-#primary {
+/*#primary {
     top: 0;
     text-shadow: 0 1px 0 aliceblue;
     position: absolute;
@@ -78,18 +78,39 @@
         transform: translateY(0);
         transition: .35s ease-out;
     }
-}
+}*/
 
 #primary {
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     transition: .35s ease-out;
-    &.above {
-        transform: translateY(-100%);
+    transition: background-color 0s;
+    animation: slide-down 0.35s;
+    &.slide-up {
+        animation-direction: reverse;
     }
-    &.show {
+    &.fade-up {
+        animation: fade-up 0.35s;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-200%);
+    } 
+    100% {
+        opacity: 1;
         transform: translateY(0);
-    }
+    } 
+}
+
+@keyframes fade-up {
+    0% {
+        transform: translateY(200%);
+    } 
+    100% {
+        transform: translateY(0);
+    } 
 }
