@@ -29,3 +29,67 @@
 .main-menu .nav .nav-item-icon {
     font-size: 2rem;
 }
+
+// Yvan's Navbar
+#primary {
+    top: 0;
+    text-shadow: 0 1px 0 aliceblue;
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9999;
+
+    a {
+        color: inherit;
+    }
+
+    &.sticky {
+        position: sticky;
+    }
+}
+
+.header {
+    padding: 1rem 2rem;
+    pointer-events: all;
+}
+
+.header--alpha {
+    // padding-bottom: 2rem;
+    transition: .225s ease-out;
+
+    .sticky & {
+        opacity: .5;
+        transform: translateY(100%);
+        transition: none;
+    }
+}
+
+.header--beta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: .5;
+    transform: translateY(-100%);
+
+
+    .sticky & {
+        opacity: 1;
+        transform: translateY(0);
+        transition: .35s ease-out;
+    }
+}
+
+#primary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: .35s ease-out;
+    &.above {
+        transform: translateY(-100%);
+    }
+    &.show {
+        transform: translateY(0);
+    }
+}

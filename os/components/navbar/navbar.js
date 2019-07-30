@@ -2,7 +2,7 @@ import $ from "jquery";
 import _ from "lodash";
 
 export function scrollNav() {
-  const $realSticky = document.querySelector("header");
+  const $realSticky = document.querySelector("#primary");
   const $placeholderSticky = document.querySelector(".placeholder-header");
 
   const stickyHeader = () =>
@@ -26,24 +26,24 @@ export function navbar(store) {
   let headerArray = [];
   switch (store) {
     case "os":
-      storeColor = "moss";
+      storeColor = "white";
       break;
     case "osw":
-      storeColor = "mustard";
+      storeColor = "white";
       break;
     default:
-      storeColor = "store-color";
+      storeColor = "white";
       break;
   }
   headerArray.push(navbarTemplate("", store, "alpha", ""));
-  headerArray.push(navbarTemplate(storeColor, store, "beta", "text-white"));
-  $("#wrapper").prepend(`<header>${headerArray.join("")}
+  headerArray.push(navbarTemplate(storeColor, store, "beta"));
+  $("#wrapper").prepend(`<header id="primary">${headerArray.join("")}
   </header><div class="placeholder-header"></div>`);
 }
 
 function navbarTemplate(storeColor, store, headerType, textColor) {
   return `
-      <div class="${storeColor} header header--${headerType}">
+      <div class="bg-${storeColor} header header--${headerType}">
         <nav class="navbar navbar-expand-lg navbar-light">
         <a class="mburger mburger--collapse navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" href="#my-menu">
         
