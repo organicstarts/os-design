@@ -2,85 +2,80 @@ import $ from "jquery";
 import _ from "lodash";
 
 export function scrollNav() {
-  const $realSticky = document.querySelector("#primary");
-  const $placeholderSticky = document.querySelector(".placeholder-header");
+  $(window).scroll(function() {
+    if (this.scrollY >= 50) {
+      $("#primary")
+        .removeClass("position-absolute")
+        .addClass("bg-white")
+        .addClass("fixed-top");
 
-  const stickyHeader = () =>
-    function() {
-      const sr1 = $placeholderSticky.getBoundingClientRect();
-      const sr2 = $realSticky.getBoundingClientRect();
-      if (sr1.top > -10) {
-        $realSticky.classList.remove("sticky");
-        $placeholderSticky.style.top = -10;
-      } else {
-        $realSticky.classList.add("sticky");
-        $placeholderSticky.style.top = `-${sr2.height + 1}px`;
-      }
-    };
+      $("#primary").addClass("slide-down");
+      $("#primary").removeClass("fade-up");
+    } else {
+      $("#primary")
+        .addClass("position-absolute")
+        .removeClass("bg-white")
+        .removeClass("fixed-top");
 
-  window.addEventListener("scroll", _.debounce(stickyHeader(), 15));
+      $("#primary").removeClass("slide-down");
+      $("#primary").addClass("fade-up");
+    }
+  });
 }
 
-export function navbar(store) {
-  let storeColor = "";
-  let headerArray = [];
-  switch (store) {
-    case "os":
-      storeColor = "white";
-      break;
-    case "osw":
-      storeColor = "white";
-      break;
-    default:
-      storeColor = "white";
-      break;
-  }
-  headerArray.push(navbarTemplate("", store, "alpha", ""));
-  headerArray.push(navbarTemplate(storeColor, store, "beta"));
-  $("#wrapper").prepend(`<header id="primary">${headerArray.join("")}
-  </header><div class="placeholder-header"></div>`);
+export function navbar() {
+  $("#wrapper").prepend(navbarTemplate());
 }
 
-function navbarTemplate(storeColor, store, headerType, textColor) {
+function navbarTemplate() {
   return `
-      <div class="bg-${storeColor} header header--${headerType}">
-        <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="mburger mburger--collapse navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" href="#my-menu">
-        
-         <b></b>
-         <b></b>
-         <b></b>
-     
-      </a>
-        <div class="collapse navbar-collapse">
-        <ul class="navbar-nav">
-            <li class="nav-item ${store === "os" ? "active" : ""}">
-              <a class="nav-link ${textColor}" href="https://organicstart.com">
-                Retail
-              </a>
-            </li>
-            <li class="nav-item ${store === "blog" ? "active" : ""}">
-              <a class="nav-link ${textColor}" href="https://blog.organicstart.com">
-                Blog
-              </a>
-            </li>
-            <li class="nav-item ${store === "support" ? "active" : ""}">
-              <a
-                class="nav-link ${textColor}"
-                href="https://support.organicstart.com/hc/en-us"
-              >
-                Support
-              </a>
-            </li>
-          </ul>
-          </div>
-
-          <a class="float-right nav-link" href="#my-accountmenu">  
-            <i class="fa fa-user-circle fa-2x ${textColor}" aria-hidden="true"></i>
-          </a>
-          </ul>
-        </nav>
+  <nav id="primary" class="main-menu py-3 py-lg-5 px-3 px-xl-5 position-absolute">
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-2 m-0">
+        <ul class="nav">
+          <li class="nav-item-icon d-inline d-lg-none p-0">
+            <a class="mburger mburger--collapse" href="#my-menu"><b></b><b></b><b></b></a>
+          </li>
+          <li class="nav-item d-none d-lg-inline p-0">
+            <a href="https://organicstart.com" title="Home">
+              <picture>
+                <img src="https://triad.imgix.net/os/i/logo.svg?s=83f3f5678face7e3f500c8aba1fd41e9"
+                  alt="Organic Start" title="Organic Start Logo" class="logo img-fluid my-0">
+              </picture>
+            </a>
+          </li>
       </div>
-   
+      <div class="col-10 m-0">
+        <ul class="nav justify-content-end align-items-center">
+          <li class="nav-item d-none d-lg-inline">
+            <a href="#">Baby Food</a>
+          </li>
+          <li class="nav-item d-none d-lg-inline">
+            <a href="#">Baby Care</a>
+          </li>
+          <li class="nav-item d-none d-lg-inline">
+            <a href="#">Clothes</a>
+          </li>
+          <li class="nav-item d-none d-lg-inline">
+            <a href="#">Toys</a>
+          </li>
+          <li class="nav-item d-none d-lg-inline">
+            <a href="#">Diapers</a>
+          </li>
+          <li class="nav-item d-none d-lg-inline">
+            <a href="#">Mommy</a>
+          </li>
+          <li class="nav-item-icon" id="AccountDrawer">
+            <a href="#my-accountmenu"><i class="far fa-user-circle"></i></a>
+          </li>
+          <li class="nav-item-icon" id="CartDrawer">
+            <a href="#"><i class="fas fa-shopping-bag"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
   `;
 }

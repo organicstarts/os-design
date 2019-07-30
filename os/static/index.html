@@ -9,79 +9,13 @@
 
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Nunito:300,400,600|Open+Sans:300,400,600&display=swap"
     rel="stylesheet">
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
   <div id="wrapper">
     <div id="my-account"></div>
-    <script>
-      $(document).ready(function() {
-        $(window).scroll(function() {
-          console.log(this.scrollY);
-          if(this.scrollY >= 50) {
-            $("#primary").removeClass('position-absolute').addClass('bg-white').addClass('fixed-top');
 
-            $("#primary").addClass('slide-down');
-            $("#primary").removeClass('fade-up');
-          } else {
-            $("#primary").addClass('position-absolute').removeClass('bg-white').removeClass('fixed-top');
 
-            $("#primary").removeClass('slide-down');
-            $("#primary").addClass('fade-up');
-          }
-        });
-      });
-    </script>
-    <nav id="primary" class="main-menu py-3 py-lg-5 px-3 px-xl-5 position-absolute">
-      <div class="container-fluid">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-2 m-0">
-            <ul class="nav">
-              <li class="nav-item-icon d-inline d-lg-none p-0">
-                <a href="#"><i class="fas fa-bars"></i></a>
-              </li>
-              <li class="nav-item d-none d-lg-inline p-0">
-                <a href="https://organicstart.com" title="Home">
-                  <picture>
-                    <img src="https://triad.imgix.net/os/i/logo.svg?s=83f3f5678face7e3f500c8aba1fd41e9"
-                      alt="Organic Start" title="Organic Start Logo" class="logo img-fluid my-0">
-                  </picture>
-                </a>
-              </li>
-          </div>
-          <div class="col-10 m-0">
-            <ul class="nav justify-content-end align-items-center">
-              <li class="nav-item d-none d-lg-inline">
-                <a href="#">Baby Food</a>
-              </li>
-              <li class="nav-item d-none d-lg-inline">
-                <a href="#">Baby Care</a>
-              </li>
-              <li class="nav-item d-none d-lg-inline">
-                <a href="#">Clothes</a>
-              </li>
-              <li class="nav-item d-none d-lg-inline">
-                <a href="#">Toys</a>
-              </li>
-              <li class="nav-item d-none d-lg-inline">
-                <a href="#">Diapers</a>
-              </li>
-              <li class="nav-item d-none d-lg-inline">
-                <a href="#">Mommy</a>
-              </li>
-              <li class="nav-item-icon" id="AccountDrawer">
-                <a href="#"><i class="far fa-user-circle"></i></a>
-              </li>
-              <li class="nav-item-icon" id="CartDrawer">
-                <a href="#"><i class="fas fa-shopping-bag"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div class="home jumbotron overflow-hidden d-flex justify-content-center align-items-end text-center">
       <h1 class="display-4">Home to the world's best organic baby products.</h1>
     </div>
@@ -327,6 +261,7 @@
       </div>
     </section>
   </article>
+  
   </div>
   <script src="main.js"></script>
   <script type="text/javascript">
@@ -334,16 +269,15 @@
     window.organicStart.populateAccountNav("my-account", null);
     window.organicStart.sidebar();
     window.organicStart.accountBar();
-    //window.organicStart.navbar('os');
-    // $(document).ready(function() {
-    //   window.organicstart.carousel('.category.carousel');
-    // });
+    window.organicStart.navbar();
+    window.organicStart.carousel(".carousel");
+    window.organicStart.scrollNav();
     window.onload = function () {
       // window.organicStart.alert()
-      //window.organicStart.scrollNav();
+
       window.organicStart.footer("os");
       window.organicStart.getArticles();
-      window.organicStart.getItems().then(() => window.organicStart.carousel(".carousel"));
+     
     };
   </script>
 </body>
