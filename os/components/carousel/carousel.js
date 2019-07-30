@@ -8,16 +8,25 @@ export function carousel(className) {
     lazyLoad: "ondemand",
     responsive: [
       {
-        breakpoint: 1200,
+        breakpoint: 1440,
         settings: {
           arrows: true,
           centerMode: true,
           centerPadding: "45px",
-          slidesToShow: 4
+          slidesToShow: 6
         }
       },
       {
-        breakpoint: 992,
+        breakpoint: 1024,
+        settings: {
+          arrows: true,
+          centerMode: true,
+          centerPadding: "45px",
+          slidesToShow: 5
+        }
+      },
+      {
+        breakpoint: 768,
         settings: {
           arrows: true,
           centerMode: true,
@@ -26,7 +35,7 @@ export function carousel(className) {
         }
       },
       {
-        breakpoint: 768,
+        breakpoint: 560,
         settings: {
           arrows: false,
           centerMode: true,
@@ -35,7 +44,7 @@ export function carousel(className) {
         }
       },
       {
-        breakpoint: 576,
+        breakpoint: 0,
         settings: {
           arrows: false,
           centerMode: true,

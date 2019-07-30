@@ -1,0 +1,33 @@
+/* Segments */
+.ui {
+    &.segments &.segment {
+        border: none;
+        box-shadow: none;
+    }
+    &.segments, &.segment, &.inverted.segment {
+        border: none;
+        @include BoxShadow(1);
+
+        &.flat {
+            box-shadow: none;
+        }
+        &.lifted {
+            @include BoxShadow(6);
+        }
+
+        &.raised {
+            @include BoxShadow(12);
+        }
+
+        &.boosted {
+            @include BoxShadow(24);
+        }
+
+        &.padded {
+            padding: 1.5rem;
+        }
+    }
+    &.segment, &.inverted.segment {
+        padding: 1rem;
+    }
+}

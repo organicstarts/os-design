@@ -1,0 +1,37 @@
+/* Segments */
+.card {
+    &.cards &.card {
+        border: none;
+        box-shadow: none;
+    }
+    &.cards, &.card, &.inverted.card {
+        border: none;
+        @include BoxShadow(1);
+
+        &.flat {
+            box-shadow: none;
+        }
+        &.lifted {
+            @include BoxShadow(6);
+        }
+
+        &.raised {
+            @include BoxShadow(12);
+        }
+
+        &.boosted {
+            @include BoxShadow(24);
+        }
+
+        &.padded {
+            padding: 1.5rem;
+        }
+    }
+    &.card, &.inverted.card {
+        padding: 1rem;
+    }
+    &.category {
+        border-radius: 2rem;
+        padding-bottom: 100%;
+    }
+}
