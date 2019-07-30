@@ -10,7 +10,7 @@ export function getItems() {
     let sunscreen = [];
     let repellant = [];
     let balm = [];
-    $.get("http://localhost:3001/os/getcategories")
+    $.get("https://brainiac.organicstart.com/os/getcategories")
       .then((resData, status) => {
         for (let res in resData) {
           resData[res].map(data => {
@@ -99,7 +99,7 @@ function appendInfo(data, htmlArray) {
     htmlArray.push(`
           <div class="ui baby-care text-center card">
               <a href="https://organicstart.com${data.custom_url}">
-                  <img src="${
+                  <img data-lazy="${
                     data.primary_image.standard_url
                   }" class="img-fluid center-block"/>
                   <div class="text-wrapper">

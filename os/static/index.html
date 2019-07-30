@@ -10,9 +10,11 @@
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Nunito:300,400,600|Open+Sans:300,400,600&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body >
   
   <div id="wrapper">
+
+    
     <div id="my-account"></div>
     <section class="container-fluid" style="min-height: 350px; max-height: 600px;" id="babywash">
         <div class="babywash carousel my-5"></div>
@@ -217,10 +219,12 @@
       window.organicStart.navbar("os");
       window.organicStart.populateSideNav("wrapper")
       window.organicStart.populateAccountNav("my-account", null)
+
       window.organicStart.sidebar();
       window.organicStart.accountBar();
     window.onload = function () {
       // window.organicStart.alert()
+      window.organicStart.scrollNav();
       window.organicStart.footer("os");
       window.organicStart.getArticles();
       window.organicStart.getItems().then(() => window.organicStart.carousel(".carousel"));
