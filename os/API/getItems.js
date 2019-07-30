@@ -10,7 +10,7 @@ export function getItems() {
     let sunscreen = [];
     let repellant = [];
     let balm = [];
-    $.get("http://localhost:3001/os/getcategories")
+    $.get("https://brainiac.organicstart.com/os/getcategories")
       .then((resData, status) => {
         for (let res in resData) {
           resData[res].map(data => {

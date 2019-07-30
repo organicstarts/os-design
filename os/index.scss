@@ -51,7 +51,20 @@ $body-bg: #fff; // This will be different for production.
 $font-family-base: 'Open Sans',
 sans-serif; // This is where we switch the global font-family
 $enable-responsive-font-sizes: true;
-$theme-colors:('moss': #94C120, 'mustard': #FFCA28);
+$moss: #94C120;
+$mustard: #FFCA28;
+$theme-colors:(
+    'moss': $moss, 
+    'moss-dark': darken($moss, 10%), 
+    'moss-light': lighten($moss, 10%), 
+    'moss-gray': grayscale($moss), 
+    'moss-alt': complement($moss), 
+    'mustard': $mustard,
+    'mustard-dark': darken($mustard, 10%), 
+    'mustard-light': lighten($mustard, 10%), 
+    'mustard-gray': grayscale($mustard), 
+    'mustard-alt': complement($mustard)
+);
 
 $header-font: 'Fredoka One',
 cursive;
@@ -63,8 +76,10 @@ sans-serif;
 @import "~mmenu-js/src/mmenu";
 @import "~mburger-css/src/scss/mburger";
 
-$fa-font-path: "../node_modules/font-awesome/fonts";
-@import "~font-awesome/scss/font-awesome";
+$fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
 
 $slick-loader-path: "../node_modules/slick-carousel/slick/";
 $slick-font-path: "../node_modules/slick-carousel/slick/fonts/";
@@ -160,4 +175,9 @@ $color in $theme-colors {
     header.#{$name} {
         background-color: #{$color}
     }
+}
+
+img.logo {
+    min-width: 200px;
+    height: auto;
 }
