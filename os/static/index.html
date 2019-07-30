@@ -13,9 +13,6 @@
 
 <body>
   <div id="wrapper">
-    <div id="my-account"></div>
-
-
     <div class="home jumbotron overflow-hidden d-flex justify-content-center align-items-end text-center">
       <h1 class="display-4">Home to the world's best organic baby products.</h1>
     </div>
@@ -284,10 +281,10 @@
   <script src="main.js"></script>
   <script type="text/javascript">
     window.organicStart.populateSideNav("wrapper");
-    window.organicStart.populateAccountNav("my-account", null);
+    window.organicStart.populateAccountNav("wrapper", null);
     window.organicStart.sidebar();
-    window.organicStart.accountBar();
-    window.organicStart.navbar();
+    window.organicStart.accountMenu();
+    window.organicStart.navbar("wrapper");
     window.organicStart.carousel(".carousel");
     window.organicStart.scrollNav();
     window.onload = function () {

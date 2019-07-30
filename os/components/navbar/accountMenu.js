@@ -1,11 +1,11 @@
 import $ from "jquery";
 
-export function accountBar() {
+export function accountMenu() {
   Mmenu.configs.classNames.selected = "active";
-  Mmenu.configs.offCanvas.page.selector = "#my-account";
+  Mmenu.configs.offCanvas.page.selector = "#accountMenu";
 
   document.addEventListener("DOMContentLoaded", () => {
-    const menu = new Mmenu("#my-accountmenu", {
+    const menu = new Mmenu("#accountMenu", {
       offCanvas: true,
       navbar: {
         title: ""

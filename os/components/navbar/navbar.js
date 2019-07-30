@@ -20,8 +20,8 @@ export function scrollNav() {
   });
 }
 
-export function navbar() {
-  $("#wrapper").prepend(navbarTemplate());
+export function navbar(id) {
+  $(`#${id}`).prepend(navbarTemplate());
 }
 
 function navbarTemplate() {
@@ -32,7 +32,7 @@ function navbarTemplate() {
         <div class="col-2 m-0">
           <ul class="nav">
             <li class="nav-item-icon d-inline d-lg-none p-0">
-              <a class="mburger mburger--collapse" href="#my-menu"><b></b><b></b><b></b></a>
+              <a class="mburger mburger--collapse" href="#mainMobileMenu"><b></b><b></b><b></b></a>
             </li>
             <li class="nav-item d-none d-lg-inline p-0">
               <a href="https://organicstart.com" title="Home">
@@ -64,7 +64,7 @@ function navbarTemplate() {
               <a href="#">Mommy</a>
             </li>
             <li class="nav-item-icon" id="AccountDrawer">
-              <a href="#my-accountmenu"><i class="far fa-user-circle"></i></a>
+              <a href="#accountMenu"><i class="far fa-user-circle"></i></a>
             </li>
             <li class="nav-item-icon" id="CartDrawer">
               <a href="#"><i class="fas fa-shopping-bag"></i></a>

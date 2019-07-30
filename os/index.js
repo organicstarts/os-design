@@ -5,7 +5,7 @@ import lazyload from "vanilla-lazyload";
 import { footer, getArticles } from "./components/footer/footer";
 import { navbar, scrollNav } from "./components/navbar/navbar";
 import { sidebar } from "./components/navbar/sidebar";
-import { accountBar } from "./components/navbar/accountbar";
+import { accountMenu } from "./components/navbar/accountMenu";
 import { carousel } from "./components/carousel/carousel";
 import { getItems } from "./API/getItems";
 import {
@@ -23,7 +23,7 @@ export {
   getArticles,
   navbar,
   sidebar,
-  accountBar,
+  accountMenu,
   carousel,
   getItems,
   populateSideNav,

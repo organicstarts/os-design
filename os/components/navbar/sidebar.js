@@ -3,7 +3,7 @@ export function sidebar() {
   Mmenu.configs.offCanvas.page.selector = "#wrapper";
 
   document.addEventListener("DOMContentLoaded", () => {
-    const menu = new Mmenu("#my-menu", {
+    const menu = new Mmenu("#mainMobileMenu", {
       navbar: {
         title: ""
       },

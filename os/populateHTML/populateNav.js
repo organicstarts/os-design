@@ -2,7 +2,7 @@ import $ from "jquery";
 
 export function populateSideNav(id) {
   $(`#${id}`)
-    .prepend(`<nav id="my-menu" class="primary sidebar mm-menu mm-menu_offcanvas mm-menu_theme-dark" aria-hidden="true">
+    .prepend(`<nav id="mainMobileMenu" class="primary sidebar mm-menu mm-menu_offcanvas mm-menu_theme-dark" aria-hidden="true">
       <ul>
           <li>
           <a class="nav-link" href="https://organicstart.com">
@@ -23,7 +23,7 @@ export function populateSideNav(id) {
           </a>
         </li>
         <li class="nav-item" id="my-header">
-        <a class="mburger mburger--collapse" href="#my-accountmenu">Account
+        <a class="mburger mburger--collapse" href="#accountMenu">Account
         </a>
         </li>
       </ul>
@@ -33,7 +33,7 @@ export function populateSideNav(id) {
 export function populateAccountNav(id, email) {
   if (email) {
     $(`#${id}`)
-      .append(`<nav id="my-accountmenu" class="primary sidebar mm-menu  mm-menu_theme-dark" aria-hidden="true">
+      .append(`<nav id="accountMenu" class="primary sidebar mm-menu  mm-menu_theme-dark" aria-hidden="true">
         <ul class="text-center">
         <li>
            <a class="nav-link" href="https://organicstart.com">
@@ -58,7 +58,7 @@ export function populateAccountNav(id, email) {
     </nav>`);
   } else {
     $(`#${id}`)
-      .append(`<nav id="my-accountmenu" class="primary sidebar mm-menu  mm-menu_theme-dark" aria-hidden="true">
+      .append(`<nav id="accountMenu" class="primary sidebar mm-menu  mm-menu_theme-dark" aria-hidden="true">
          <div class="row text-center">
              <a class="col-6" href="https://organicstart.com">
               <i class="fa fa-star fa-2x"></i>
