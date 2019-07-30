@@ -99,7 +99,7 @@ function appendInfo(data, htmlArray) {
     htmlArray.push(`
           <div class="ui baby-care text-center card">
               <a href="https://organicstart.com${data.custom_url}">
-                  <img src="${
+                  <img data-lazy="${
                     data.primary_image.standard_url
                   }" class="img-fluid center-block"/>
                   <div class="text-wrapper">

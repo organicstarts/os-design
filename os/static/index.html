@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
   <div id="wrapper">
     <div id="my-account"></div>
     <nav class="main-menu fixed-top bg-transparent py-3 py-lg-5 px-3 px-xl-5">
@@ -322,6 +321,7 @@
     });
     window.onload = function () {
       // window.organicStart.alert()
+      window.organicStart.scrollNav();
       window.organicStart.footer("os");
       window.organicStart.getArticles();
       window.organicStart.getItems().then(() => window.organicStart.carousel(".carousel"));
