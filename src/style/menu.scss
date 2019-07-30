@@ -27,85 +27,29 @@
 }
 
 .main-menu .nav .nav-item a {
-    font-family: $subheader-font;
+    //font-family: $subheader-font;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 900;
 }
 
 .main-menu .nav .nav-item-icon {
     font-size: 2rem;
 }
-
-// Yvan's Navbar
-/*#primary {
-    top: 0;
-    text-shadow: 0 1px 0 aliceblue;
-    position: absolute;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 9999;
-
-    a {
-        color: inherit;
-    }
-
-    &.sticky {
-        position: sticky;
-    }
-}
-
-.header {
-    padding: 1rem 2rem;
-    pointer-events: all;
-}
-
-.header--alpha {
-    // padding-bottom: 2rem;
-    transition: .225s ease-out;
-
-    .sticky & {
-        opacity: .5;
-        transform: translateY(100%);
-        transition: none;
-    }
-}
-
-.header--beta {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    opacity: .5;
-    transform: translateY(-100%);
-
-
-    .sticky & {
-        opacity: 1;
-        transform: translateY(0);
-        transition: .35s ease-out;
-    }
-}*/
-
-#primary {
+#mainMenu {
     top: 0;
     left: 0;
     right: 0;
     z-index: 1030;
-    transition: .35s ease-out;
-    transition: background-color 0s;
-    animation: fade-up 0.35s;
-
+    transition: .5s ease-out;
     &.slide-down {
         padding: 1rem!important;
-        animation: slide-down 0.35s;
+        animation: slide-down 0.5s;
+        //@include BoxShadow(2);
         & {
             @include media-breakpoint-up(lg) {
                 padding: 1rem 3rem!important;
             }
         }
-    }
-    &.fade-up {
-        animation: fade-up 0.35s;
     }
 }
 
@@ -121,6 +65,10 @@
     }
 }
 
+.fade-up {
+    transition: 1s ease-out;
+    animation: fade-up 1s;
+}
 @keyframes fade-up {
     0% {
         transform: translateY(200%);
