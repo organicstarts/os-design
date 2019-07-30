@@ -1,31 +1,37 @@
-
 .main-menu .nav .nav-item {
     padding: 0;
+
     & {
         @include media-breakpoint-up(lg) {
             padding: 0 0.35rem;
         }
+
         @include media-breakpoint-up(xl) {
             padding: 0 0.70rem;
         }
+
         @media (min-width: 1440px) {
             padding: 0 1rem;
         }
     }
 }
+
 .main-menu .nav .nav-item-icon {
     padding: 0 0.5rem;
+
     & {
         @include media-breakpoint-up(xl) {
             padding: 0 1rem;
         }
     }
 }
+
 .main-menu .nav .nav-item a {
     font-family: $subheader-font;
     text-transform: uppercase;
     font-weight: 600;
 }
+
 .main-menu .nav .nav-item-icon {
     font-size: 2rem;
 }
@@ -86,10 +92,12 @@
     right: 0;
     transition: .35s ease-out;
     transition: background-color 0s;
-    animation: slide-down 0.35s;
-    &.slide-up {
-        animation-direction: reverse;
+    animation: fade-up 0.35s;
+
+    &.slide-down {
+        animation: slide-down 0.35s;
     }
+
     &.fade-up {
         animation: fade-up 0.35s;
     }
@@ -99,18 +107,22 @@
     0% {
         opacity: 0;
         transform: translateY(-200%);
-    } 
+    }
+
     100% {
         opacity: 1;
         transform: translateY(0);
-    } 
+    }
 }
 
 @keyframes fade-up {
     0% {
         transform: translateY(200%);
-    } 
+        opacity: 0
+    }
+
     100% {
         transform: translateY(0);
-    } 
+        opacity: 1
+    }
 }
