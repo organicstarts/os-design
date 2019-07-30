@@ -32,6 +32,16 @@
     }
     &.category {
         border-radius: 2rem;
-        padding-bottom: 100%;
+        padding-bottom: calc(100% - 5.8125rem);
+        transition: all .3s ease-out;
+        @include BoxShadow(6);
+        &:hover {
+            @include BoxShadow(16);
+        }
+        & .content {
+            font-size: 2rem;
+            font-weight: 900;
+            @include TextShadow(6);
+        }
     }
 }
