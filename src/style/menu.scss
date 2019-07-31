@@ -52,31 +52,3 @@
         }
     }
 }
-
-@keyframes slide-down {
-    0% {
-        opacity: 0;
-        transform: translateY(-200%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fade-up {
-    transition: 1s ease-out;
-    animation: fade-up 1s;
-}
-@keyframes fade-up {
-    0% {
-        transform: translateY(200%);
-        opacity: 0
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1
-    }
-}
