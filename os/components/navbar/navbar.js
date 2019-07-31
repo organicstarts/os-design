@@ -66,12 +66,18 @@ function checkNav() {
       .removeClass("bg-white")
       .removeClass("fixed-top")
       .removeClass("slide-down");
-    $(".staggered-fade-up").each(function (i) {
-      var $item = $(this); 
-      setTimeout(function() {
-        $item.addClass("animated delay-1s fadeInDown").removeClass('staggered-fade-up');
-      }, 150 * i);
-    });
+    if(window.innerWidth >= 1024) {
+      $(".staggered-fade-up").each(function (i) {
+        var $item = $(this); 
+        setTimeout(function() {
+          $item.addClass("animated fadeInDown").removeClass('staggered-fade-up');
+        }, 150 * i);
+      });
+    } else {
+      $(".staggered-fade-up").each(function() {
+        $(this).removeClass("staggered-fade-up");
+      });
+    }
   }
   if (window.scrollY >= $("#mainMenu").height() + 96) { // 96 Pixels is the default padding
     $(".staggered-fade-up").each(function() {

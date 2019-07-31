@@ -1,0 +1,21 @@
+/*
+ * Buttons
+ *
+ * Here we have all of the button styles.
+ *
+ */
+ button,
+ .button,
+ .btn {
+     /*font-size: 0.875rem;*/
+     font-family: $font-family-base;
+     font-weight: 600;
+     text-transform: uppercase;
+ 
+     &.btn-moss {
+         color: #fff;
+     }
+ }
+ .ui.animated.button {
+    padding: 0.78571429em 1.5em 0.78571429em!important;
+}

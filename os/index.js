@@ -7,6 +7,7 @@ import { navbar, scrollNav } from "./components/navbar/navbar";
 import { sidebar } from "./components/navbar/sidebar";
 import { accountMenu } from "./components/navbar/accountMenu";
 import { carousel } from "./components/carousel/carousel";
+import { scrollSpy } from "./components/scrollspy/scrollSpy";
 import { getItems } from "./API/getItems";
 import {
   populateSideNav,
@@ -25,6 +26,7 @@ export {
   sidebar,
   accountMenu,
   carousel,
+  scrollSpy,
   getItems,
   populateSideNav,
   populateAccountNav,
