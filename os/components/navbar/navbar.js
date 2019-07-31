@@ -60,8 +60,7 @@ export function navbar(id) {
 
 function checkNav() {
   $("#mainMenu").removeClass("invisible");
-  if (window.scrollY <= $("#mainMenu").height() - 32) {
-    // 32 Pixels is the difference in top padding between default and slide-down
+  if (window.scrollY <= $("#mainMenu").height() - 32) { // 32 Pixels is the difference in top padding between default and slide-down
     $("#mainMenu")
       .addClass("position-absolute")
       .removeClass("bg-white")
@@ -80,8 +79,7 @@ function checkNav() {
       });
     }
   }
-  if (window.scrollY >= $("#mainMenu").height() + 96) {
-    // 96 Pixels is the default padding
+  if (window.scrollY >= $("#mainMenu").height() + 96) { // 96 Pixels is the default padding
     $(".staggered-fade-up").each(function() {
       $(this).removeClass("staggered-fade-up");
     });
