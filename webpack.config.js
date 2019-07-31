@@ -41,8 +41,13 @@ module.exports = {
     new HtmlWebpackPlugin({ // Simplifies creation of HTML files to serve your webpack bundles
       template: resolve(`${site}/static/index.html`),
       filename: "index.html",
-      inject: "body"
-    })
+      chunks: ['main']
+    }) // ,
+    // new HtmlWebpackPlugin({ // Simplifies creation of HTML files to serve your webpack bundles
+    //   template: resolve(`${site}/static/login.html`),
+    //   filename: "login.html",
+    //   chunks: ['login']
+    // })
   ],
   module: {
     rules: [
@@ -154,7 +159,13 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: resolve('dist')
+    contentBase: resolve('dist') // ,
+    // historyApiFallback: {
+    //   disableDotRule: true,
+    //   rewrites: [
+    //       { from: /^\/login\/.*$/, to: resolve(`${site}/static/login.html`)}
+    //   ]
+    // }
   },
   watch: true
 };
