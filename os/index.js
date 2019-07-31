@@ -9,6 +9,7 @@ import { dropdown } from "./components/navbar/dropdown";
 import { cartMenu } from "./components/navbar/cartMenu";
 import { accountMenu } from "./components/navbar/accountMenu";
 import { carousel } from "./components/carousel/carousel";
+import { scrollSpy } from "./components/scrollspy/scrollSpy";
 import { getItems } from "./API/getItems";
 import {
   populateSideNav,
@@ -28,6 +29,7 @@ export {
   sidebar,
   accountMenu,
   carousel,
+  scrollSpy,
   getItems,
   populateSideNav,
   populateAccountNav,
