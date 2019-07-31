@@ -5,6 +5,7 @@ import lazyload from "vanilla-lazyload";
 import { footer, getArticles } from "./components/footer/footer";
 import { navbar, scrollNav } from "./components/navbar/navbar";
 import { sidebar } from "./components/navbar/sidebar";
+import { dropdown } from "./components/navbar/dropdown";
 import { cartMenu } from "./components/navbar/cartMenu";
 import { accountMenu } from "./components/navbar/accountMenu";
 import { carousel } from "./components/carousel/carousel";
@@ -33,5 +34,6 @@ export {
   populateCartNav,
   alert,
   scrollNav,
-  cartMenu
+  cartMenu,
+  dropdown
 };

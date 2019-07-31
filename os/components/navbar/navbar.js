@@ -22,7 +22,7 @@ function navbarTemplate() {
         </div>
         <div class="col-10 m-0">
           <ul class="nav justify-content-end align-items-center">
-            <li class="nav-item d-none d-lg-inline staggered-fade-up">
+            <li id="baby" class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Baby Food</a>
             </li>
             <li class="nav-item d-none d-lg-inline staggered-fade-up">
