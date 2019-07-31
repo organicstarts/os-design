@@ -1,32 +1,9 @@
 import $ from "jquery";
 import _ from "lodash";
 
-export function scrollNav() {
-  $(window).scroll(function() {
-    if (this.scrollY >= $("#mainMenu").height() + 96) { // 96 Pixels is the default padding
-      $("#mainMenu")
-        .removeClass("position-absolute")
-        .addClass("bg-white")
-        .addClass("fixed-top")
-        .addClass("slide-down");
-    }
-    if (this.scrollY <= $("#mainMenu").height() - 32) { // 32 Pixels is the difference in top padding between default and slide-down
-      $("#mainMenu")
-        .addClass("position-absolute")
-        .removeClass("bg-white")
-        .removeClass("fixed-top")
-        .removeClass("slide-down");
-    }
-  });
-}
-
-export function navbar(id) {
-  $(`#${id}`).prepend(navbarTemplate());
-}
-
 function navbarTemplate() {
   return `
-  <nav id="mainMenu" class="main-menu py-3 py-lg-5 px-3 px-xl-5 position-absolute">
+  <nav id="mainMenu" class="main-menu py-3 py-lg-5 px-3 px-xl-5 invisible position-absolute">
     <div class="container-fluid">
       <div class="row justify-content-center align-items-center">
         <div class="col-2 m-0">
@@ -43,30 +20,30 @@ function navbarTemplate() {
               </a>
             </li>
         </div>
-        <div class="col-10 m-0 fade-up">
+        <div class="col-10 m-0">
           <ul class="nav justify-content-end align-items-center">
-            <li class="nav-item d-none d-lg-inline">
+            <li class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Baby Food</a>
             </li>
-            <li class="nav-item d-none d-lg-inline">
+            <li class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Baby Care</a>
             </li>
-            <li class="nav-item d-none d-lg-inline">
+            <li class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Clothes</a>
             </li>
-            <li class="nav-item d-none d-lg-inline">
+            <li class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Toys</a>
             </li>
-            <li class="nav-item d-none d-lg-inline">
+            <li class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Diapers</a>
             </li>
-            <li class="nav-item d-none d-lg-inline">
+            <li class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Mommy</a>
             </li>
-            <li class="nav-item-icon" id="AccountDrawer">
+            <li class="nav-item-icon staggered-fade-up" id="AccountDrawer">
               <a href="#accountMenu"><i class="far fa-user-circle"></i></a>
             </li>
-            <li class="nav-item-icon" id="CartDrawer">
+            <li class="nav-item-icon staggered-fade-up" id="CartDrawer">
               <a href="#cartMenu"><i class="fas fa-shopping-bag"></i></a>
             </li>
           </ul>
@@ -75,4 +52,47 @@ function navbarTemplate() {
     </div>
   </nav>
   `;
+}
+
+export function navbar(id) {
+  $(`#${id}`).prepend(navbarTemplate());
+}
+
+function checkNav() {
+  $("#mainMenu").removeClass("invisible");
+  if (window.scrollY <= $("#mainMenu").height() - 32) {
+    // 32 Pixels is the difference in top padding between default and slide-down
+    $("#mainMenu")
+      .addClass("position-absolute")
+      .removeClass("bg-white")
+      .removeClass("fixed-top")
+      .removeClass("slide-down");
+    $(".staggered-fade-up").each(function(i) {
+      var $item = $(this);
+      setTimeout(function() {
+        $item
+          .addClass("animated delay-1s fadeInDown")
+          .removeClass("staggered-fade-up");
+      }, 150 * i);
+    });
+  }
+  if (window.scrollY >= $("#mainMenu").height() + 96) {
+    // 96 Pixels is the default padding
+    $(".staggered-fade-up").each(function() {
+      $(this).removeClass("staggered-fade-up");
+    });
+    $("#mainMenu")
+      .removeClass("position-absolute")
+      .addClass("bg-white")
+      .addClass("fixed-top")
+      .addClass("slide-down");
+  }
+}
+export function scrollNav() {
+  $(document).ready(function() {
+    checkNav();
+  });
+  $(window).scroll(function() {
+    checkNav();
+  });
 }
