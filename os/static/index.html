@@ -1,64 +1,319 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Organic Start Webpack App</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Organic Start Webpack App</title>
-  <meta name="description" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Fredoka+One|Nunito:300,400,600|Open+Sans:300,400,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Nunito:300,400,600|Open+Sans:300,400,600&display=swap"
-    rel="stylesheet" />
-</head>
+    rel="stylesheet">
 </head>
 
 <body>
   <div id="wrapper">
-    <div class="d-flex justify-content-center align-items-center cover">
-      <div class="container m-auto">
-        <h1 class="display animated fadeInUp text-center mb-4 mb-lg-5">Log In</h1>
-          <div class="row justify-content-center align-items-center">
-            <div class="col-12 col-sm-11 col-md-6 col-lg-4">
-              <div class="ui segment">
-                <form class="ui large form text-center">
-                  <div class="field">
-                    <label for="inputEmail" class="sr-only">Email address</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                  </div>
-                  <div class="field">
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                  </div>
-                  <div class="field">
-                      <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                          <label class="form-check-label" for="defaultCheck1">
-                              Remember me
-                          </label>
-                      </div>
-                  </div>
-                  <button class="ui large green button rounded-pill" type="submit">Sign in</button>
-                </form>
-              </div>
+    <div class="home jumbotron overflow-hidden d-flex justify-content-center align-items-end text-center rounded-0">
+      <h1 class="display-4 animated fadeInUp">Home to the world's best organic baby products.</h1>
+    </div>
+    <section class="container-fluid my-lg-5 py-4 py-lg-5">
+      <h2 class="text-center text-moss">Lorem ipsum dolor sit amet<br><small class="text-moss-gray">Ut semper metus eget
+          tristique dapibus. Nullam vitae metus vel.</small></h2>
+    </section>
+    <section class="bg-light my-lg-5" id="bundles" data-spy="scroll">
+      <div class="container-fluid p-0">
+        <div class="row justify-content-center align-items-center">
+          <div class="col m-lg-0">
+            <svg class="m-0 p-0" width="100%" height="500px" xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+                dy=".3em">Placeholder</text>
+            </svg>
+          </div>
+          <div class="col-5 offset-1 py-xl-5">
+            <h3>
+              <span data-spy="item" data-animation="fadeInRight" data-staggered="true"
+                data-timeout="300">Bundles for Every Occassion</span><br>
+              <small data-spy="item" data-animation="fadeInRight" data-staggered="true"
+                data-timeout="300">
+                We've paired the best products with the best prices.
+              </small>
+            </h3>
+            <a href="#" class="ui large bg-mustard-light text-dark button rounded-pill" data-spy="item"
+              data-animation="fadeInUp" data-staggered="true" data-timeout="250">
+              Shop Bundles
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container-fluid py-4 py-lg-5" id="categories" data-spy="scroll">
+      <div class="my-lg-5">
+        <div class="category carousel">
+          <div class="p-lg-2 p-xl-5">
+            <div class="category card first young_grass" data-spy="item"
+              data-animation="flipInX" data-staggered="true" data-timeout="250">
+              <p class="content text-white text-uppercase font-weight-bold pt-xl-5 pl-xl-1" data-spy="item"
+                data-animation="fadeInRight" data-staggered="true" data-timeout="300">Baby
+                Food</p>
             </div>
           </div>
+          <div class="p-lg-2 p-xl-5">
+            <div class="category card second sharp_blues" data-spy="item"
+              data-animation="flipInX" data-staggered="true" data-timeout="250">
+              <p class="content text-white text-uppercase font-weight-bold pt-xl-5 pl-xl-1" data-spy="item"
+                data-animation="fadeInRight" data-staggered="true" data-timeout="300">Baby
+                Care</p>
+            </div>
+          </div>
+          <div class="p-lg-2 p-xl-5">
+            <div class="category card second happy_memories" data-spy="item"
+              data-animation="flipInX" data-staggered="true" data-timeout="250">
+              <p class="content text-white text-uppercase font-weight-bold pt-xl-5 pl-xl-1" data-spy="item"
+                data-animation="fadeInRight" data-staggered="true" data-timeout="300">Clothes
+              </p>
+            </div>
+          </div>
+          <div class="p-lg-2 p-xl-5">
+            <div class="category card second eternal_constance" data-spy="item"
+              data-animation="flipInX" data-staggered="true" data-timeout="250">
+              <p class="content text-white text-uppercase font-weight-bold pt-xl-5 pl-xl-1" data-spy="item"
+                data-animation="fadeInRight" data-staggered="true" data-timeout="300">Toys</p>
+            </div>
+          </div>
+          <div class="p-lg-2 p-xl-5">
+            <div class="category card second mars_party" data-spy="item"
+              data-animation="flipInX" data-staggered="true" data-timeout="250">
+              <p class="content text-white text-uppercase font-weight-bold pt-xl-5 pl-xl-1" data-spy="item"
+                data-animation="fadeInRight" data-staggered="true" data-timeout="300">Diapers
+              </p>
+            </div>
+          </div>
+          <div class="p-lg-2 p-xl-5">
+            <div class="category card second amour_amour" data-spy="item"
+              data-animation="flipInX" data-staggered="true" data-timeout="250">
+              <p class="content text-white text-uppercase font-weight-bold pt-xl-5 pl-xl-1" data-spy="item"
+                data-animation="fadeInRight" data-staggered="true" data-timeout="300">Mommy
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
+    <!--
+  <section class="container-fluid" style="min-height: 350px; max-height: 600px;" id="babywash">
+    <div class="babywash carousel my-5"></div>
+  </section>
+  <section class="container-fluid" style="min-height: 350px; max-height: 600px;" id="oil">
+    <div class="oil carousel my-5"></div>
+  </section>
+  <section class="container-fluid" style="min-height: 350px; max-height: 600px;" id="dental">
+    <div class="dental carousel my-5"></div>
+  </section>
+  <header class="py-5">
+    <h1 class="display-1 text-center"><span class="text-mustard">Organic</span> <span class="text-moss">Start</span>
+      Design</h1>
+  </header>
+
+  <article class="container mt-5">
+    <header>
+      <h3>Typography</h3>
+      <p class="my-3">
+        Fluid Typography is always enabled. Always reference <a
+          href="https://material.io/design/typography/the-type-system.html" target="_new">the type scale</a> and <a
+          href="https://material.io/design/typography/understanding-typography.html" target="_new">understand
+          typography</a>.<br>
+      </p>
+    </header>
+  </article>
+  <article class="container">
+    <header>
+      <h4>Headers</h4>
+      <p>
+        The base font family is <code>'Open Sans'</code> and <code>'Nunito'</code> for headers and subheaders.<br>
+        Use the <code>display</code> class or <code>display-#</code> classes to use our display (cursive) font which
+        is <code>'Fredoka One'</code>.
+      </p>
+    </header>
+    <section class="row my-3">
+      <div class="col-12 col-lg-6">
+        <h1 class="display-1">Display 1</h1>
+        <h1 class="display-2">Display 2</h1>
+        <h1 class="display-3">Display 3</h1>
+        <h1 class="display-4">Display 4</h1>
+      </div>
+      <div class="col-12 col-lg-6">
+        <h1>H1 Headline</h1>
+        <h2>H2 Headline</h2>
+        <h3>H3 Headline <small>Subheader</small></h3>
+        <h4>H4 Headline <small>Subheader</small></h4>
+        <h5>H5 Headline <small>Subheader</small></h5>
+        <h6>H6 Headline <small>Subheader</small></h6>
+      </div>
+    </section>
+  </article>
+  <article class="container mb-5">
+    <header>
+      <h4>Other Typography</h4>
+    </header>
+    <section class="mt-3">
+      <p class="caption">
+        <caption>This is a caption example.</caption>
+      </p>
+      <p>This text contains <sub>subscript</sub> text.</p>
+      <p>This text contains <sup>superscript</sup> text.</p>
+    </section>
+  </article>
+  <div style="background:#e5e5e5;">
+    <article class="container py-5">
+      <header>
+        <h3>Material Shadows</h3>
+        <p class="my-3">Use the SASS mixin <code>BoxShadow(dp)</code> to match material design elevation shadows.
+          Always reference <a href="https://material.io/design/environment/elevation.html#elevation-in-material-design"
+            target="_new">elevation rules</a>.</p>
+      </header>
+      <section class="row">
+        <div class="col-12 col-md-3">
+          <section class="ui segment" style="min-height:150px;">
+            <p class="text-center">Segment using<br><code>BoxShadow(1)</code>.<br><br>Alternatively you can
+              use<br><code>ui segment</code> classes.</code></p>
+          </section>
+        </div>
+        <div class="col-12 col-md-3">
+          <section class="ui lifted segment" style="min-height:150px;">
+            <p class="text-center">Lifted Segment using<br><code>BoxShadow(6)</code>.<br><br>Alternatively you can
+              use<br><code>ui lifted segment</code> classes.</code></p>
+          </section>
+        </div>
+        <div class="col-12 col-md-3">
+          <section class="ui raised segment" style="min-height:150px;">
+            <p class="text-center">Raised Segment using<br><code>BoxShadow(12)</code>.<br><br>Alternatively you can
+              use<br><code>ui raised segment</code> classes.</code></p>
+          </section>
+        </div>
+        <div class="col-12 col-md-3">
+          <section class="ui boosted segment" style="min-height:150px;">
+            <p class="text-center">Boosted Segment using<br><code>BoxShadow(24)</code>.<br><br>Alternatively you can
+              use<br><code>ui bosted segment</code> classes.</code></p>
+          </section>
+        </div>
+      </section>
+    </article>
+  </div>
+  <article class="container my-5">
+    <header>
+      <h3>Gradients</h3>
+      <p class="my-3">Use the SASS mixin <code>BoxShadow(dp)</code> to match material design elevation shadows. Always
+        reference <a href="https://material.io/design/environment/elevation.html#elevation-in-material-design"
+          target="_new">elevation rules</a>.</p>
+    </header>
+    <section class="row">
+      <div class="col-12 col-md-3">
+        <section class="ui segment" style="min-height:150px;">
+          <p class="text-center">Segment using<br><code>BoxShadow(1)</code>.<br><br>Alternatively you can
+            use<br><code>ui segment</code> classes.</code></p>
+        </section>
+      </div>
+      <div class="col-12 col-md-3">
+        <section class="ui lifted segment" style="min-height:150px;">
+          <p class="text-center">Lifted Segment using<br><code>BoxShadow(6)</code>.<br><br>Alternatively you can
+            use<br><code>ui lifted segment</code> classes.</code></p>
+        </section>
+      </div>
+      <div class="col-12 col-md-3">
+        <section class="ui raised segment" style="min-height:150px;">
+          <p class="text-center">Raised Segment using<br><code>BoxShadow(12)</code>.<br><br>Alternatively you can
+            use<br><code>ui raised segment</code> classes.</code></p>
+        </section>
+      </div>
+      <div class="col-12 col-md-3">
+        <section class="ui boosted segment" style="min-height:150px;">
+          <p class="text-center">Boosted Segment using<br><code>BoxShadow(24)</code>.<br><br>Alternatively you can
+            use<br><code>ui bosted segment</code> classes.</code></p>
+        </section>
+      </div>
+    </section>
+  </article>
+
+  <article class="my-5">
+    <header class="container">
+      <h3>Gradients</h3>
+      <p class="my-3">Use any of over 180 gradient from <a href="https://webgradients.com/">WebGradients</a> as a class
+        thanks to <code>@itmeo/webgradients</code>. Substitute spaces with underscores. For example: <strong>Malibu
+          Beach</strong> is <strong>malibu_beach</strong></p>
+    </header>
+    <section class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-md-1">
+          <section class="ui segment winter_neva" style="min-height:150px;">
+          </section>
+        </div>
+        <div class="col-12 col-md-1">
+          <section class="ui segment dusty_grass" style="min-height:150px;">
+          </section>
+        </div>
+        <div class="col-12 col-md-1">
+          <section class="ui segment deep_blue" style="min-height:150px;">
+          </section>
+        </div>
+        <div class="col-12 col-md-1">
+          <section class="ui segment ripe_malinka" style="min-height:150px;">
+          </section>
+        </div>
+        <div class="col-12 col-md-1">
+          <section class="ui segment malibu_beach" style="min-height:150px;">
+          </section>
+        </div>
+        <div class="col-12 col-md-1">
+          <section class="ui segment new_life" style="min-height:150px;">
+          </section>
+        </div>
+        <div class="col-12 col-md-1">
+          <section class="ui segment true_sunset" style="min-height:150px;">
+          </section>
+        </div>
+        <div class="col-12 col-md-1">
+          <section class="ui segment morpheus_den" style="min-height:150px;">
+          </section>
+        </div>
+        <div class="col-12 col-md-1">
+          <section class="ui segment rare_wind" style="min-height:150px;">
+          </section>
+        </div>
+        <div class="col-12 col-md-1">
+          <section class="ui segment near_moon" style="min-height:150px;">
+          </section>
+        </div>
+        <div class="col-12 col-md-1">
+          <section class="ui segment saint_petersburg" style="min-height:150px;">
+          </section>
+        </div>
+        <div class="col-12 col-md-1">
+          <section class="ui segment plum_plate" style="min-height:150px;">
+          </section>
+        </div>
+      </div>
+    </section>
+  </article>-->
   <script src="main.js"></script>
   <script type="text/javascript">
     window.organicStart.populateCartNav("wrapper");
     window.organicStart.populateSideNav("wrapper");
     window.organicStart.populateAccountNav("wrapper", null);
     window.organicStart.sidebar();
-    window.organicStart.accountMenu();
+    window.organicStart.accountMenu();      
     window.organicStart.navbar("wrapper");
     window.organicStart.carousel(".carousel");
     window.organicStart.cartMenu();
     window.organicStart.scrollNav();
     window.organicStart.scrollSpy();
-    window.organicStart.dropdown();
-
     window.onload = function () {
       // window.organicStart.alert()
 
@@ -68,5 +323,4 @@
     };
   </script>
 </body>
-
 </html>

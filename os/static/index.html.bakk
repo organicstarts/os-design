@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Organic Start Webpack App</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Nunito:300,400,600|Open+Sans:300,400,600&display=swap"
+    rel="stylesheet" />
+</head>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="d-flex justify-content-center align-items-center cover">
+      <div class="container m-auto">
+        <h1 class="display animated fadeInUp text-center mb-4 mb-lg-5">Log In</h1>
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-sm-11 col-md-6 col-lg-4">
+              <div class="ui segment">
+                <form class="ui large form text-center">
+                  <div class="field">
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  </div>
+                  <div class="field">
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  </div>
+                  <div class="field">
+                      <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                          <label class="form-check-label" for="defaultCheck1">
+                              Remember me
+                          </label>
+                      </div>
+                  </div>
+                  <button class="ui large green button rounded-pill" type="submit">Sign in</button>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+  <script type="text/javascript">
+    window.organicStart.populateCartNav("wrapper");
+    window.organicStart.populateSideNav("wrapper");
+    window.organicStart.populateAccountNav("wrapper", null);
+    window.organicStart.sidebar();
+    window.organicStart.accountMenu();
+    window.organicStart.navbar("wrapper");
+    window.organicStart.carousel(".carousel");
+    window.organicStart.cartMenu();
+    window.organicStart.scrollNav();
+    window.organicStart.scrollSpy();
+    window.organicStart.dropdown();
+
+    window.onload = function () {
+      // window.organicStart.alert()
+
+      //window.organicStart.footer("os");
+      window.organicStart.getArticles();
+
+    };
+  </script>
+</body>
+
+</html>

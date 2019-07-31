@@ -1,4 +1,5 @@
 .main-menu .nav .nav-item {
+    position: relative;
     padding: 0;
 
     & {
@@ -35,6 +36,49 @@
 .main-menu .nav .nav-item-icon {
     font-size: 2rem;
 }
+
+
+// Dropdowns
+.main-menu .nav .nav-item .dropdown {
+    position: absolute;
+    
+    left: 50%;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(-50%, -10px, 0);
+    transition: all .2s ease-in-out;
+    transition-property: opacity,visibility,transform;
+    transform-origin: top center;
+
+    padding-top: 4rem;
+
+    z-index: 1030;
+}
+.main-menu .nav .nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(-50%, -2rem,0);
+}
+.main-menu.slide-down .nav .nav-item:hover .dropdown {
+    transform: translate3d(-50%, 0rem,0);
+}
+.main-menu .nav .nav-item .dropdown .style {
+    background: #fff;
+    box-shadow: 0 1.5rem 4rem rgba(22,28,45,.15);
+    border: 0 solid rgba(22,28,45,.15);
+    border-radius: .375rem;
+}
+.dropdown.medium {
+
+}
+.dropdown.large {
+
+}
+.dropdown.extra {
+    min-width: 42rem;
+}
+
 #mainMenu {
     top: 0;
     left: 0;

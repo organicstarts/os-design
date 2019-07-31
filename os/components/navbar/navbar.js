@@ -24,7 +24,18 @@ function navbarTemplate() {
           <ul class="nav justify-content-end align-items-center">
             <li id="babyFood" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Baby Food</a>
-              <div class="d-none">hi</div>
+              <div class="dropdown extra">
+                <div class="style">
+                  <div class="row">
+                    <div class="col">
+                      Test Here
+                    </div>
+                    <div class="col">
+                      Test Here
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
             <li  id="babyCare" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Baby Care</a>
