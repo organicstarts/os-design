@@ -22,23 +22,29 @@ function navbarTemplate() {
         </div>
         <div class="col-10 m-0">
           <ul class="nav justify-content-end align-items-center">
-            <li id="baby" class="nav-item d-none d-lg-inline staggered-fade-up">
+            <li id="babyFood" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Baby Food</a>
+              <div class="d-none">hi</div>
             </li>
-            <li class="nav-item d-none d-lg-inline staggered-fade-up">
+            <li  id="babyCare" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Baby Care</a>
+              <div class="d-none">hi</div>
             </li>
-            <li class="nav-item d-none d-lg-inline staggered-fade-up">
+            <li  id="clothes" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Clothes</a>
+              <div class="d-none">hi</div>
             </li>
-            <li class="nav-item d-none d-lg-inline staggered-fade-up">
+            <li  id="toys" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Toys</a>
+              <div class="d-none">hi</div>
             </li>
-            <li class="nav-item d-none d-lg-inline staggered-fade-up">
+            <li  id="diapers" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Diapers</a>
+              <div class="d-none">hi</div>
             </li>
-            <li class="nav-item d-none d-lg-inline staggered-fade-up">
+            <li id="mommy" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#">Mommy</a>
+              <div class="d-none">hi</div>
             </li>
             <li class="nav-item-icon staggered-fade-up" id="AccountDrawer">
               <a href="#accountMenu"><i class="far fa-user-circle"></i></a>
