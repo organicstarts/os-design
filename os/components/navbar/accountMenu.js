@@ -1,4 +1,4 @@
-import $ from "jquery";
+
 
 export function accountMenu() {
   Mmenu.configs.classNames.selected = "active";

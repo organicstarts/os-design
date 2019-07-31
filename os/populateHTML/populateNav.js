@@ -86,3 +86,10 @@ export function populateAccountNav(id, email) {
     </nav>`);
   }
 }
+
+export function populateCartNav(id) {
+  $(`#${id}`)
+    .append(`<nav id="cartMenu" class="primary sidebar mm-menu  mm-menu_theme-dark" aria-hidden="true">
+      <div id="cartItems">asas</div>
+</nav>`);
+}

@@ -67,7 +67,7 @@ function navbarTemplate() {
               <a href="#accountMenu"><i class="far fa-user-circle"></i></a>
             </li>
             <li class="nav-item-icon" id="CartDrawer">
-              <a href="#"><i class="fas fa-shopping-bag"></i></a>
+              <a href="#cartMenu"><i class="fas fa-shopping-bag"></i></a>
             </li>
           </ul>
         </div>
