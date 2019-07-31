@@ -22,40 +22,89 @@ function navbarTemplate() {
         </div>
         <div class="col-10 m-0">
           <ul class="nav justify-content-end align-items-center">
-            <li id="babyFood" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
-              <a href="#">Baby Food</a>
+            <li class="nav-item d-none d-lg-inline staggered-fade-up">
+              <a href="#" class="nav-link">Baby Food</a>
               <div class="dropdown extra">
                 <div class="style">
-                  <div class="row">
-                    <div class="col">
-                      Test Here
+                  <div class="row justify-content-center align-items-center">
+                    <div class="col m-0">
+                      <svg class="dropdown-image-left m-0 p-0" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+                          dy=".3em">Placeholder</text>
+                      </svg>
                     </div>
-                    <div class="col">
-                      Test Here
+                    <div class="col m-0 p-4">
+                      <div class="row no-gutters">
+                        <div class="col">
+                          <a class="dropdown-item" href="#">Porridge</a>
+                          <a class="dropdown-item" href="#">Fruit &amp; Vegetable Purees</a>
+                          <a class="dropdown-item" href="#">Snacks &amp; Teas</a>
+                          <a class="dropdown-item" href="#"><small>VIEW ALL &raquo;</small></a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </li>
-            <li  id="babyCare" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
-              <a href="#">Baby Care</a>
-              <div class="d-none">hi</div>
+            <li class="nav-item d-none d-lg-inline staggered-fade-up">
+              <a href="#" class="nav-link">Baby Care</a>
+              <div class="dropdown large">
+                <div class="style p-4">
+                  <div class="row justify-content-center align-items-center">
+                    <div class="col m-0">
+                      <a class="dropdown-item" href="#">Baby Wash</a>
+                      <a class="dropdown-item" href="#">Balms</a>
+                      <a class="dropdown-item" href="#">Oils</a>
+                      <a class="dropdown-item" href="#">Lotions</a>
+                    </div>
+                    <div class="col m-0">
+                    <a class="dropdown-item" href="#">Dental</a>
+                      <a class="dropdown-item" href="#">Diapers</a>
+                      <a class="dropdown-item" href="#">Bundles</a>
+                      <a class="dropdown-item" href="#">Accessories</a>
+                    </div>
+                    <div class="col m-0">
+                      <div class="dropdown-header">Outdoors</div>
+                      <a class="dropdown-item" href="#">Repellents</a>
+                      <a class="dropdown-item" href="#">First Aid</a>
+                      <a class="dropdown-item" href="#">Sunscreen</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
-            <li  id="clothes" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
-              <a href="#">Clothes</a>
-              <div class="d-none">hi</div>
+            <li class="nav-item d-none d-lg-inline staggered-fade-up">
+              <a href="#" class="nav-link">Clothes</a>
             </li>
-            <li  id="toys" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
-              <a href="#">Toys</a>
-              <div class="d-none">hi</div>
+            <li class="nav-item d-none d-lg-inline staggered-fade-up">
+              <a href="#" class="nav-link">Toys</a>
             </li>
-            <li  id="diapers" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
-              <a href="#">Diapers</a>
-              <div class="d-none">hi</div>
+            <li class="nav-item d-none d-lg-inline staggered-fade-up">
+              <a href="#" class="nav-link">Diapers</a>
             </li>
-            <li id="mommy" data-toggle="dropdown" class="nav-item d-none d-lg-inline staggered-fade-up">
-              <a href="#">Mommy</a>
-              <div class="d-none">hi</div>
+            <li class="nav-item d-none d-lg-inline staggered-fade-up">
+              <a href="#" class="nav-link">Mommy</a>
+              <div class="dropdown large">
+                <div class="style p-4">
+                  <div class="row justify-content-center align-items-center">
+                  <div class="col m-0">
+                    <a class="dropdown-item" href="#">Body Wash</a>
+                    <a class="dropdown-item" href="#">Balms</a>
+                    <a class="dropdown-item" href="#">Lotions</a>
+                    <a class="dropdown-item" href="#">Teas</a>
+                  </div>
+                    <div class="col m-0">
+                      <div class="dropdown-header">Shop by Stage</div>
+                      <a class="dropdown-item" href="#">Prenatal</a>
+                      <a class="dropdown-item" href="#">Post-Partum</a>
+                      <a class="dropdown-item" href="#">Breast-Feeding</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
             <li class="nav-item-icon staggered-fade-up" id="AccountDrawer">
               <a href="#accountMenu"><i class="far fa-user-circle"></i></a>
