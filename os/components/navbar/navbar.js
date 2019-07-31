@@ -67,7 +67,6 @@ function checkNav() {
       .removeClass("bg-white")
       .removeClass("fixed-top")
       .removeClass("slide-down");
-<<<<<<< HEAD
     if(window.innerWidth >= 1024) {
       $(".staggered-fade-up").each(function (i) {
         var $item = $(this); 
@@ -80,16 +79,6 @@ function checkNav() {
         $(this).removeClass("staggered-fade-up");
       });
     }
-=======
-    $(".staggered-fade-up").each(function(i) {
-      var $item = $(this);
-      setTimeout(function() {
-        $item
-          .addClass("animated delay-1s fadeInDown")
-          .removeClass("staggered-fade-up");
-      }, 150 * i);
-    });
->>>>>>> origin/master
   }
   if (window.scrollY >= $("#mainMenu").height() + 96) {
     // 96 Pixels is the default padding
