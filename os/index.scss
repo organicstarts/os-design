@@ -79,6 +79,8 @@ $grid-breakpoints: (
   xxl: 2560px
 );
 
+@import "~animate.css/animate.min";
+
 @import "~bootstrap/scss/bootstrap";
 
 @import "~mmenu-js/src/mmenu";

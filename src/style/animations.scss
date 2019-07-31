@@ -1,8 +1,6 @@
-.staggered-fade-up {
-    transform: translateY(200%);
-    opacity: 0
+.slide-down {
+    animation: slide-down 1s;
 }
-
 @keyframes slide-down {
     0% {
         opacity: 0;
@@ -13,19 +11,7 @@
         transform: translateY(0)
     }
 }
-
-.fade-up {
-    transition: 1s ease-out;
-    animation: fade-up 1s;
-}
-@keyframes fade-up {
-    0% {
-        transform: translateY(200%);
-        opacity: 0
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1
-    }
+.staggered-fade-up {
+    transform: translateY(200%);
+    opacity: 0
 }

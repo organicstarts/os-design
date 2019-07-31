@@ -69,8 +69,8 @@ function checkNav() {
     $(".staggered-fade-up").each(function (i) {
       var $item = $(this); 
       setTimeout(function() {
-        $item.addClass("fade-up").removeClass('staggered-fade-up');
-      }, 100 * i);
+        $item.addClass("animated delay-1s fadeInDown").removeClass('staggered-fade-up');
+      }, 150 * i);
     });
   }
   if (window.scrollY >= $("#mainMenu").height() + 96) { // 96 Pixels is the default padding

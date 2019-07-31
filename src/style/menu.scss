@@ -43,7 +43,6 @@
     transition: .5s ease-out;
     &.slide-down {
         padding: 1rem!important;
-        animation: slide-down 0.5s;
         //@include BoxShadow(2);
         & {
             @include media-breakpoint-up(lg) {
