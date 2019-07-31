@@ -44,7 +44,7 @@ function navbarTemplate() {
               <a href="#accountMenu"><i class="far fa-user-circle"></i></a>
             </li>
             <li class="nav-item-icon staggered-fade-up" id="CartDrawer">
-              <a href="#"><i class="fas fa-shopping-bag"></i></a>
+              <a href="#cartMenu"><i class="fas fa-shopping-bag"></i></a>
             </li>
           </ul>
         </div>
@@ -60,12 +60,14 @@ export function navbar(id) {
 
 function checkNav() {
   $("#mainMenu").removeClass("invisible");
-  if (window.scrollY <= $("#mainMenu").height() - 32) { // 32 Pixels is the difference in top padding between default and slide-down
+  if (window.scrollY <= $("#mainMenu").height() - 32) {
+    // 32 Pixels is the difference in top padding between default and slide-down
     $("#mainMenu")
       .addClass("position-absolute")
       .removeClass("bg-white")
       .removeClass("fixed-top")
       .removeClass("slide-down");
+<<<<<<< HEAD
     if(window.innerWidth >= 1024) {
       $(".staggered-fade-up").each(function (i) {
         var $item = $(this); 
@@ -78,8 +80,19 @@ function checkNav() {
         $(this).removeClass("staggered-fade-up");
       });
     }
+=======
+    $(".staggered-fade-up").each(function(i) {
+      var $item = $(this);
+      setTimeout(function() {
+        $item
+          .addClass("animated delay-1s fadeInDown")
+          .removeClass("staggered-fade-up");
+      }, 150 * i);
+    });
+>>>>>>> origin/master
   }
-  if (window.scrollY >= $("#mainMenu").height() + 96) { // 96 Pixels is the default padding
+  if (window.scrollY >= $("#mainMenu").height() + 96) {
+    // 96 Pixels is the default padding
     $(".staggered-fade-up").each(function() {
       $(this).removeClass("staggered-fade-up");
     });
@@ -91,10 +104,10 @@ function checkNav() {
   }
 }
 export function scrollNav() {
-  $(document).ready(function () {
+  $(document).ready(function() {
     checkNav();
   });
-  $(window).scroll(function () {
+  $(window).scroll(function() {
     checkNav();
   });
 }
