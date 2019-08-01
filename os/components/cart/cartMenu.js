@@ -119,6 +119,10 @@ function parseData(data) {
     });
   });
   htmlArray.push("</ul>");
+  //href="{{urls.cart}}"
+  htmlArray.push(
+    `<a href="http://localhost:3000/cart.php" class="button button--small button--action">View Cart</a>`
+  );
   // console.log(htmlArray);
   return htmlArray.join("");
 }
