@@ -11,7 +11,7 @@ function navbarTemplate() {
             <li class="nav-item-icon d-inline d-lg-none p-0">
               <a class="mburger mburger--collapse" href="#mainMobileMenu"><b></b><b></b><b></b></a>
             </li>
-            <li class="nav-item d-none d-lg-inline p-0">
+            <li class="nav-item d-none d-lg-inline m-0 p-0">
               <a href="https://organicstart.com" title="Home">
                 <picture>
                   <img src="https://triad.imgix.net/os/i/logo.svg?s=83f3f5678face7e3f500c8aba1fd41e9"
@@ -26,24 +26,22 @@ function navbarTemplate() {
               <a href="#" class="nav-link">Baby Food</a>
               <div class="dropdown extra">
                 <div class="style">
-                  <div class="row justify-content-center align-items-center">
-                    <div class="col m-0">
-                      <svg class="dropdown-image-left m-0 p-0" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                        preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                          dy=".3em">Placeholder</text>
-                      </svg>
-                    </div>
-                    <div class="col m-0 p-4">
-                      <div class="row no-gutters">
-                        <div class="col">
-                          <a class="dropdown-item" href="#">Porridge</a>
-                          <a class="dropdown-item" href="#">Fruit &amp; Vegetable Purees</a>
-                          <a class="dropdown-item" href="#">Snacks &amp; Teas</a>
-                          <a class="dropdown-item" href="#"><small>VIEW ALL &raquo;</small></a>
-                        </div>
+                  <div class="row m-0">
+                    <div class="col-6 m-0 p-0">
+                      <div class="w-100 h-100 bg-fruits dropdown-image-left d-flex justify-content-center align-items-center" style="background-image:url('https://as1.ftcdn.net/jpg/00/70/40/76/500_F_70407687_vyuv1qat0vpEyHbhijBEiybLMIKbV12H.jpg');background-size:cover;background-position:left center;background-repeat:no-repeat;">
+                        <p class="m-auto text-white text-center font-weight-bold lead p-3">
+                          Wholesome and Nutritious
+                        </p>
                       </div>
+                    </div>
+                    <div class="col-6 m-0 p-5">
+                      <div class="dropdown-header p-0 mt-3"></div>
+                        <a class="dropdown-item p-0" href="#">Porridge</a>
+                        <a class="dropdown-item p-0" href="#">Snacks &amp; Teas</a>
+                        <a class="dropdown-item p-0" href="#">Fruit &amp; Vegetable Purees</a>
+                        <div class="text-right">
+                          <a class="dropdown-item p-0 mt-3 mb-0" href="#"><small>VIEW ALL &raquo;</small></a>
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -51,26 +49,28 @@ function navbarTemplate() {
             </li>
             <li class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#" class="nav-link">Baby Care</a>
-              <div class="dropdown large">
-                <div class="style p-4">
-                  <div class="row justify-content-center align-items-center">
+              <div class="dropdown medium">
+                <div class="style p-5">
+                  <div class="row m-0">
                     <div class="col m-0">
-                      <a class="dropdown-item" href="#">Baby Wash</a>
-                      <a class="dropdown-item" href="#">Balms</a>
-                      <a class="dropdown-item" href="#">Oils</a>
-                      <a class="dropdown-item" href="#">Lotions</a>
+                      <a class="dropdown-item p-0" href="#">Baby Wash</a>
+                      <a class="dropdown-item p-0" href="#">Balms</a>
+                      <a class="dropdown-item p-0" href="#">Oils</a>
+                      <a class="dropdown-item p-0" href="#">Lotions</a>
+                      <a class="dropdown-item p-0" href="#">Dental</a>
+                      <a class="dropdown-item p-0" href="#">Diapers</a>
                     </div>
                     <div class="col m-0">
-                    <a class="dropdown-item" href="#">Dental</a>
-                      <a class="dropdown-item" href="#">Diapers</a>
-                      <a class="dropdown-item" href="#">Bundles</a>
-                      <a class="dropdown-item" href="#">Accessories</a>
-                    </div>
-                    <div class="col m-0">
-                      <div class="dropdown-header">Outdoors</div>
-                      <a class="dropdown-item" href="#">Repellents</a>
-                      <a class="dropdown-item" href="#">First Aid</a>
-                      <a class="dropdown-item" href="#">Sunscreen</a>
+                      <div class="dropdown-header p-0">Outdoors</div>
+                      <a class="dropdown-item p-0" href="#">Repellents</a>
+                      <a class="dropdown-item p-0" href="#">First Aid</a>
+                      <a class="dropdown-item p-0" href="#">Sunscreen</a>
+                      <div class="dropdown-header p-0 mt-3">More</div>
+                      <a class="dropdown-item p-0" href="#">Bundles</a>
+                      <a class="dropdown-item p-0" href="#">Accessories</a>
+                      <div class="text-right">
+                        <a class="dropdown-item p-0 mt-3 mb-0" href="#"><small>VIEW ALL &raquo;</small></a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -78,6 +78,32 @@ function navbarTemplate() {
             </li>
             <li class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#" class="nav-link">Clothes</a>
+              <div class="dropdown large">
+                <div class="style p-5">
+                  <div class="row m-0">
+                    <div class="col m-0">
+                      <a class="dropdown-item p-0" href="#">Blankets</a>
+                      <a class="dropdown-item p-0" href="#">Bodysuits</a>
+                      <a class="dropdown-item p-0" href="#">Bibs &amp; Burp Cloths</a>
+                      <a class="dropdown-item p-0" href="#">Pajamas &amp; Sleepwear</a>
+                      <a class="dropdown-item p-0" href="#">Pants &amp; Shorts</a>
+                      <a class="dropdown-item p-0" href="#">Bundles</a>
+                      <a class="dropdown-item p-0" href="#">Accessories</a>
+                    </div>
+                    <div class="col m-0">
+                      <div class="dropdown-header p-0">Shop By Age</div>
+                      <a class="dropdown-item p-0" href="#">0 to 3 Months</a>
+                      <a class="dropdown-item p-0" href="#">3 to 6 Months</a>
+                      <a class="dropdown-item p-0" href="#">6 to 9 Months</a>
+                      <a class="dropdown-item p-0" href="#">9 to 12 Months</a>
+                      <a class="dropdown-item p-0" href="#">1+ Years</a>
+                      <div class="text-right">
+                        <a class="dropdown-item p-0 mt-3 mb-0" href="#"><small>VIEW ALL &raquo;</small></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
             <li class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#" class="nav-link">Toys</a>
@@ -87,20 +113,30 @@ function navbarTemplate() {
             </li>
             <li class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#" class="nav-link">Mommy</a>
-              <div class="dropdown large">
-                <div class="style p-4">
-                  <div class="row justify-content-center align-items-center">
-                  <div class="col m-0">
-                    <a class="dropdown-item" href="#">Body Wash</a>
-                    <a class="dropdown-item" href="#">Balms</a>
-                    <a class="dropdown-item" href="#">Lotions</a>
-                    <a class="dropdown-item" href="#">Teas</a>
+              <div class="dropdown small">
+                <div class="style">
+                  <div class="w-100 h-100 bg-fruits dropdown-image-top d-flex justify-content-center align-items-center p-5" style="background-image:url('https://as2.ftcdn.net/jpg/01/90/65/11/500_F_190651128_8fz185WGhlGFh4YJEhGTj94EsW3CMlJK.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat;">
+                    <p class="m-auto text-white text-center font-weight-bold lead p-5">
+                    
+                    </p>
                   </div>
-                    <div class="col m-0">
-                      <div class="dropdown-header">Shop by Stage</div>
-                      <a class="dropdown-item" href="#">Prenatal</a>
-                      <a class="dropdown-item" href="#">Post-Partum</a>
-                      <a class="dropdown-item" href="#">Breast-Feeding</a>
+                  <div class="p-5">
+                    <div class="row justify-content-center align-items-center">
+                      <div class="col m-0">
+                        <a class="dropdown-item p-0" href="#">Body Wash</a>
+                        <a class="dropdown-item p-0" href="#">Balms</a>
+                        <a class="dropdown-item p-0" href="#">Lotions</a>
+                        <a class="dropdown-item p-0" href="#">Teas</a>
+                      </div>
+                      <div class="col m-0">
+                        <div class="dropdown-header p-0">Shop By Stage</div>
+                        <a class="dropdown-item p-0" href="#">Prenatal</a>
+                        <a class="dropdown-item p-0" href="#">Post-Partum</a>
+                        <a class="dropdown-item p-0" href="#">Breast-Feeding</a>
+                      </div>
+                    </div>
+                    <div class="text-right">
+                      <a class="dropdown-item p-0 mt-3 mb-0" href="#"><small>VIEW ALL &raquo;</small></a>
                     </div>
                   </div>
                 </div>
