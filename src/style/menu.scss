@@ -31,7 +31,7 @@
     //text-transform: uppercase;
     font-weight: 900;
 
-    transition: all .25s ease-in-out;
+    transition: all .1s ease-in-out;
     transition-property: opacity;
 }
 .main-menu .nav .nav-item:hover .nav-link {
@@ -107,10 +107,10 @@
     min-width: 30rem;
 }
 .dropdown.large {
-    min-width: 33rem;
+    min-width: 35rem;
 }
 .dropdown.extra {
-    min-width: 38rem;
+    min-width: 45rem;
 }
 
 #mainMenu {
@@ -123,7 +123,7 @@
         padding: 1rem!important;
         //@include BoxShadow(2);
         & {
-            @include media-breakpoint-up(lg) {
+            @include media-breakpoint-up(xl) {
                 padding: 1rem 3rem!important;
             }
         }
