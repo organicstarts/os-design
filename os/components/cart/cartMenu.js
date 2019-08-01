@@ -108,17 +108,29 @@ export function cartMenu() {
 
 function parseData(data) {
   console.log(data);
-  let htmlArray = ["<ul>"];
+  let htmlArray = [`<ul class="list-unstyled m-2">`];
   data.map(x => {
     x.lineItems.physicalItems.map(el => {
       htmlArray.push(
-        `<li><img src=${el.imageUrl} alt="product"/> ${el.brand} ${el.name} ${
-          el.salePrice
-        } x ${el.quantity}</li>`
+        `<li class="border-bottom mt-2">
+          <div class="row">
+            <div class="col-2 text-center"><img src=${el.imageUrl} class="img-fluid" style="max-height: 75px;" alt="product"/></div>
+            <div class="col"> 
+             <strong>${el.brand}</strong> <br/> 
+             <p>${el.name} <br/>
+             ${el.quantity} x $${el.salePrice} 
+             </p>
+             </div>
+            </div>
+          </li>`
       );
     });
   });
   htmlArray.push("</ul>");
+  //href="{{urls.cart}}"
+  htmlArray.push(
+    `<section class="ui segment text-center bg-moss m-2"><a href="http://localhost:3000/cart.php" class="button button--small button--action">View Cart</a></section>`
+  );
   // console.log(htmlArray);
   return htmlArray.join("");
 }
