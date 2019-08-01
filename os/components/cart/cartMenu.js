@@ -108,13 +108,13 @@ export function cartMenu() {
 
 function parseData(data) {
   console.log(data);
-  let htmlArray = [`<ul class="ui segment list-unstyled m-2">`];
+  let htmlArray = [`<ul class="list-unstyled m-2">`];
   data.map(x => {
     x.lineItems.physicalItems.map(el => {
       htmlArray.push(
-        `<li class="border-bottom">
-          <div class="row py-2">
-            <div class="col-2"><img src=${el.imageUrl} class="img-fluid" alt="product"/></div>
+        `<li class="border-bottom mt-2">
+          <div class="row">
+            <div class="col-2 text-center"><img src=${el.imageUrl} class="img-fluid" style="max-height: 75px;" alt="product"/></div>
             <div class="col"> 
              <strong>${el.brand}</strong> <br/> 
              <p>${el.name} <br/>
