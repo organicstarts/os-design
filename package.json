@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env SITE=\"os\" webpack --config webpack.config.js",
     "os:live": "cross-env SITE=\"os\" webpack-dev-server --config webpack.config.js --open --history-api-fallback",
-    "osw:live": "cross-env SITE=\"osw\" webpack-dev-server --config webpack.config.js --open --history-api-fallback"
+    "osw:live": "cross-env SITE=\"osw\" webpack-dev-server --config webpack.config.js --open --history-api-fallback",
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +23,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "bootstrap": "^4.3.1",
+    "express": "^4.17.1",
     "jquery": "^3.4.1",
     "less": "^3.9.0",
     "lodash": "^4.17.15",

@@ -4,7 +4,7 @@ const TerserJSPlugin = require('terser-webpack-plugin'); // Uses terser to minif
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // Optimize \ minimize CSS assets
 const path = require("path");
 const resolve = dir => path.join(__dirname, "./", dir);
-const site = process.env.SITE;
+const site = process.env.SITE || 'os';
 
 module.exports = {
   entry: [
