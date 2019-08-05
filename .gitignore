@@ -17,3 +17,5 @@ osw/semantic/*
 !osw/semantic/src/
 osw/semantic/src/*
 !osw/semantic/src/site/
+
+semantic.json
