@@ -44,7 +44,7 @@ function navbarTemplate() {
                       <a class="dropdown-item p-0" href="#">Bundles</a>
                       <a class="dropdown-item p-0" href="#">Accessories</a>
                       <div class="text-right">
-                        <a class="dropdown-item p-0 mt-3 mb-0" href="#"><small>VIEW ALL &raquo;</small></a>
+                        <a class="dropdown-item p-0 mt-3 mb-0" href="#"><small>VIEW ALL <i class="fas fa-arrow-right"></i></small></a>
                       </div>
                     </div>
                   </div>
@@ -57,19 +57,18 @@ function navbarTemplate() {
                 <div class="style">
                   <div class="row m-0">
                     <div class="col-6 m-0 p-0">
-                      <div class="w-100 h-100 bg-fruits dropdown-image-left d-flex justify-content-center align-items-center" style="background-image:url('https://as2.ftcdn.net/jpg/01/15/21/23/500_F_115212320_ua2tjIPsTtADy7Dp32S9KXXS3LuftYOd.jpg');background-size:cover;background-position:left center;background-repeat:no-repeat;">
-                        <p class="m-auto text-white text-center font-weight-bold lead p-3" style="text-shadow:2px 2px 5px #000;">
+                      <div class="w-100 h-100 bg-fruits dropdown-image-left d-flex justify-content-center align-items-end" style="background-image:url('https://as2.ftcdn.net/jpg/01/15/21/23/500_F_115212320_ua2tjIPsTtADy7Dp32S9KXXS3LuftYOd.jpg');background-size:cover;background-position:left center;background-repeat:no-repeat;">
+                        <p class="mt-auto text-white text-center font-weight-bold lead pb-3 subheader" style="text-shadow: -1px -1px 1px rgba(0,0,0,0.5), 1px 1px 1px rgba(0,0,0,0.5), 1px 1px 5px #000;">
                           Wholesome and Nutritious
                         </p>
                       </div>
                     </div>
                     <div class="col-6 m-0 p-5">
-                      <div class="dropdown-header p-0 mt-3"></div>
                         <a class="dropdown-item p-0" href="#">Porridge</a>
                         <a class="dropdown-item p-0" href="#">Snacks &amp; Teas</a>
-                        <a class="dropdown-item p-0" href="#">Fruit &amp; Vegetable Purees</a>
+                        <a class="dropdown-item p-0 mb-0" href="#">Fruit &amp; Vegetable Purees</a>
                         <div class="text-right">
-                          <a class="dropdown-item p-0 mt-3 mb-0" href="#"><small>VIEW ALL &raquo;</small></a>
+                          <a class="dropdown-item p-0 mt-5 mb-0 badge badge-pill badge-dark bg-light rounded-pill text-dark px-3 py-1 w-auto align-middle" href="#"><small>VIEW ALL <i class="fas fa-arrow-right"></i></small></a>
                         </div>
                     </div>
                   </div>
@@ -79,26 +78,25 @@ function navbarTemplate() {
             <li class="nav-item d-none d-lg-inline staggered-fade-up">
               <a href="#" class="nav-link">Clothes</a>
               <div class="dropdown large">
-                <div class="style p-5">
+                <div class="style">
                   <div class="row m-0">
-                    <div class="col m-0">
+                    <div class="col-6 m-0 p-0">
+                      <div class="w-100 h-100 bg-fruits dropdown-image-left d-flex justify-content-center align-items-end" style="background-image:url('https://www.iloveplaytime.com/interface/newyork/exhibitor2/1130_LZ1_17200.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat;">
+                        <p class="mt-auto text-white text-center font-weight-bold lead pb-3 subheader" style="text-shadow:1px 1px 5px rgba(0, 0, 0, 0.5);">
+                          Native Organic Cotton
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-6 m-0 p-5">
                       <a class="dropdown-item p-0" href="#">Blankets</a>
                       <a class="dropdown-item p-0" href="#">Bodysuits</a>
                       <a class="dropdown-item p-0" href="#">Bibs &amp; Burp Cloths</a>
                       <a class="dropdown-item p-0" href="#">Pajamas &amp; Sleepwear</a>
                       <a class="dropdown-item p-0" href="#">Pants &amp; Shorts</a>
                       <a class="dropdown-item p-0" href="#">Bundles</a>
-                      <a class="dropdown-item p-0" href="#">Accessories</a>
-                    </div>
-                    <div class="col m-0">
-                      <div class="dropdown-header p-0">Shop By Age</div>
-                      <a class="dropdown-item p-0" href="#">0 to 3 Months</a>
-                      <a class="dropdown-item p-0" href="#">3 to 6 Months</a>
-                      <a class="dropdown-item p-0" href="#">6 to 9 Months</a>
-                      <a class="dropdown-item p-0" href="#">9 to 12 Months</a>
-                      <a class="dropdown-item p-0" href="#">1+ Years</a>
+                      <a class="dropdown-item p-0 mb-0" href="#">Accessories</a>
                       <div class="text-right">
-                        <a class="dropdown-item p-0 mt-3 mb-0" href="#"><small>VIEW ALL &raquo;</small></a>
+                        <a class="dropdown-item p-0 mt-5 mb-0 badge badge-pill badge-dark bg-light rounded-pill text-dark px-3 py-1 w-auto align-middle" href="#"><small>VIEW ALL <i class="fas fa-arrow-right"></i></small></a>
                       </div>
                     </div>
                   </div>
@@ -111,7 +109,7 @@ function navbarTemplate() {
                 <div class="style">
                   <div class="row m-0">
                     <div class="col-7 m-0 p-0">
-                      <div class="w-100 h-100 bg-fruits dropdown-image-left d-flex justify-content-center align-items-center" style="background-image:url('https://as2.ftcdn.net/jpg/01/35/28/95/500_F_135289556_Nltu3ZTF5NdjX3a2yhWHfu2BFF0NNETb.jpg');background-size:cover;background-position:right top;background-repeat:no-repeat;">
+                      <div class="w-100 h-100 bg-fruits dropdown-image-left d-flex justify-content-center align-items-center" style="background-image:url('https://as2.ftcdn.net/jpg/01/35/28/95/500_F_135289556_Nltu3ZTF5NdjX3a2yhWHfu2BFF0NNETb.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat;">
                         <p class="m-auto text-white text-center font-weight-bold lead p-3">
                         </p>
                       </div>
@@ -121,9 +119,9 @@ function navbarTemplate() {
                         <a class="dropdown-item p-0" href="#">Sizes 0 and 1 <small>(6-14 lb)</small></a>
                         <a class="dropdown-item p-0" href="#">Sizes 2 and 3 <small>(12-28 lb)</small></a>
                         <a class="dropdown-item p-0" href="#">Sizes 4 and 5 <small>(22-37 lb)</small></a>
-                        <a class="dropdown-item p-0" href="#">Sizes 6 and up <small>(33+ lb)</small></a>
+                        <a class="dropdown-item p-0 mb-0" href="#">Sizes 6 and up <small>(33+ lb)</small></a>
                         <div class="text-right">
-                          <a class="dropdown-item p-0 mt-3 mb-0" href="#"><small>VIEW ALL &raquo;</small></a>
+                          <a class="dropdown-item p-0 mt-5 mb-0 badge badge-pill badge-dark bg-light rounded-pill text-dark px-3 py-1 w-auto align-middle" href="#"><small>VIEW ALL <i class="fas fa-arrow-right"></i></small></a>
                         </div>
                     </div>
                   </div>
@@ -148,17 +146,17 @@ function navbarTemplate() {
                         <a class="dropdown-item p-0" href="#">Body Wash</a>
                         <a class="dropdown-item p-0" href="#">Balms</a>
                         <a class="dropdown-item p-0" href="#">Lotions</a>
-                        <a class="dropdown-item p-0" href="#">Teas</a>
+                        <a class="dropdown-item p-0 mb-0" href="#">Teas</a>
                       </div>
                       <div class="col m-0">
                         <div class="dropdown-header p-0">Shop By Stage</div>
                         <a class="dropdown-item p-0" href="#">Prenatal</a>
                         <a class="dropdown-item p-0" href="#">Post-Partum</a>
-                        <a class="dropdown-item p-0" href="#">Breast-Feeding</a>
+                        <a class="dropdown-item p-0 mb-0" href="#">Breast-Feeding</a>
                       </div>
                     </div>
                     <div class="text-right">
-                      <a class="dropdown-item p-0 mt-3 mb-0" href="#"><small>VIEW ALL &raquo;</small></a>
+                      <a class="dropdown-item p-0 mt-5 mb-0 badge badge-pill badge-dark bg-light rounded-pill text-dark px-3 py-1 w-auto align-middle" href="#"><small>VIEW ALL <i class="fas fa-arrow-right"></i></small></a>
                     </div>
                   </div>
                 </div>

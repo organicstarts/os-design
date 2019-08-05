@@ -29,7 +29,7 @@ export function scrollSpy() {
     $('[data-spy="item"]').each(function () {
         $(this).addClass('invisible');
     });
-    if (window.innerWidth >= 425) {
+    if (window.innerWidth > 500) {
         $(document).ready(function () {
             animateScrollSpy();
         });

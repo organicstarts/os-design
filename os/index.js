@@ -7,7 +7,7 @@ import { navbar, scrollNav } from "./components/navbar/navbar";
 import { sidebar } from "./components/navbar/sidebar";
 import { cartMenu } from "./components/cart/cartMenu";
 import { accountMenu } from "./components/navbar/accountMenu";
-import { carousel } from "./components/carousel/carousel";
+import { categoryCarousel, carousel } from "./components/carousel/carousel";
 import { scrollSpy } from "./components/scrollspy/scrollSpy";
 import { addToCart } from "./components/cart/cart";
 import { getItems } from "./API/getItems";
@@ -28,6 +28,7 @@ export {
   navbar,
   sidebar,
   accountMenu,
+  categoryCarousel,
   carousel,
   scrollSpy,
   getItems,
