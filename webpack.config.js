@@ -64,7 +64,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader, // Extracts CSS into separate files
             options: {
               hmr: process.env.NODE_ENV === 'development',
-              reloadAll: true, // Forceful method for Hot Module Reloading (HMR)
+              //reloadAll: true, // Forceful method for Hot Module Reloading (HMR)
             },
           },
           "css-loader", // Interprets @import and url() like import/require() and will resolve them
@@ -87,7 +87,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader, // Extracts CSS into separate files
             options: {
               hmr: process.env.NODE_ENV === 'development',
-              reloadAll: true, // Forceful method for Hot Module Reloading (HMR)
+              //reloadAll: true, // Forceful method for Hot Module Reloading (HMR)
             },
           },
           "css-loader", // Interprets @import and url() like import/require() and will resolve them
@@ -111,7 +111,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader, // Extracts CSS into separate files
             options: {
               hmr: process.env.NODE_ENV === 'development',
-              reloadAll: true, // Forceful method for Hot Module Reloading (HMR)
+              //reloadAll: true, // Forceful method for Hot Module Reloading (HMR)
             },
           },
           "css-loader", // Interprets @import and url() like import/require() and will resolve them
@@ -166,6 +166,6 @@ module.exports = {
     //       { from: /^\/login\/.*$/, to: resolve(`${site}/static/login.html`)}
     //   ]
     // }
-  },
-  watch: true
+  }//,
+  //watch: true
 };
