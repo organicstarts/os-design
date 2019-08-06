@@ -6,6 +6,11 @@ const app = express();
 const cors = require('cors'); 
 app.use(cors());
 
+app.all('/*', function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*')
+    next()
+})
+
 app.use('/dist', express.static(`${__dirname}/dist/`));
 
 app.get('*', (req, res) => {
