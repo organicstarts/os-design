@@ -51,17 +51,17 @@ $body-bg: #fff; // This will be different for production.
 $font-family-base: 'Open Sans',
 sans-serif; // This is where we switch the global font-family
 $enable-responsive-font-sizes: true;
-$moss: #94C120;
-$mustard: #FFCA28;
+$moss: #7cb342;
+$mustard: #ffca28;
 $theme-colors:(
     'moss': $moss,
-    'moss-dark': darken($moss, 10%),
-    'moss-light': lighten($moss, 10%),
+    'moss-dark': #4b830d,
+    'moss-light': #aee571,
     'moss-gray': grayscale($moss),
     'moss-alt': complement($moss),
     'mustard': $mustard,
-    'mustard-dark': darken($mustard, 10%),
-    'mustard-light': lighten($mustard, 10%),
+    'mustard-dark': #c79a00,
+    'mustard-light': #fffd61,
     'mustard-gray': grayscale($mustard),
     'mustard-alt': complement($mustard));
 
