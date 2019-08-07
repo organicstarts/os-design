@@ -1,27 +1,63 @@
 $body-bg: #FBFBFB;
 $body-color: #333333;
-
-$moss: #93c11f;
-$mustard: #ffc107;
+$colors: (
+//   "blue": $blue,
+//   "indigo": $indigo,
+//   "purple": $purple,
+//   "pink": $pink,
+//   "red": $red,
+//   "orange": $orange,
+//   "yellow": $yellow,
+//   "green": $green,
+//   "teal": $teal,
+//   "cyan": $cyan,
+//   "white": $white,
+//   "gray": $gray-600,
+//   "gray-dark": $gray-800
+) !default;
 $theme-colors:(
     'white': #FBFBFB,
 
-    'moss': $moss,
+    'moss': #93c11f,
     'moss-light': #c7f457,
     'moss-dark': #609000,
 
-    'mustard': $mustard,
+    'moss-50': #f3f8e6,
+    'moss-100': #e0ecc0,
+    'moss-200': #cbe097,
+    'moss-300': #b5d36c,
+    'moss-400': #a4ca49,
+    'moss-500': #93c11f,
+    'moss-600': #83b116,
+    'moss-700': #6d9e07,
+    'moss-800': #588a00,
+    'moss-900': #306900,
+
+    'mustard-50': #fff8e1,
+    'mustard-100': #ffecb3,
+    'mustard-200': #ffe082,
+    'mustard-300': #ffd54f,
+    'mustard-400': #ffca28,
+    'mustard-500': #ffc107,
+    'mustard-600': #ffb300,
+    'mustard-700': #ffa000,
+    'mustard-800': #ff8f00,
+    'mustard-900': #ff6f00,
+
+    'mustard-a100': #FFE57F,
+    'mustard-a200': #FFD740,
+    'mustard-a400': #FFC400,
+    'mustard-a700': #FFAB00,
+
+    'mustard': #ffc107,
     'mustard-light': #fff350,
     'mustard-dark': #c79100,
-
-
 
     // Other Colors
     'dark-gray': #989898,
     'burly-wood': #DDD76C,
     'goldenrod': #CCC02C
 );
-
 $spacer: 1rem; 
 $enable-rounded: true;
 $enable-shadows: true;
