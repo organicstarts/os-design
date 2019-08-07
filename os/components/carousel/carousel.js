@@ -69,8 +69,11 @@ export function categoryCarousel(className) {
 export function carousel(className) {
   $(`${className}`).slick({
     mobileFirst: true,
+    infinite: true,
     autoplay: true,
+    swipeToSlide: true,
     cancellable: true,
+    touchThreshold: 10,
     lazyLoad: "ondemand",
     responsive: [
       {
@@ -79,7 +82,7 @@ export function carousel(className) {
           arrows: true,
           centerMode: true,
           centerPadding: "45px",
-          slidesToShow: 6
+          slidesToShow: 6,
         }
       },
       {
