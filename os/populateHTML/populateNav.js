@@ -33,7 +33,7 @@ export function populateSideNav(id) {
 export function populateAccountNav(id, email) {
   if (email) {
     $(`#${id}`)
-      .append(`<nav id="accountMenu" class="primary sidebar mm-menu  mm-menu_theme-dark" aria-hidden="true">
+      .append(`<nav id="accountMenu" class="primary sidebar mm-menu  mm-menu_theme-dark  d-lg-none" aria-hidden="true">
         <ul class="text-center">
         <li>
            <a class="nav-link" href="https://organicstart.com">
@@ -58,7 +58,7 @@ export function populateAccountNav(id, email) {
     </nav>`);
   } else {
     $(`#${id}`)
-      .append(`<nav id="accountMenu" class="primary sidebar mm-menu  mm-menu_theme-dark" aria-hidden="true">
+      .append(`<nav id="accountMenu" class="primary sidebar mm-menu  mm-menu_theme-dark  d-lg-none" aria-hidden="true">
          <div class="row text-center">
              <a class="col-6" href="https://organicstart.com">
               <i class="fa fa-star fa-2x"></i>
