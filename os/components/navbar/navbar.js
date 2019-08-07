@@ -22,7 +22,7 @@ function navbarTemplate() {
           <nav class="col-10 m-0" aria-label="Main" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
               <ul class="nav justify-content-end align-items-center float-right m-0">
                   <li class="nav-item-icon animated fadeInDown delay-1s slow" id="AccountDrawer">
-                      <a href="#accountMenu"><i class="far fa-user-circle"></i></a>
+                      <a id="accountLink" href=""><i class="far fa-user-circle"></i></a>
                   </li>
                   <li class="nav-item-icon animated fadeInDown delay-1s slow" id="CartDrawer">
                       <a href="#cartMenu"><i class="fas fa-shopping-bag"></i></a>
@@ -265,19 +265,39 @@ export function navbar(id) {
   $(`#${id}`).prepend(navbarTemplate());
 }
 
+function initializeAccount() {
+  if ($(window).width() < 768) {
+    $("#accountLink").attr("href", "#accountMenu");
+  } else {
+    $("#accountLink").attr("href", "{{urls.account.index}}");
+  }
+}
+function checkAccount() {
+  $(window).resize(function() {
+    if ($(window).width() < 768) {
+      $("#accountLink").attr("href", "#accountMenu");
+    } else {
+      $("#accountLink").attr("href", "{{urls.account.index}}");
+    }
+  });
+}
+
 function checkNav() {
   $("#mainMenu").removeClass("invisible");
-  if (window.scrollY <= $("#mainMenu").height() - 32) { // 32 Pixels is the difference in top padding between default and slide-down
+  if (window.scrollY <= $("#mainMenu").height() - 32) {
+    // 32 Pixels is the difference in top padding between default and slide-down
     $("#mainMenu")
       .addClass("position-absolute")
       .removeClass("bg-white")
       .removeClass("fixed-top")
       .removeClass("slide-down");
-    if(window.innerWidth >= 1024) {
-      $(".staggered-fade-up").each(function (i) {
-        var $item = $(this); 
+    if (window.innerWidth >= 1024) {
+      $(".staggered-fade-up").each(function(i) {
+        var $item = $(this);
         setTimeout(function() {
-          $item.addClass("animated fadeInDown").removeClass('staggered-fade-up');
+          $item
+            .addClass("animated fadeInDown")
+            .removeClass("staggered-fade-up");
         }, 150 * i);
       });
     } else {
@@ -286,7 +306,8 @@ function checkNav() {
       });
     }
   }
-  if (window.scrollY >= $("#mainMenu").height() + 96) { // 96 Pixels is the default padding
+  if (window.scrollY >= $("#mainMenu").height() + 96) {
+    // 96 Pixels is the default padding
     $(".staggered-fade-up").each(function() {
       $(this).removeClass("staggered-fade-up");
     });
@@ -300,6 +321,8 @@ function checkNav() {
 export function scrollNav() {
   $(document).ready(function() {
     checkNav();
+    initializeAccount();
+    checkAccount();
   });
   $(window).scroll(function() {
     checkNav();
