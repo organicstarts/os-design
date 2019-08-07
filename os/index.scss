@@ -1,74 +1,40 @@
-:root {
-    --blue: #007bff;
-    --indigo: #6610f2;
-    --purple: #6f42c1;
-    --pink: #e83e8c;
-    --red: #dc3545;
-    --orange: #fd7e14;
-    --yellow: #ffc107;
-    --green: #28a745;
-    --teal: #20c997;
-    --cyan: #17a2b8;
-    --white: #fff;
-    --gray: #6c757d;
-    --gray-dark: #343a40;
-    --primary: #007bff;
-    --secondary: #6c757d;
-    --success: #28a745;
-    --info: #17a2b8;
-    --warning: #ffc107;
-    --danger: #dc3545;
-    --light: #f8f9fa;
-    --dark: #343a40;
-    --breakpoint-xs: 0;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
+$body-bg: #FBFBFB;
+$body-color: #333333;
 
-$font-family-sans-serif: // Safari for macOS and iOS (San Francisco)
--apple-system,
-// Chrome < 56 for macOS (San Francisco)
-BlinkMacSystemFont,
-// Windows
-"Segoe UI",
-// Android
-"Roboto",
-// Basic web fallback
-"Helvetica Neue",
-Arial,
-sans-serif,
-// Emoji fonts
-"Apple Color Emoji",
-"Segoe UI Emoji",
-"Segoe UI Symbol" !default;
-
-$body-bg: #fff; // This will be different for production.
-
-$font-family-base: 'Open Sans',
-sans-serif; // This is where we switch the global font-family
-$enable-responsive-font-sizes: true;
-$moss: #7cb342;
-$mustard: #ffca28;
+$moss: #93c11f;
+$mustard: #ffc107;
 $theme-colors:(
-    'moss': $moss,
-    'moss-dark': #4b830d,
-    'moss-light': #aee571,
-    'moss-gray': grayscale($moss),
-    'moss-alt': complement($moss),
-    'mustard': $mustard,
-    'mustard-dark': #c79a00,
-    'mustard-light': #fffd61,
-    'mustard-gray': grayscale($mustard),
-    'mustard-alt': complement($mustard));
+    'white': #FBFBFB,
 
-$header-font: 'Fredoka One',
-cursive;
-$subheader-font: 'Nunito',
-sans-serif;
+    'moss': $moss,
+    'moss-light': #c7f457,
+    'moss-dark': #609000,
+
+    'mustard': $mustard,
+    'mustard-light': #fff350,
+    'mustard-dark': #c79100,
+
+
+
+    // Other Colors
+    'dark-gray': #989898,
+    'burly-wood': #DDD76C,
+    'goldenrod': #CCC02C
+);
+
+$spacer: 1rem; 
+$enable-rounded: true;
+$enable-shadows: true;
+$enable-gradients: true;
+$enable-transitions: true;
+$enable-prefers-reduced-motion-media-query: true; // Enables the prefers-reduced-motion media query, which suppresses certain animations/transitions based on the users’ browser/operating system preferences.
+$enable-grid-classes: true;
+$enable-caret: false;
+$enable-pointer-cursor-for-buttons: true;
+$enable-print-styles: true;
+$enable-responsive-font-sizes: true;
+$enable-validation-icons: true;
+$enable-deprecation-messages: false;
 
 $grid-breakpoints: (
   xs: 0,
@@ -78,6 +44,30 @@ $grid-breakpoints: (
   xl: 1440px,
   xxl: 2560px
 );
+
+$font-family-base: 'Open Sans', sans-serif; // This is where we switch the global font-family
+
+$font-family-sans-serif: 
+    // Safari for macOS and iOS (San Francisco)
+    -apple-system,
+    // Chrome < 56 for macOS (San Francisco)
+    BlinkMacSystemFont,
+    // Windows
+    "Segoe UI",
+    // Android
+    "Roboto",
+    // Basic web fallback
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    // Emoji fonts
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol" !default;
+
+$header-font: 'Fredoka One', cursive;
+
+$subheader-font: 'Nunito', sans-serif;
 
 @import "~animate.css/animate.min";
 
@@ -117,8 +107,59 @@ $slick-font-path: "../node_modules/slick-carousel/slick/fonts/";
  * 
  */
 
-@each $name,
-$color in $theme-colors {
+ $theme-color-shades: (
+    'moss-neg-1': theme-color-level(moss, -1),
+    'moss-neg-2': theme-color-level(moss, -2),
+    'moss-neg-3': theme-color-level(moss, -3),
+    'moss-neg-4': theme-color-level(moss, -4),
+    'moss-neg-5': theme-color-level(moss, -5),
+    'moss-neg-6': theme-color-level(moss, -6),
+    'moss-neg-7': theme-color-level(moss, -7),
+    'moss-neg-8': theme-color-level(moss, -8),
+    'moss-neg-9': theme-color-level(moss, -9),
+    'moss-neg-10': theme-color-level(moss, -10),
+    'moss-1': theme-color-level(moss, 1),
+    'moss-2': theme-color-level(moss, 2),
+    'moss-3': theme-color-level(moss, 3),
+    'moss-4': theme-color-level(moss, 4),
+    'moss-5': theme-color-level(moss, 5),
+    'moss-6': theme-color-level(moss, 6),
+    'moss-7': theme-color-level(moss, 7),
+    'moss-8': theme-color-level(moss, 8),
+    'moss-9': theme-color-level(moss, 9),
+    'moss-10': theme-color-level(moss, 10),
+    'mustard-neg-1': theme-color-level(mustard, -1),
+    'mustard-neg-2': theme-color-level(mustard, -2),
+    'mustard-neg-3': theme-color-level(mustard, -3),
+    'mustard-neg-4': theme-color-level(mustard, -4),
+    'mustard-neg-5': theme-color-level(mustard, -5),
+    'mustard-neg-6': theme-color-level(mustard, -6),
+    'mustard-neg-7': theme-color-level(mustard, -7),
+    'mustard-neg-8': theme-color-level(mustard, -8),
+    'mustard-neg-9': theme-color-level(mustard, -9),
+    'mustard-neg-10': theme-color-level(mustard, -10),
+    'mustard-1': theme-color-level(mustard, 1),
+    'mustard-2': theme-color-level(mustard, 2),
+    'mustard-3': theme-color-level(mustard, 3),
+    'mustard-4': theme-color-level(mustard, 4),
+    'mustard-5': theme-color-level(mustard, 5),
+    'mustard-6': theme-color-level(mustard, 6),
+    'mustard-7': theme-color-level(mustard, 7),
+    'mustard-8': theme-color-level(mustard, 8),
+    'mustard-9': theme-color-level(mustard, 9),
+    'mustard-10': theme-color-level(mustard, 10)
+);
+
+@each $name, $color in $theme-color-shades {
+    .text-#{$name} {
+        color: #{$color};
+    }
+    .bg-#{$name} {
+        background-color: #{$color};
+    }
+}
+
+@each $name, $color in $theme-colors {
     footer.#{$name} {
         background-color: #{$color}
     }
@@ -157,7 +198,7 @@ img.logo {
 }
 
 
-.slick-list {
+.slick-list,.slick-slider {
     overflow: visible;
 }
 .slick-initialized .slick-slide {
@@ -178,6 +219,30 @@ img.logo {
         width: calc((100vw / 6) - 0.2rem);
     }
     & div, & .slide {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.product.carousel.slick-initialized .slick-slide {
+    min-width: 400px;
+    height: 400px;
+    transition: transform .15s ease-out;
+    transform: scale(0.75);
+    @media(min-width:375px) {
+        transform: scale(0.85);
+    }
+    @media(min-width:425px) {
+        transform: none;
+    }
+    @include media-breakpoint-up(xl) {
+        padding: 1rem;
+        width: calc((100vw / 6) - 0.2rem);
+    }
+    &:hover {
+        transform: scale(1.1);
+    }
+    & div, & .product-slide {
         width: 100%;
         height: 100%;
     }

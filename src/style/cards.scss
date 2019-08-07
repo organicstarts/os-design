@@ -45,4 +45,23 @@
             @include TextShadow(6);
         }
     }
+    &.product {
+        width: 100%;
+        height: 100%;
+        transition: all .3s ease-out;
+        @include BoxShadow(1);
+        &:hover {
+            @include BoxShadow(2);
+        }
+        & .card-figcaption {
+            display: none!important;
+        }
+        & .card-image {
+            max-height: calc(250px + (250 - 250) * (100vw - 320px)/ (2560 - 320));
+        }
+        & .card-img-container:after {
+            padding-bottom: 75%;
+        }
+        
+    }
 }
