@@ -45,15 +45,16 @@
  $headers: ('h1', 'h2', 'h3', 'h4', 'h5', 'h6');
 
  @each $header in $headers {
-     #{$header}, #{$header} small, #{$header} .small, .#{$header}, .#{$header} small, .#{$header} .small, .subheader {
+     #{$header}, #{$header} small, .subheader {
          font-family: $subheader-font;
      }
-     #{$header} small, #{$header} .small, .#{$header} small, .#{$header} .small {
-         font-weight: 300;
-         color: rgba(33, 37, 41, 0.8); // Everything for small is always 80%
-     }
  }
- 
+
+ .small {
+    font-weight: 300;
+    color: rgba(33, 37, 41, 0.8); // Everything for small is always 80%
+}
+
  h1, .h1 {
      @include FluidType(320px, 2560px, 36px, 72px, 0px, -1.5px);
      font-weight: 300;
