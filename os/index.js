@@ -27,6 +27,8 @@ class Public extends Master {
     }
 
     this.jQuery(document).ready(() => {
+      this.Swipes.Products()
+      
       if (window.innerWidth > Breakpoints.Mobile) {
         Scrolly.Init()
         Scrolly.Animate('ready')

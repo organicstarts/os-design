@@ -163,10 +163,13 @@ $fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/regular";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 
+@import "~flickity/dist/flickity.min";
+
 $slick-loader-path: "../node_modules/slick-carousel/slick/";
 $slick-font-path: "../node_modules/slick-carousel/slick/fonts/";
 
-@import "~flickity/dist/flickity.min";
+@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick-theme";
 
 @import "../src/style/init";
 
@@ -234,10 +237,10 @@ $slick-font-path: "../node_modules/slick-carousel/slick/fonts/";
 
 @each $name, $color in $theme-color-shades {
     .text-#{$name} {
-        color: #{$color};
+        color: #{$color}!important;
     }
     .bg-#{$name} {
-        background-color: #{$color};
+        background-color: #{$color}!important;
     }
     .border-#{$name} {
         border-color: #{$color}!important;
@@ -256,6 +259,24 @@ body {
 #wrapper {
     overflow: hidden;
     max-width: 100%;
+}
+
+#wrapper > main > header > div:nth-child(1), #wrapper > main > *:nth-child(1):not(header):not(.pt-0) {
+    padding-top: 160px;
+}
+
+.flex-page {
+    width: 100%;
+    height: 75vh;
+    min-height: 900px;
+    position: relative;
+    & .row {
+        height: 100%;
+    }
+}
+
+.bg-404, .bg-404 body {
+    
 }
 
 .placeholder-header {
@@ -291,10 +312,13 @@ img.logo {
 .product-carousel {
     & .product-slide {
         padding: 0.5rem;
-        width: 300px;
+        width: 100%;
+        max-width: 300px;
         height: 400px;
+        max-height: 400px;
         min-height: 400px;
         transition: transform .15s ease-out;
+        /*
         @include media-breakpoint-up(sm) {
             width: calc((100vw / 4) - (1.5rem / 4));
         }
@@ -306,7 +330,7 @@ img.logo {
         }
         @include media-breakpoint-up(xl) {
             width: calc((100vw / 7) - (3rem / 7));
-        }
+        }*/
         &:hover {
             transform: translateY(-1rem);
         }
@@ -323,4 +347,22 @@ img.logo {
 
 .max-w-350 {
     max-width: 350px;
+}
+
+.max-w-500 {
+    max-width: 500px;
+}
+
+.card-image.lazyload, .card-image.lazyloading {
+    content: '';
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    background: #fff;
+    vertical-align: text-bottom;
+    border: 0.5rem solid #000;
+    border-right-color: transparent;
+    // stylelint-disable-next-line property-blacklist
+    border-radius: 50%;
+    animation: spinner-border .75s linear infinite;
 }
