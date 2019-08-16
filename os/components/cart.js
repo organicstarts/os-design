@@ -1,29 +1,30 @@
-import $ from "jquery";
+import Master from "./index"
 
-export function cartMenu() {
-  Mmenu.configs.classNames.selected = "active";
-  Mmenu.configs.offCanvas.page.selector = "#cartMenu";
+export default class Cart extends Master {
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const menu = new Mmenu("#cartMenu", {
-      offCanvas: true,
-      navbar: {
-        title: ""
-      },
-      navbars: [
-        {
-          position: "top",
-          content: ["close"]
-        }
-      ],
-      slidingSubmenus: false,
-      extensions: [
-        // "fullscreen",
-        "position-right",
-        "pagedim-black"
-      ]
-    });
-  });
+    constructor() {
+        super();
+    }
+
+    AddToCart() {
+        $(".clicky").on("click", function() {
+          const url = $(this).data("src");
+          $.get(url).then(x => {
+            console.log(x);
+            const num =
+              +$(".countPill.cart-quantity.countPill--positive")[0].innerHTML + 1;
+            $(".countPill.cart-quantity.countPill--positive")[0].innerHTML = num;
+          });
+          e.preventDefault();
+        });
+      }
+      
+
+}
+
+
+/*
+
 
   $("#CartDrawer").on("click", function() {
     $.get("http://localhost:3000/api/storefront/cart")
@@ -133,4 +134,4 @@ function parseData(data) {
   );
   // console.log(htmlArray);
   return htmlArray.join("");
-}
+}*/

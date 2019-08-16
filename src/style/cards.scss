@@ -30,21 +30,6 @@
     &.card, &.inverted.card {
         padding: 1rem;
     }
-    &.category {
-        width: 100%;
-        height: 100%;
-        border-radius: 2rem;
-        transition: all .3s ease-out;
-        @include BoxShadow(6);
-        &:hover {
-            @include BoxShadow(16);
-        }
-        & .content {
-            font-size: 2rem;
-            font-weight: 900;
-            @include TextShadow(6);
-        }
-    }
     &.product {
         width: 100%;
         height: 100%;

@@ -62,6 +62,18 @@
  h2, .h2 {
      @include FluidType(320px, 2560px, 30px, 60px, 0px, -0.5px);
      font-weight: 300;
+     &-lg {
+        @include media-breakpoint-up(lg) {
+            @include FluidType(320px, 2560px, 30px, 60px, 0px, -0.5px);
+            font-weight: 300;
+        }
+     }
+     &-xl {
+        @include media-breakpoint-up(xl) {
+            @include FluidType(320px, 2560px, 30px, 60px, 0px, -0.5px);
+            font-weight: 300;
+        }
+     }
  }
  h3, .h3 { 
      @include FluidType(320px, 2560px, 24px, 48px, 0px, 0px);
@@ -107,8 +119,7 @@
  }
 
  
-.link-unstyled, .link-unstyled:visited, .link-unstyled:hover, .link-unstyled:active, .link-unstyled:focus, .link-unstyled:active:hover,
-.main-menu .nav .nav-item a, .main-menu .nav .nav-item-icon a {
+.link-unstyled, .link-unstyled:visited, .link-unstyled:hover, .link-unstyled:active, .link-unstyled:focus, .link-unstyled:active:hover {
     font-style: inherit;
     color: inherit;
     background-color: transparent;

@@ -2,10 +2,324 @@
     width: 100%;
     height: 75vh;
     min-height: 900px;
-    background-repeat: no-repeat;
+    position: relative;
+    background: url('https://as1.ftcdn.net/jpg/02/55/97/30/500_F_255973025_IVjxz6IZMNflVnXqPWyUDcB8CPsABbrJ.jpg');
     background-size: cover;
-    background-position: left 10%;
+    background-position: 0px 25%;
+}
+.home.jumbotron::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0.25;
+    z-index: 0;
 }
 .home.jumbotron h1 {
-    text-shadow: 0px 0px 15px #fff;
+    color: theme-color(gray);
+}
+
+.bg-featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: theme-color-level(moss, 8);
+    opacity: 0.25;
+    z-index: 0;
+}
+.bg-featured {
+    position: relative;
+    background: url('https://as1.ftcdn.net/jpg/01/27/49/02/500_F_127490276_uSeuCMn3w9yx0wy2HADHK2n541IwB0iw.jpg');
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+
+// .bg-headline {
+//     background-color: #ffaa00;
+//     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpath fill='%23ffb100' d='M486 705.8c-109.3-21.8-223.4-32.2-335.3-19.4C99.5 692.1 49 703 0 719.8V800h843.8c-115.9-33.2-230.8-68.1-347.6-92.2C492.8 707.1 489.4 706.5 486 705.8z'/%3E%3Cpath fill='%23ffb800' d='M1600 0H0v719.8c49-16.8 99.5-27.8 150.7-33.5c111.9-12.7 226-2.4 335.3 19.4c3.4 0.7 6.8 1.4 10.2 2c116.8 24 231.7 59 347.6 92.2H1600V0z'/%3E%3Cpath fill='%23ffbf00' d='M478.4 581c3.2 0.8 6.4 1.7 9.5 2.5c196.2 52.5 388.7 133.5 593.5 176.6c174.2 36.6 349.5 29.2 518.6-10.2V0H0v574.9c52.3-17.6 106.5-27.7 161.1-30.9C268.4 537.4 375.7 554.2 478.4 581z'/%3E%3Cpath fill='%23ffc500' d='M0 0v429.4c55.6-18.4 113.5-27.3 171.4-27.7c102.8-0.8 203.2 22.7 299.3 54.5c3 1 5.9 2 8.9 3c183.6 62 365.7 146.1 562.4 192.1c186.7 43.7 376.3 34.4 557.9-12.6V0H0z'/%3E%3Cpath fill='%23ffcc00' d='M181.8 259.4c98.2 6 191.9 35.2 281.3 72.1c2.8 1.1 5.5 2.3 8.3 3.4c171 71.6 342.7 158.5 531.3 207.7c198.8 51.8 403.4 40.8 597.3-14.8V0H0v283.2C59 263.6 120.6 255.7 181.8 259.4z'/%3E%3Cpath fill='%23ffd624' d='M1600 0H0v136.3c62.3-20.9 127.7-27.5 192.2-19.2c93.6 12.1 180.5 47.7 263.3 89.6c2.6 1.3 5.1 2.6 7.7 3.9c158.4 81.1 319.7 170.9 500.3 223.2c210.5 61 430.8 49 636.6-16.6V0z'/%3E%3Cpath fill='%23ffe038' d='M454.9 86.3C600.7 177 751.6 269.3 924.1 325c208.6 67.4 431.3 60.8 637.9-5.3c12.8-4.1 25.4-8.4 38.1-12.9V0H288.1c56 21.3 108.7 50.6 159.7 82C450.2 83.4 452.5 84.9 454.9 86.3z'/%3E%3Cpath fill='%23ffeb49' d='M1600 0H498c118.1 85.8 243.5 164.5 386.8 216.2c191.8 69.2 400 74.7 595 21.1c40.8-11.2 81.1-25.2 120.3-41.7V0z'/%3E%3Cpath fill='%23fff558' d='M1397.5 154.8c47.2-10.6 93.6-25.3 138.6-43.8c21.7-8.9 43-18.8 63.9-29.5V0H643.4c62.9 41.7 129.7 78.2 202.1 107.4C1020.4 178.1 1214.2 196.1 1397.5 154.8z'/%3E%3Cpath fill='%23ffff66' d='M1315.3 72.4c75.3-12.6 148.9-37.1 216.8-72.4h-723C966.8 71 1144.7 101 1315.3 72.4z'/%3E%3C/g%3E%3C/svg%3E");
+
+//     background-size: cover;
+// }
+
+// .bg-bundles {
+//     background-color: #fff8e1;
+//     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%23ffe082' fill-opacity='0.25' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E");
+//     background-repeat: repeat;
+//     background-size: auto 75%;
+// }
+.bg-bundles {
+    @include media-breakpoint-up(lg) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top right;
+        @include Background(
+            "https://triad.imgix.net/os/i/home/bundles.jpeg?w=1280&blur=200&q=80&s=9a40fcdded48870f8206545e314a930e",
+            "https://triad.imgix.net/os/i/home/bundles.jpeg?w=1280&blur=200&q=60&dpr=1.5&s=64cff964131871630dfe3496d1196627",
+            "https://triad.imgix.net/os/i/home/bundles.jpeg?w=1280&blur=200&q=40&dpr=2&s=f5059eed4d114c1d584a43c55a512afb",
+            "https://triad.imgix.net/os/i/home/bundles.jpeg?w=1280&blur=200&q=20&dpr=3&s=ed0c8fa151ef2775d748fe3e19facf6c",
+            "https://triad.imgix.net/os/i/home/bundles.jpeg?w=1280&blur=200&q=10&dpr=4&s=9789fdf9bb5b0f4a01c263584f9b9725"
+        );
+    }
+}
+#bundles h3 {
+    text-shadow: 0px 0px 20px #fff, 0px 0px 10px #fff;
+}
+.bundles-img {
+    padding-top: 1560px / 2560px * 100%;
+    @include media-breakpoint-up(md) {
+        padding-top: 1000px / 2560px * 100%;
+    }
+    @include media-breakpoint-up(lg) {
+        padding-top: 850px / 2560px * 100%;
+    }
+    @include media-breakpoint-up(xl) {
+        padding-top: 600px / 2560px * 100%;
+    }
+    @include Background(
+        "https://triad.imgix.net/os/i/home/bundles.jpeg?w=1280&q=80&s=73b0202599efcf9962df5f81feae4328",
+        "https://triad.imgix.net/os/i/home/bundles.jpeg?w=1280&q=60&dpr=1.5&s=792fb86286e70cf545b8e43aed81d8f9",
+        "https://triad.imgix.net/os/i/home/bundles.jpeg?w=1280&q=40&dpr=2&s=bfd343d39c25d47fdd0d4a557aee9464",
+        "https://triad.imgix.net/os/i/home/bundles.jpeg?w=1280&q=20&dpr=3&s=d97a6d9e2795b212f50f17203efc1a74",
+        "https://triad.imgix.net/os/i/home/bundles.jpeg?w=1280&q=10&dpr=4&s=e6c0dd250fdc5672bf434741a23ec1fa"
+    );
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.category-carousel {
+    & .category-slide {
+        padding: 1rem;
+        width: 100vw;
+        max-width: 400px;
+        height: 100vw;
+        max-height: 400px;
+        transition: all .3s ease-in-out;
+        @include media-breakpoint-up(sm) {
+            transform: scale(0.95);
+            &.slick-current {
+                transform: scale(1)!important;
+            }
+        }
+        @include media-breakpoint-up(xl) {
+            width: calc((100vw / 6) - (1rem / 6));
+            min-width: 400px;
+            max-width: none;
+            height: calc((100vw / 6) - (1rem / 6));
+            min-height: 400px;
+            max-height: none;
+        }
+        @media(min-width:2559px) {
+            transform: scale(1)!important;
+        }
+        & > div, & > div > .category-slide {
+            width: 100%;
+            height: 100%;
+            margin: 0!important;
+        }
+    }
+}
+
+.category-card {
+    position: relative;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    transition: all .3s ease-out;
+    @include BoxShadow(6);
+    &:hover {
+        @include BoxShadow(16);
+    }
+    & .content {
+        font-size: 2rem;
+        font-weight: 900;
+        @include TextShadow(6);
+    }
+    &.baby-care::before, 
+    &.baby-care .suds,
+    &.baby-care .bubbles-left,
+    &.baby-care .bubbles-middle,
+    &.baby-care .bubbles-right,
+    &.baby-food::before, 
+    &.baby-food .food, 
+    &.clothes::before,
+    &.clothes .cotton-left,
+    &.clothes .cotton-right,
+    &.toys::before,
+    &.toys .toys-left,
+    &.toys .toys-right,
+    &.diapers::before,
+    &.diapers .diapers-left,
+    &.diapers .diapers-right,
+    &.mommy::before,
+    &.mommy .mommy-left,
+    &.mommy .mommy-right {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background-repeat: no-repeat!important;
+    }
+    &.baby-care .suds {
+        width: 110%;
+        height: 110%;
+        top: -5%;
+        left: -5%;
+        background: url("https://triad.imgix.net/os/i/home/categories/baby-care-cloud.png?s=da4d8ab356d686caaaa92b14b9cbdcbe");
+        background-size: contain;
+        background-position: center center;
+    }
+    &.baby-care .bubbles-left {
+        width: 125px;
+        height: 157px;
+        top: calc(50% - (157px / 2));
+        left: -10%;
+        background: url("https://triad.imgix.net/os/i/home/categories/baby-care-bubble-left.png?s=131d49cb528562948634531e72222ea9");
+        background-size: contain;
+        background-position: center center;
+    }
+    &.baby-care .bubbles-middle {
+        width: 100px;
+        height: 86px;
+        top: 50%;
+        left: calc(50% - (100px / 2));
+        background: url("https://triad.imgix.net/os/i/home/categories/baby-care-bubble-middle.png?s=3165b46f8fb00b0e229fb7e35a7faa25");
+        background-size: contain;
+        background-position: center center;
+    }
+    &.baby-care .bubbles-right {
+        width: 81px;
+        height: 122px;
+        top: calc(50% - (122px / 2));
+        left: auto;
+        right: -5%;
+        background: url("https://triad.imgix.net/os/i/home/categories/baby-care-bubble-right.png?s=598cd044506bc557498448d6fba24d9d");
+        background-size: contain;
+        background-position: right center;
+    }
+    &.baby-care .suds {
+        width: 110%;
+        height: 110%;
+        top: -5%;
+        left: -5%;
+        background: url("https://triad.imgix.net/os/i/home/categories/baby-care-cloud.png?s=da4d8ab356d686caaaa92b14b9cbdcbe");
+        background-size: contain;
+        background-position: bottom center;
+    }
+    &.baby-food .food {
+        width: 110%;
+        height: 110%;
+        top: -5%;
+        left: -5%;
+        background: url("https://triad.imgix.net/os/i/home/categories/food.png?s=19d3f5da2ebe78d1f9f8df759326ee40");
+        background-size: contain;
+        background-position: bottom center;
+    }
+    &.clothes .cotton-left {
+        width: 50%;
+        height: 50%;
+        top: auto;
+        bottom: -5%;
+        left: -10%;
+        right: auto;
+        background: url("https://triad.imgix.net/os/i/home/categories/clothes-left.png?s=eeaa8851a38621ba3aefb828810d329a");
+        background-size: contain;
+        background-position: center center;
+    }
+    &.clothes .cotton-right {
+        width: 80%;
+        height: 80%;
+        top: auto;
+        bottom: -5%;
+        left: auto;
+        right: -10%;
+        background: url("https://triad.imgix.net/os/i/home/categories/clothes-right.png?s=f213da5aa0aa481ecb9a564e90c9c7d1");
+        background-size: contain;
+        background-position: center center;
+    }
+    &.toys .toys-left {
+        width: 50%;
+        height: 50%;
+        top: auto;
+        bottom: -5%;
+        left: -5%;
+        right: auto;
+        z-index: 1;
+        background: url("https://triad.imgix.net/os/i/home/categories/toys-left.png?s=b106c9df93b6bfc4da239175f133b03f");
+        background-size: contain;
+        background-position: center center;
+    }
+    &.toys .toys-right {
+        width: 80%;
+        height: 80%;
+        top: auto;
+        bottom: -5%;
+        left: auto;
+        right: -15%;
+        background: url("https://triad.imgix.net/os/i/home/categories/toys-right-v4.png?s=5eb472d5b9659781e98ea44a18de5258");
+        background-size: contain;
+        background-position: center center;
+    }
+    &.diapers .diapers-left {
+        width: 50%;
+        height: 50%;
+        top: calc(50% - (50% / 4));
+        bottom: auto;
+        left: -5%;
+        right: auto;
+        z-index: 1;
+        background: url("https://triad.imgix.net/os/i/home/categories/diapers-left.png?s=5e43c3ee19545eb05e5bb8475afc9908");
+        background-size: contain;
+        background-position: center center;
+    }
+    &.diapers .diapers-right {
+        width: 60%;
+        height: 60%;
+        top: auto;
+        bottom: -10%;
+        left: auto;
+        right: -5%;
+        background: url("https://triad.imgix.net/os/i/home/categories/diapers-right.png?s=c8a134a3506ce226e0164222f96b90de");
+        background-size: contain;
+        background-position: center center;
+    }
+    &.mommy .mommy-left {
+        width: 50%;
+        height: 50%;
+        top: auto;
+        bottom: -5%;
+        left: -5%;
+        right: auto;
+        z-index: 1;
+        background: url("https://triad.imgix.net/os/i/home/categories/mommy-flowers.png?s=ba5bf2232d41efab2d1710e32fbbcb72");
+        background-size: contain;
+        background-position: center center;
+    }
+    &.mommy .mommy-right {
+        width: 80%;
+        height: 80%;
+        top: auto;
+        bottom: -5%;
+        left: auto;
+        right: -15%;
+        background: url("https://triad.imgix.net/os/i/home/categories/mommy-mug.png?s=ff87603a48ca879d8425f0ab5f284cba");
+        background-size: contain;
+        background-position: center center;
+    }
 }

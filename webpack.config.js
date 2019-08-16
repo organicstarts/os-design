@@ -16,7 +16,8 @@ module.exports = {
     filename: "main.js",
     path: resolve("dist"),
     libraryTarget: "var",
-    library: "organicStart"
+    libraryExport: 'OrganicStart',
+    library: "oSx"
   },
   optimization: {
     minimizer: [
