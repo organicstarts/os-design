@@ -21,3 +21,8 @@
  .ui.animated.button {
     padding: 0.78571429em 1.5em 0.78571429em!important;
 }
+.ui.basic.borderless.button, .ui.basic.borderless.button:hover, .ui.basic.borderless.button:focus, .ui.basic.borderless.button:active {
+    padding: 0 1rem;
+    border: none!important;
+    box-shadow: none!important;
+}

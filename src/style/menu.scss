@@ -194,15 +194,6 @@
 
             }
         }
-        & .nav-item-icon {
-            font-size: 2rem;
-            padding: 0 1rem;
-            & {
-                @include media-breakpoint-up(xl) {
-                    padding: 0 1.25rem;
-                }
-            }
-        }
     }
 }
 
