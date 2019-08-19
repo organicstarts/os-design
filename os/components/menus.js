@@ -52,7 +52,7 @@ export default class Menus extends Master {
     }
 
     Init(mobile) {
-        document.getElementById('AccountLink').href = mobile ? '#accountMenu' : '{{urls.account.index}}'
+        document.getElementById('AccountLink').href = mobile ? '#accountMenu' : '/account.php'
         
         if (mobile) {
             document.getElementById('mainMobileMenu').classList.remove('d-none')
