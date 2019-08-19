@@ -16,8 +16,7 @@ class Public extends Master {
 
   Start() {
     const Menu = new Menus(),
-      Scrolly = new Scrolls(),
-      $ = require('jquery')
+      Scrolly = new Scrolls()
 
     var Breakpoints = {
       Mobile: 425,
@@ -27,14 +26,14 @@ class Public extends Master {
       Desktop: 2560
     }
 
-    $(document).ready(() => {
+    this.jQuery(document).ready(() => {
       this.Swipes.Products()
       
       if (window.innerWidth > Breakpoints.Mobile) {
         Scrolly.Init()
         Scrolly.Animate('ready')
 
-        $(window).scroll(function () {
+        this.jQuery(window).scroll(function () {
           Scrolly.Animate('scroll')
         })
       }
@@ -42,7 +41,7 @@ class Public extends Master {
       Menu.Init(window.innerWidth > Breakpoints.Tablet ? false : true)
     })
 
-    $(window).scroll(function () {
+    this.jQuery(window).scroll(function () {
       Menu.Main()
     })
   }

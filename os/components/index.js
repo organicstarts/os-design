@@ -7,7 +7,7 @@ import slick from "slick-carousel"
 
 export default class Master {
     constructor() {
-        this.jQuery = require('jQuery')
+        this.jQuery = require('jquery')
     }
 
     forEachElements(array, callback, scope) {
