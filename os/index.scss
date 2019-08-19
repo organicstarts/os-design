@@ -24,6 +24,21 @@ $colors: (
 //   "gray": $gray-600,
 //   "gray-dark": $gray-800
 ) !default;
+$semantic-colors: (
+   'red': #db2828,
+   'orange': #f2711c,
+   'yellow': #fbbd08,
+   'olive': #b5cc18,
+   'green': #21ba45,
+   'teal': #00b5ad,
+   'blue': #2185d0,
+   'violet': #6435c9,
+   'purple': #a333c8,
+   'pink': #e03997,
+   'brown': #a5673f,
+   'grey': #767676,
+   'black': #1b1c1d
+);
 $theme-colors:(
     'moss': #93c11f,
     'moss-light': #c7f457,
@@ -76,6 +91,48 @@ $theme-colors:(
     'dark-gray': #989898,
     'burly-wood': #DDD76C,
     'goldenrod': #CCC02C
+);
+$theme-color-shades: (
+   'moss-neg-1': theme-color-level(moss, -1),
+   'moss-neg-2': theme-color-level(moss, -2),
+   'moss-neg-3': theme-color-level(moss, -3),
+   'moss-neg-4': theme-color-level(moss, -4),
+   'moss-neg-5': theme-color-level(moss, -5),
+   'moss-neg-6': theme-color-level(moss, -6),
+   'moss-neg-7': theme-color-level(moss, -7),
+   'moss-neg-8': theme-color-level(moss, -8),
+   'moss-neg-9': theme-color-level(moss, -9),
+   'moss-neg-10': theme-color-level(moss, -10),
+   'moss-1': theme-color-level(moss, 1),
+   'moss-2': theme-color-level(moss, 2),
+   'moss-3': theme-color-level(moss, 3),
+   'moss-4': theme-color-level(moss, 4),
+   'moss-5': theme-color-level(moss, 5),
+   'moss-6': theme-color-level(moss, 6),
+   'moss-7': theme-color-level(moss, 7),
+   'moss-8': theme-color-level(moss, 8),
+   'moss-9': theme-color-level(moss, 9),
+   'moss-10': theme-color-level(moss, 10),
+   'mustard-neg-1': theme-color-level(mustard, -1),
+   'mustard-neg-2': theme-color-level(mustard, -2),
+   'mustard-neg-3': theme-color-level(mustard, -3),
+   'mustard-neg-4': theme-color-level(mustard, -4),
+   'mustard-neg-5': theme-color-level(mustard, -5),
+   'mustard-neg-6': theme-color-level(mustard, -6),
+   'mustard-neg-7': theme-color-level(mustard, -7),
+   'mustard-neg-8': theme-color-level(mustard, -8),
+   'mustard-neg-9': theme-color-level(mustard, -9),
+   'mustard-neg-10': theme-color-level(mustard, -10),
+   'mustard-1': theme-color-level(mustard, 1),
+   'mustard-2': theme-color-level(mustard, 2),
+   'mustard-3': theme-color-level(mustard, 3),
+   'mustard-4': theme-color-level(mustard, 4),
+   'mustard-5': theme-color-level(mustard, 5),
+   'mustard-6': theme-color-level(mustard, 6),
+   'mustard-7': theme-color-level(mustard, 7),
+   'mustard-8': theme-color-level(mustard, 8),
+   'mustard-9': theme-color-level(mustard, 9),
+   'mustard-10': theme-color-level(mustard, 10)
 );
 $spacer: 1rem; 
 $enable-rounded: true;
@@ -191,49 +248,6 @@ $slick-font-path: "../node_modules/slick-carousel/slick/fonts/";
  * 96px = 6rem
  * 
  */
-
- $theme-color-shades: (
-    'moss-neg-1': theme-color-level(moss, -1),
-    'moss-neg-2': theme-color-level(moss, -2),
-    'moss-neg-3': theme-color-level(moss, -3),
-    'moss-neg-4': theme-color-level(moss, -4),
-    'moss-neg-5': theme-color-level(moss, -5),
-    'moss-neg-6': theme-color-level(moss, -6),
-    'moss-neg-7': theme-color-level(moss, -7),
-    'moss-neg-8': theme-color-level(moss, -8),
-    'moss-neg-9': theme-color-level(moss, -9),
-    'moss-neg-10': theme-color-level(moss, -10),
-    'moss-1': theme-color-level(moss, 1),
-    'moss-2': theme-color-level(moss, 2),
-    'moss-3': theme-color-level(moss, 3),
-    'moss-4': theme-color-level(moss, 4),
-    'moss-5': theme-color-level(moss, 5),
-    'moss-6': theme-color-level(moss, 6),
-    'moss-7': theme-color-level(moss, 7),
-    'moss-8': theme-color-level(moss, 8),
-    'moss-9': theme-color-level(moss, 9),
-    'moss-10': theme-color-level(moss, 10),
-    'mustard-neg-1': theme-color-level(mustard, -1),
-    'mustard-neg-2': theme-color-level(mustard, -2),
-    'mustard-neg-3': theme-color-level(mustard, -3),
-    'mustard-neg-4': theme-color-level(mustard, -4),
-    'mustard-neg-5': theme-color-level(mustard, -5),
-    'mustard-neg-6': theme-color-level(mustard, -6),
-    'mustard-neg-7': theme-color-level(mustard, -7),
-    'mustard-neg-8': theme-color-level(mustard, -8),
-    'mustard-neg-9': theme-color-level(mustard, -9),
-    'mustard-neg-10': theme-color-level(mustard, -10),
-    'mustard-1': theme-color-level(mustard, 1),
-    'mustard-2': theme-color-level(mustard, 2),
-    'mustard-3': theme-color-level(mustard, 3),
-    'mustard-4': theme-color-level(mustard, 4),
-    'mustard-5': theme-color-level(mustard, 5),
-    'mustard-6': theme-color-level(mustard, 6),
-    'mustard-7': theme-color-level(mustard, 7),
-    'mustard-8': theme-color-level(mustard, 8),
-    'mustard-9': theme-color-level(mustard, 9),
-    'mustard-10': theme-color-level(mustard, 10)
-);
 
 @each $name, $color in $theme-color-shades {
     .text-#{$name} {

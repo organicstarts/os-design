@@ -2,6 +2,13 @@
 @import "shadows";
 @import "images";
 
+@function color-level($color, $level: 0) {
+    $color-base: if($level > 0, #000, #fff);
+    $level: abs($level);
+  
+    @return mix($color-base, $color, $level * $theme-color-interval);
+  }
+
 @import "gradients";
 @import "grid";
 @import "animations";

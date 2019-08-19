@@ -22,7 +22,23 @@
     padding: 0.78571429em 1.5em 0.78571429em!important;
 }
 .ui.basic.borderless.button, .ui.basic.borderless.button:hover, .ui.basic.borderless.button:focus, .ui.basic.borderless.button:active {
-    padding: 0 1rem;
+    background: transparent!important;
+    padding: 0!important;
     border: none!important;
     box-shadow: none!important;
+}
+
+@each $name, $hex in $semantic-colors {
+    .ui.#{$name}.button {
+        @include BoxShadow(1);
+        transition: background 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    .ui.#{$name}.button:hover, .ui.#{$name}.button:focus {
+        @include BoxShadow(2);
+        background: color-level($hex, -1); // theme-color-level($hex, -5);
+    }
+    .ui.#{$name}.button:active  {
+        @include BoxShadow(3);
+        background: color-level($hex, -2); // theme-color-level($hex, -5);
+    }
 }
