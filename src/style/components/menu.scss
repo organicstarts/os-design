@@ -1,3 +1,21 @@
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-200%)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+.slide-down {
+    animation: slide-down 1s;
+}
+.staggered-fade-up {
+    transform: translateY(200%);
+    opacity: 0
+}
+
 .main-menu {
     top: 0;
     left: 0;
@@ -42,7 +60,7 @@
                     background: transparent;
                     //font-family: $subheader-font;
                     //text-transform: uppercase;
-                    opacity: 0.6;
+                    opacity: 0.75;
                     outline: none;
                     font-weight: 900;
                     transition: all .1s ease-in-out;
@@ -134,9 +152,10 @@
                             &::before, & .row::before {
                                 content: "";
                                 position: absolute;
-                                width: 100%;
-                                height: 100%;
-                                bottom: 70%;
+                                width: 115%;
+                                height: 115%;
+                                bottom: 65%;
+                                left: -10%;
                                 right: 0%;
                                 z-index: 0;
                                 background-image: url("https://triad.imgix.net/os/i/home/bubbles-v2.png?s=12b5e839439f6721fb25a32dc7dd30e3");
@@ -148,8 +167,8 @@
                             & .row::before {
                                 width: 100%;
                                 height: 100%;
-                                bottom: -50%;
-                                left: -30%;
+                                bottom: -40%;
+                                left: -25%;
                                 transform: rotate(-130deg) scale(3);
                             }
                         }
@@ -203,4 +222,9 @@
 
 .pagination .list-group {
     list-style: none;
+}
+
+#CartPill {
+    left: 150%;
+    padding: 0.25rem 0.5rem;
 }

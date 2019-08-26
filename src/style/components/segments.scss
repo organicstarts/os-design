@@ -1,15 +1,19 @@
 /* Segments */
+.ui.segments, *:not(.segments) > .segment {
+    border: none!important;
+}
+.ui.segments > .segment:first-child {
+    border-top: none!important;
+}
+.ui.segments > .segment:last-child {
+    border-bottom: none!important;
+}
 .ui {
-    &.segments &.segment {
-        border: none;
-        box-shadow: none;
-    }
     &.segments, &.segment, &.inverted.segment {
-        border: none;
         @include BoxShadow(1);
 
         &.flat {
-            box-shadow: none;
+            box-shadow: none!important;
         }
         &.lifted {
             @include BoxShadow(6);

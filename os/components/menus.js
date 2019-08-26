@@ -10,16 +10,15 @@ export default class Menus extends Master {
     Main() {
         const $ = require('jquery')
 
-        $("#mainMenu").removeClass("invisible")
+        const mainMenu = document.getElementById("mainMenu")
 
-        if (window.scrollY <= $("#mainMenu").height() - 32) { // 32 Pixels is the difference in top padding between default and slide-down
-            $("#mainMenu")
-                .addClass("position-absolute")
-                .removeClass("bg-white")
-                .removeClass("fixed-top")
-                .removeClass("slide-down")
+        mainMenu.classList.remove("invisible")
+        
+        if (window.scrollY <= mainMenu.offsetHeight - 32) { // 32 Pixels is the difference in top padding between default and slide-down
+            mainMenu.classList.add("position-absolute")
+            mainMenu.classList.remove("bg-white", "fixed-top", "slide-down")
 
-            if (window.innerWidth >= 1024) {
+            if (window.innerWidth <= 1024) {
                 $(".staggered-fade-up").each(function () {
                     $(this).removeClass("staggered-fade-up")
                 })
@@ -38,16 +37,15 @@ export default class Menus extends Master {
             }
         }
 
-        if (window.scrollY >= $("#mainMenu").height() + 96) { // 96 Pixels is the default padding
-            $(".staggered-fade-up").each(function () {
-                $(this).removeClass("staggered-fade-up")
+        if (window.scrollY >= mainMenu.offsetHeight + 96) { // 96 Pixels is the default padding
+            var elements = document.querySelectorAll('.staggered-fade-up')
+                    
+            super.forEachElements(elements, (i, el) => {
+                el.classList.remove("staggered-fade-up")
             })
 
-            $("#mainMenu")
-                .removeClass("position-absolute")
-                .addClass("bg-white")
-                .addClass("fixed-top")
-                .addClass("slide-down")
+            mainMenu.classList.remove("position-absolute")
+            mainMenu.classList.add("bg-white", "fixed-top", "slide-down")
         }
     }
 
@@ -95,7 +93,7 @@ export default class Menus extends Master {
             "extensions": [
                 "border-none",
                 "fx-listitems-drop",
-                "pagedim-black",
+                //"pagedim-black",
                 "position-front",
                 "position-right",
                 "theme-white"
@@ -104,5 +102,4 @@ export default class Menus extends Master {
 
         this.Main()
     }
-
 }

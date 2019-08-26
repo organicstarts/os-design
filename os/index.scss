@@ -92,48 +92,6 @@ $theme-colors:(
     'burly-wood': #DDD76C,
     'goldenrod': #CCC02C
 );
-$theme-color-shades: (
-   'moss-neg-1': theme-color-level(moss, -1),
-   'moss-neg-2': theme-color-level(moss, -2),
-   'moss-neg-3': theme-color-level(moss, -3),
-   'moss-neg-4': theme-color-level(moss, -4),
-   'moss-neg-5': theme-color-level(moss, -5),
-   'moss-neg-6': theme-color-level(moss, -6),
-   'moss-neg-7': theme-color-level(moss, -7),
-   'moss-neg-8': theme-color-level(moss, -8),
-   'moss-neg-9': theme-color-level(moss, -9),
-   'moss-neg-10': theme-color-level(moss, -10),
-   'moss-1': theme-color-level(moss, 1),
-   'moss-2': theme-color-level(moss, 2),
-   'moss-3': theme-color-level(moss, 3),
-   'moss-4': theme-color-level(moss, 4),
-   'moss-5': theme-color-level(moss, 5),
-   'moss-6': theme-color-level(moss, 6),
-   'moss-7': theme-color-level(moss, 7),
-   'moss-8': theme-color-level(moss, 8),
-   'moss-9': theme-color-level(moss, 9),
-   'moss-10': theme-color-level(moss, 10),
-   'mustard-neg-1': theme-color-level(mustard, -1),
-   'mustard-neg-2': theme-color-level(mustard, -2),
-   'mustard-neg-3': theme-color-level(mustard, -3),
-   'mustard-neg-4': theme-color-level(mustard, -4),
-   'mustard-neg-5': theme-color-level(mustard, -5),
-   'mustard-neg-6': theme-color-level(mustard, -6),
-   'mustard-neg-7': theme-color-level(mustard, -7),
-   'mustard-neg-8': theme-color-level(mustard, -8),
-   'mustard-neg-9': theme-color-level(mustard, -9),
-   'mustard-neg-10': theme-color-level(mustard, -10),
-   'mustard-1': theme-color-level(mustard, 1),
-   'mustard-2': theme-color-level(mustard, 2),
-   'mustard-3': theme-color-level(mustard, 3),
-   'mustard-4': theme-color-level(mustard, 4),
-   'mustard-5': theme-color-level(mustard, 5),
-   'mustard-6': theme-color-level(mustard, 6),
-   'mustard-7': theme-color-level(mustard, 7),
-   'mustard-8': theme-color-level(mustard, 8),
-   'mustard-9': theme-color-level(mustard, 9),
-   'mustard-10': theme-color-level(mustard, 10)
-);
 $spacer: 1rem; 
 $enable-rounded: true;
 $enable-shadows: true;
@@ -154,7 +112,7 @@ $grid-breakpoints: (
   md: 768px,
   lg: 1024px,
   xl: 1440px,
-  xxl: 2560px
+  xxl: 2561px
 );
 
 $font-family-base: 'Open Sans', sans-serif; // This is where we switch the global font-family
@@ -228,6 +186,50 @@ $slick-font-path: "../node_modules/slick-carousel/slick/fonts/";
 @import "~slick-carousel/slick/slick";
 @import "~slick-carousel/slick/slick-theme";
 
+
+$theme-color-shades: (
+   'moss-neg-1': theme-color-level(moss, -1),
+   'moss-neg-2': theme-color-level(moss, -2),
+   'moss-neg-3': theme-color-level(moss, -3),
+   'moss-neg-4': theme-color-level(moss, -4),
+   'moss-neg-5': theme-color-level(moss, -5),
+   'moss-neg-6': theme-color-level(moss, -6),
+   'moss-neg-7': theme-color-level(moss, -7),
+   'moss-neg-8': theme-color-level(moss, -8),
+   'moss-neg-9': theme-color-level(moss, -9),
+   'moss-neg-10': theme-color-level(moss, -10),
+   'moss-1': theme-color-level(moss, 1),
+   'moss-2': theme-color-level(moss, 2),
+   'moss-3': theme-color-level(moss, 3),
+   'moss-4': theme-color-level(moss, 4),
+   'moss-5': theme-color-level(moss, 5),
+   'moss-6': theme-color-level(moss, 6),
+   'moss-7': theme-color-level(moss, 7),
+   'moss-8': theme-color-level(moss, 8),
+   'moss-9': theme-color-level(moss, 9),
+   'moss-10': theme-color-level(moss, 10),
+   'mustard-neg-1': theme-color-level(mustard, -1),
+   'mustard-neg-2': theme-color-level(mustard, -2),
+   'mustard-neg-3': theme-color-level(mustard, -3),
+   'mustard-neg-4': theme-color-level(mustard, -4),
+   'mustard-neg-5': theme-color-level(mustard, -5),
+   'mustard-neg-6': theme-color-level(mustard, -6),
+   'mustard-neg-7': theme-color-level(mustard, -7),
+   'mustard-neg-8': theme-color-level(mustard, -8),
+   'mustard-neg-9': theme-color-level(mustard, -9),
+   'mustard-neg-10': theme-color-level(mustard, -10),
+   'mustard-1': theme-color-level(mustard, 1),
+   'mustard-2': theme-color-level(mustard, 2),
+   'mustard-3': theme-color-level(mustard, 3),
+   'mustard-4': theme-color-level(mustard, 4),
+   'mustard-5': theme-color-level(mustard, 5),
+   'mustard-6': theme-color-level(mustard, 6),
+   'mustard-7': theme-color-level(mustard, 7),
+   'mustard-8': theme-color-level(mustard, 8),
+   'mustard-9': theme-color-level(mustard, 9),
+   'mustard-10': theme-color-level(mustard, 10)
+);
+
 @import "../src/style/init";
 
 /* 
@@ -248,16 +250,60 @@ $slick-font-path: "../node_modules/slick-carousel/slick/fonts/";
  * 96px = 6rem
  * 
  */
+ 
 
 @each $name, $color in $theme-color-shades {
     .text-#{$name} {
         color: #{$color}!important;
+    }
+    .text-sm-#{$name} {
+        @include media-breakpoint-up(sm) {
+            color: #{$color}!important;
+        }
+    }
+    .text-md-#{$name} {
+        @include media-breakpoint-up(md) {
+            color: #{$color}!important;
+        }
+    }
+    .text-lg-#{$name} {
+        @include media-breakpoint-up(lg) {
+            color: #{$color}!important;
+        }
+    }
+    .text-xl-#{$name} {
+        @include media-breakpoint-up(xl) {
+            color: #{$color}!important;
+        }
     }
     .bg-#{$name} {
         background-color: #{$color}!important;
     }
     .border-#{$name} {
         border-color: #{$color}!important;
+    }
+}
+
+@each $name, $color in $theme-colors {
+    .text-sm-#{$name} {
+        @include media-breakpoint-up(sm) {
+            color: #{$color}!important;
+        }
+    }
+    .text-md-#{$name} {
+        @include media-breakpoint-up(md) {
+            color: #{$color}!important;
+        }
+    }
+    .text-lg-#{$name} {
+        @include media-breakpoint-up(lg) {
+            color: #{$color}!important;
+        }
+    }
+    .text-xl-#{$name} {
+        @include media-breakpoint-up(xl) {
+            color: #{$color}!important;
+        }
     }
 }
 
@@ -276,21 +322,25 @@ body {
 }
 
 #wrapper > main > header > div:nth-child(1), #wrapper > main > *:nth-child(1):not(header):not(.pt-0) {
-    padding-top: 160px;
+    padding-top: 10rem;
 }
 
 .flex-page {
     width: 100%;
     height: 100%;
     min-height: 75vh;
-    padding-top: 96px!important;
+    padding-top: 6rem!important;
     position: relative;
     & .row {
         height: 100%;
     }
     @include media-breakpoint-up(lg) {
-        padding-top: 161px!important;
+        padding-top: 10rem!important;
     }
+}
+
+.img-fluid {
+    width: 100%;
 }
 
 .bg-404, .bg-404 body {
@@ -303,22 +353,22 @@ body {
 }
 
 img.logo {
-    min-width: 200px;
-    width: 200px;
-    max-width: 200px;
+    min-width: 12.5rem;
+    width: 12.5rem;
+    max-width: 12.5rem;
     height: auto;
 }
 
 img.icon {
-    min-width: 50px;
-    width: 50px;
-    max-width: 50px;
+    min-width: 3.125rem;
+    width: 3.125rem;
+    max-width: 3.125rem;
     height: auto;
 }
 
 .cover {
     height: 100vh;
-    min-height: 900px;
+    min-height: 56.25rem;
     overflow: hidden;
 }
 
@@ -340,10 +390,9 @@ img.icon {
     & .product-slide {
         padding: 0.5rem;
         width: 100%;
-        max-width: 300px;
-        height: 400px;
-        max-height: 400px;
-        min-height: 400px;
+        max-width: 25rem;
+        height: 25rem;
+        min-height: 25rem;
         transition: transform .15s ease-out;
         /*
         @include media-breakpoint-up(sm) {
@@ -361,7 +410,7 @@ img.icon {
         &:hover {
             transform: translateY(-1rem);
         }
-        & div, & .slide {
+        & .slide {
             width: 100%;
             height: 100%;
             margin: 0!important;
@@ -373,11 +422,15 @@ img.icon {
 }
 
 .max-w-350 {
-    max-width: 350px;
+    max-width: 21.875rem;
 }
 
 .max-w-500 {
-    max-width: 500px;
+    max-width: 31.25rem;
+}
+
+.card-figure {
+    min-height: 50%; /* 15.625rem;*/
 }
 
 .card-image.lazyload, .card-image.lazyloading {
@@ -392,4 +445,30 @@ img.icon {
     // stylelint-disable-next-line property-blacklist
     border-radius: 50%;
     animation: spinner-border .75s linear infinite;
+}
+
+.top.left.ribbon {
+    position: absolute;
+    height: 2.5rem;
+    padding: 0.6875rem;
+    font-size: 1rem;
+    line-height: 1;
+    text-align: center;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 75%;
+    top: 20%;
+    left: -20%;
+    @include media-breakpoint-up(sm) {
+        -webkit-transform: rotate(-35deg);
+        transform: rotate(-35deg);
+        font-size: 1.25rem;
+        width: 60%;
+        top: 15%;
+        left: -15%;
+    }
+}
+
+.rounded-pill {
+    border-radius: 1rem!important;
 }

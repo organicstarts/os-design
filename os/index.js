@@ -4,6 +4,7 @@ import Modals from "./components/modals"
 import Swipes from "./components/swipes"
 import Products from "./components/products"
 import Scrolls from "./components/scrolls"
+import Cart from "./components/cart"
 
 class Public extends Master {
 
@@ -16,7 +17,8 @@ class Public extends Master {
 
   Start() {
     const Menu = new Menus(),
-      Scrolly = new Scrolls()
+          Scrolly = new Scrolls(),
+          Carts = new Cart()
 
     var Breakpoints = {
       Mobile: 425,
@@ -33,15 +35,17 @@ class Public extends Master {
         Scrolly.Init()
         Scrolly.Animate('ready')
 
-        this.jQuery(window).scroll(function () {
+        this.jQuery(window).scroll(() => {
           Scrolly.Animate('scroll')
         })
       }
 
       Menu.Init(window.innerWidth > Breakpoints.Tablet ? false : true)
+
+      Carts.Init()
     })
 
-    this.jQuery(window).scroll(function () {
+    this.jQuery(window).scroll(() => {
       Menu.Main()
     })
   }

@@ -9,7 +9,7 @@ export default class Swipes extends Master {
   Swipey(className, options) {
     var elements = document.querySelectorAll(className)
     if (elements) {
-      this.forEachElements(elements, function (i, el) {
+      this.forEachElements(elements, (i, el) => {
         var Flickity = require('flickity')
         new Flickity(el, options)
       })
@@ -19,7 +19,7 @@ export default class Swipes extends Master {
   EasySwipey(className, selector, infinite, speed) {
     var elements = document.querySelectorAll(className)
     if (elements) {
-      this.forEachElements(elements, function (i, el) {
+      this.forEachElements(elements, (i, el) => {
         var Flickity = require('flickity')
         new Flickity(el, {
           cellAlign: 'left',
@@ -35,12 +35,12 @@ export default class Swipes extends Master {
   Products() {
     var elements = document.querySelectorAll('.product-carousel')
     if (elements) {
-      super.forEachElements(elements, function (i, el) {
+      super.forEachElements(elements, (i, el) => {
         var Flickity = require('flickity'),
             wrap = (el.getAttribute('data-wrap') === 'true'),
             align = el.getAttribute('data-align')
             
-        console.log(wrap)
+        //console.log(wrap)
         new Flickity(el, {
           adaptiveHeight: false,
           autoPlay: 5000,
