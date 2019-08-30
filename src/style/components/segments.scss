@@ -10,6 +10,7 @@
 }
 .ui {
     &.segments, &.segment, &.inverted.segment {
+        border-radius: 0.5rem;
         @include BoxShadow(1);
 
         &.flat {
@@ -33,5 +34,10 @@
     }
     &.segment, &.inverted.segment {
         padding: 1rem;
+    }
+    &.segments {
+        border-radius: 0.5rem;
+        overflow: hidden;
+        border: none!important;
     }
 }

@@ -60,7 +60,8 @@ export default class Swipes extends Master {
 
     $('.category-carousel').slick({
       mobileFirst: true,
-      autoplay: false,
+      autoplay: true,
+      autoplaySpeed: 3000,
       infinite: true,
       swipeToSlide: true,
       touchThreshold: 10,

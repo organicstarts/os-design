@@ -8,8 +8,6 @@ export default class Menus extends Master {
     }
 
     Main() {
-        const $ = require('jquery')
-
         const mainMenu = document.getElementById("mainMenu")
 
         mainMenu.classList.remove("invisible")
@@ -19,28 +17,24 @@ export default class Menus extends Master {
             mainMenu.classList.remove("bg-white", "fixed-top", "slide-down")
 
             if (window.innerWidth <= 1024) {
-                $(".staggered-fade-up").each(function () {
-                    $(this).removeClass("staggered-fade-up")
+                const staggedElements = document.querySelectorAll('.staggered-fade-up')
+                super.forEachElements(staggedElements, (i, el) => {
+                    el.classList.remove("staggered-fade-up")
                 })
             } else {
-                $(".staggered-fade-up").each(function (i) {
-                    var $item = $(this)
-
+                const staggedElements = document.querySelectorAll('.staggered-fade-up')
+                super.forEachElements(staggedElements, (i, el) => {
                     setTimeout(function () {
-
-                        $item
-                            .addClass("animated fadeInDown")
-                            .removeClass("staggered-fade-up")
-
+                        el.classList.add("animated", "fadeInDown")
+                        el.classList.remove("staggered-fade-up")
                     }, 150 * i)
                 })
             }
         }
 
         if (window.scrollY >= mainMenu.offsetHeight + 96) { // 96 Pixels is the default padding
-            var elements = document.querySelectorAll('.staggered-fade-up')
-                    
-            super.forEachElements(elements, (i, el) => {
+            const staggedElements = document.querySelectorAll('.staggered-fade-up')
+            super.forEachElements(staggedElements, (i, el) => {
                 el.classList.remove("staggered-fade-up")
             })
 
@@ -50,11 +44,13 @@ export default class Menus extends Master {
     }
 
     Init(mobile) {
-        document.getElementById('AccountLink').href = mobile ? '#accountMenu' : '/account.php'
+        // Todo: Account Drawer
+        //document.getElementById('AccountLink').href = mobile ? '#accountMenu' : '/account.php'
         
         if (mobile) {
             document.getElementById('mainMobileMenu').classList.remove('d-none')
-            document.getElementById('accountMenu').classList.remove('d-none')
+            // Todo: Account Drawer
+            //document.getElementById('accountMenu').classList.remove('d-none')
 
             //Mmenu.configs.classNames.selected = "active"
             //Mmenu.configs.offCanvas.page.selector = "#wrapper"
@@ -71,34 +67,35 @@ export default class Menus extends Master {
                 ]
             })
 
-            new Mmenu("#accountMenu", {
-                navbar: false,
-                "extensions": [
-                    "border-none",
-                    "fx-listitems-drop",
-                    "fullscreen",
-                    "pagedim-black",
-                    "position-front",
-                    "position-bottom",
-                    "theme-white"
+            // Todo: Account Drawer
+            // new Mmenu("#accountMenu", {
+            //     navbar: false,
+            //     "extensions": [
+            //         "border-none",
+            //         "fx-listitems-drop",
+            //         "fullscreen",
+            //         "pagedim-black",
+            //         "position-front",
+            //         "position-bottom",
+            //         "theme-white"
 
-                ]
-            })
+            //     ]
+            // })
 
         }
 
-        document.getElementById('cartMenu').classList.remove('d-none')
-        new Mmenu("#cartMenu", {
-            navbar: false,
-            "extensions": [
-                "border-none",
-                "fx-listitems-drop",
-                //"pagedim-black",
-                "position-front",
-                "position-right",
-                "theme-white"
-            ]
-        })
+        // document.getElementById('cartMenu').classList.remove('d-none')
+        // new Mmenu("#cartMenu", {
+        //     navbar: false,
+        //     "extensions": [
+        //         "border-none",
+        //         "fx-listitems-drop",
+        //         //"pagedim-black",
+        //         "position-front",
+        //         "position-right",
+        //         "theme-white"
+        //     ]
+        // })
 
         this.Main()
     }

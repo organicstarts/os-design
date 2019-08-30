@@ -88,7 +88,7 @@
                             background: #fff;
                             box-shadow: 0 1.5rem 4rem rgba(22,28,45,.15);
                             border: 0 solid rgba(22,28,45,.15);
-                            border-radius: .375rem;
+                            border-radius: 1rem;
                         }
                         .dropdown-item:not(.button) {
                             color: #000;
@@ -113,16 +113,16 @@
                             background-position:center center;
                         }
                         .dropdown-image-top {
-                            border-top-left-radius: .375rem;
-                            border-top-right-radius: .375rem;
+                            border-top-left-radius: 1rem;
+                            border-top-right-radius: 1rem;
                         }
                         .dropdown-image-left {
-                            border-top-left-radius: .375rem;
-                            border-bottom-left-radius: .375rem;
+                            border-top-left-radius: 1rem;
+                            border-bottom-left-radius: 1rem;
                         }
                         .dropdown-image-right {
-                            border-top-right-radius: .375rem;
-                            border-bottom-right-radius: .375rem;
+                            border-top-right-radius: 1rem;
+                            border-bottom-right-radius: 1rem;
                         }
                     }
                     
@@ -224,7 +224,127 @@
     list-style: none;
 }
 
-#CartPill {
+// Cart Stuff
+.cart-sidebar {
+    background: #fff;
+    @include BoxShadow(24);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: fixed;
+    right: 0;
+    width: 80%;
+    min-width: 240px;
+    max-width: 440px;
+    height: 100vh;
+    top: 0;
+    overflow: hidden;
+    @media (min-width: 1024px) and (min-height: 900px) {
+        max-height: 768px;
+        top: auto;
+        right: 1rem;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        transform: translateY(0%);
+        animation: cart-slide-up 0.5s ease;
+    }
+    bottom: 0;
+    left: auto;
+    right: 0;
+    z-index: 99;
+    opacity: 1;
+    transform: translateX(0%);
+    animation: cart-slide-left 0.5s ease;
+    transition: all 0.5s ease;
+    &.offcanvas {
+        opacity: 0;
+        transform: translateX(100%);
+        animation: slide-right 0.5s ease;
+        @media (min-width: 1024px) and (min-height: 900px) {
+            transform: translateY(100%);
+            animation: cart-slide-down 0.5s ease;
+        }
+    }
+    & .cart-wrapper {
+        position: relative;
+    }
+    & .cart-contained {
+        height: 100%;
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+    & .cart-top, & .cart-bottom {
+        background: #fff;
+        display: block;
+        position: fixed;
+        opacity: 1;
+        height: auto;
+        width: 100%;
+        min-width: 240px;
+        max-width: 440px;
+        transform: none;
+        z-index: 100;
+        &:after {
+            display: none;
+        }
+    }
+    & .cart-top {
+        top: 0;
+        bottom: auto;
+    }
+    & .cart-bottom {
+        bottom: 0;
+        top: auto;
+    }
+}
+@keyframes cart-slide-right {
+    0% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+@keyframes cart-slide-left {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@keyframes cart-slide-down {
+    0% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+@keyframes cart-slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+#cartPill {
     left: 150%;
+    border-radius: 99rem;
     padding: 0.25rem 0.5rem;
+}
+.max-h-100 {
+    width: auto;
+    max-height: 100px;
 }

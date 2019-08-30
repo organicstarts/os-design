@@ -1,138 +1,203 @@
 import Master from "./index"
+import utils from '@bigcommerce/stencil-utils';
 
 export default class Cart extends Master {
 
-    constructor() {
-        super();
-    }
+  constructor() {
+    super()
 
-    ParseData() {
-      console.log(data);
-      let htmlArray = [`<ul class="list-unstyled m-2">`];
-      data.map(x => {
-        x.lineItems.physicalItems.map(el => {
-          htmlArray.push(
-            `<li class="border-bottom mt-2">
-              <div class="row">
-                <div class="col-2 text-center"><img src=${el.imageUrl} class="img-fluid" style="max-height: 75px;" alt="product"/></div>
-                <div class="col"> 
-                <strong>${el.brand}</strong> <br/> 
-                <p>${el.name} <br/>
-                ${el.quantity} x $${el.salePrice} 
-                </p>
+    this.overlay = document.getElementById('cartLoader')
+    this.sidebar = document.getElementById('cartMenu')
+    this.header = document.querySelector('.cart-top')
+    this.container = document.querySelector('.cart-contained')
+    this.footer = document.querySelector('.cart-bottom')
+    this.counter = document.getElementById("cartPill")
+    this.content = document.getElementById("cartItems")
+  }
+
+  ParseData(products) {
+    let items = []
+    products.map(product => {
+      items.push(
+        `<div class="border-bottom p-2">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-2 text-center m-0">
+                <a href="${product.url}" class="link-unstyled">
+                  <img src=${product.imageUrl} class="mx-auto max-h-100" alt="${product.brand}: ${product.name}">
+                </a>
+              </div>
+              <div class="col-10 m-0">
+                <a href="${product.url}" class="link-unstyled">
+                  <p class="lead small m-0"><strong>${product.brand}</strong></p>
+                  <p>${product.name}</p>
+                </a>
+                <div class="row">
+                  <div class="col-6 m-0">
+                    <a href="#" class="link-unstyled rfc" data-product-id="${product.id}" onclick="oSx.RemoveFromCart(this);return false;"><small>REMOVE</small></a>
+                  </div>
+                  <div class="col-6 text-right m-0">
+                    <strong>$${product.salePrice}</strong>
+                  </div>
                 </div>
-                </div>
-              </li>`
-          );
-        });
-      });
-      htmlArray.push("</ul>");
-      //href="{{urls.cart}}"
-      htmlArray.push(
-        `<section class="ui segment text-center bg-moss m-2"><a href="http://localhost:3000/cart.php" class="button button--small button--action">View Cart</a></section>`
-      );
-      // console.log(htmlArray);
-      return htmlArray.join("");
+              </div>
+            </div>
+          </div>`
+      )
+    })
+    return items
+  }
+
+  Init() {
+    this.Refresh()
+
+    const parent = this
+    
+    const cartButtons = document.querySelectorAll('.toggle-cart')
+    if (cartButtons) {
+        super.forEachElements(cartButtons, (i, el) => {
+            el.addEventListener('click', () => {
+              this.sidebar.classList.remove('invisible') // FOUC Protection
+              this.sidebar.classList.toggle('offcanvas')
+            })
+        })
     }
 
-    Init() {
-      this.jQuery(".card-atc").click((e) => {
-        e.preventDefault();
+    const atcButtons = document.querySelectorAll('.card-atc')
+    if (atcButtons) {
+      super.forEachElements(atcButtons, (i, el) => {
+        const atcId = el.getAttribute('data-product-id')
 
-        const url = this.jQuery(this).data("src");
-        this.jQuery.get(url).then(x => {
-          console.log(x);
-          const num =
-            + this.jQuery(".countPill.cart-quantity.countPill--positive")[0].innerHTML + 1;
-            this.jQuery(".countPill.cart-quantity.countPill--positive")[0].innerHTML = num;
-            
-        });
-      });
+        el.addEventListener('click', (e) => {
+          e.preventDefault()
+          
+          this.overlay.classList.remove('d-none')
+          parent.Add(atcId)
+        })
+      })
     }
 
-    Add(id) {
-      
-    }
+    this.container.style.maxHeight = ((window.innerWidth > 1024 && window.innerHeight > 900 ? 768 : window.innerHeight) - this.header.offsetHeight - this.footer.offsetHeight) + "px"
+    this.container.style.marginTop = this.header.offsetHeight + "px"
 
-    Update() {
-      $("#CartDrawer").on("click", function() {
-          $.get("http://localhost:3000/api/storefront/cart")
-          .then(data => {
-              const tempData = [];
-              tempData.push(
-              {
-                  lineItems: {
-                  physicalItems: [
-                      {
-                      brand: "Hipp",
-                      couponAmount: 0,
-                      discountAmount: 0,
-                      discounts: [],
-                      extendedListPrice: 36.99,
-                      extendedSalePrice: 36.99,
-                      giftWrapping: null,
-                      id: "3bdc6b30-0509-4ec4-88e2-b3270868278a",
-                      imageUrl:
-                          "https://cdn11.bigcommerce.com/s-od28hnj6la/products/97/images/294/hipp-kindermilch-1__23582__15457.1517412804.190.285.jpg?c=2",
-                      isShippingRequired: true,
-                      isTaxable: true,
-                      listPrice: 36.99,
-                      name:
-                          "HiPP 1+ Years Combiotic Childrens' Milk (Kindermilch) Formula (600g)",
-                      parentId: null,
-                      productId: 97,
-                      quantity: 1,
-                      salePrice: 36.99,
-                      sku: "HP1P",
-                      type: "physical",
-                      url:
-                          "https://sandbox54.mybigcommerce.com/hipp-1-plus-combiotic-milk-formula/",
-                      variantId: 69
-                      }
-                  ]
-                  }
-              },
-              {
-                  lineItems: {
-                  physicalItems: [
-                      {
-                      brand: "Lebenswert",
-                      couponAmount: 0,
-                      discountAmount: 0,
-                      discounts: [],
-                      extendedListPrice: 89.97,
-                      extendedSalePrice: 89.97,
-                      giftWrapping: null,
-                      id: "4ba8760b-7081-49ff-bf84-6959be0b2a06",
-                      imageUrl:
-                          "https://cdn11.bigcommerce.com/s-od28hnj6la/products/86/images/681/lebenswert-stage-1__41188__49976.1563893757.190.285.png?c=2",
-                      isShippingRequired: true,
-                      isTaxable: true,
-                      listPrice: 29.99,
-                      name:
-                          "Lebenswert Stage 1 Organic (Bio) Infant Milk Formula (500g)",
-                      parentId: null,
-                      productId: 86,
-                      quantity: 3,
-                      salePrice: 29.99,
-                      sku: "LB-1",
-                      type: "physical",
-                      url:
-                          "https://sandbox54.mybigcommerce.com/lebenswert/stage-1/product",
-                      variantId: 66
-                      }
-                  ]
-                  }
-              }
-              );
-              // if (data.length < 1) {
-              //   $("#cartItems")[0].innerHTML = "your cart is empty";
-              // } else {
-              const cartHTML = parseData(tempData);
-              $("#cartItems")[0].innerHTML = cartHTML;
-              // }
+    window.addEventListener("resize", () => {
+      this.container.style.maxHeight = ((window.innerWidth > 1024 && window.innerHeight > 900 ? 768 : window.innerHeight) - this.header.offsetHeight - this.footer.offsetHeight) + "px"
+      this.container.style.marginTop = this.header.offsetHeight + "px"
+    })
+
+    this.overlay.classList.add('d-none')
+  }
+
+  RemoveFromCart(el) {
+    const rfcId = el.getAttribute('data-product-id')
+    this.overlay.classList.remove('d-none')
+    this.Remove(rfcId)
+  }
+
+  Add(id) {
+    //this.$overlay.show(); // ADD CART OVERLAY
+    const data = new FormData()
+    data.append("product_id", id);
+    data.append("qty", 1);
+    utils.api.cart.itemAdd(data, (err, response) => {
+      if (!err) {
+        this.Refresh()
+        this.sidebar.classList.remove('invisible') // FOUC Protection
+        this.sidebar.classList.toggle('offcanvas')
+      } else {
+        console.log('Send the following to tech@organicstart.com for a gift:\n' + err)
+        this.Swal({
+          title: 'Internal Error',
+          text: 'Sorry, please try again or contact support.',
+          type: 'error',
+        })
+      }
+    })
+  }
+
+  Remove(itemId) {
+    utils.api.cart.itemRemove(itemId, (err, response) => {
+        if (response.data.status === 'succeed') {
+          this.Refresh()
+        } else {
+          console.log('Send the following to tech@organicstart.com for a gift:\n' + err)
+          this.Swal({
+            title: 'Internal Error',
+            text: 'Sorry, please try again or contact support.',
+            type: 'error',
           })
-          .catch(err => console.log(err.message));
-      });
+        }
+    })
+  }
+
+  Refresh() {
+    this.jQuery.get("/api/storefront/cart").then(data => {
+              
+      if (data.length > 0) {
+        const cart = data[0],
+              products = cart.lineItems.physicalItems
+        
+        var totalQuantity = 0
+        
+        let html = this.ParseData(products)
+
+        products.map(product => {
+          totalQuantity = totalQuantity + product.quantity
+        })
+
+        // Pill Quantity Counter
+        this.counter.innerHTML = totalQuantity
+        this.counter.classList.remove("invisible")
+        this.counter.classList.add("animated", "bounceIn")
+        
+        html.push(
+          `<div class="row m-0 px-2 pt-2 pb-1">
+            <div class="col-6 m-0">
+              <strong class="text-uppercase text-gray-600">Subtotal</strong>
+            </div>
+            <div class="col-6 text-right m-0 text-gray-800">
+              $${cart.baseAmount.toFixed(2)}
+            </div>
+          </div>
+          <div class="row m-0 px-2 py-1">
+            <div class="col-6 m-0">
+              <strong class="text-uppercase text-gray-600">Shipping</strong>
+            </div>
+            <div class="col-6 text-right m-0 text-gray-800">
+              FREE
+            </div>
+          </div>
+          <div class="row m-0 px-2 py-1 d-none">
+            <div class="col-6 m-0">
+              <strong class="text-uppercase text-gray-600">Discounts</strong>
+            </div>
+            <div class="col-6 text-right m-0 text-gray-800">
+              ${cart.discountAmount == 0 ? '<a href="#">ADD CODE</a>' : '$' + cart.cartAmount.toFixed(2)}
+            </div>
+          </div>
+          <div class="row m-0 px-2 pt-1 pb-2">
+            <div class="col-6 m-0">
+              <strong class="text-uppercase text-gray-600">Total</strong>
+            </div>
+            <div class="col-6 h6 text-right text-gray-800">
+              $${cart.cartAmount.toFixed(2)}
+            </div>
+          </div>`
+        )
+
+        this.footer.classList.remove('invisible')
+        
+        this.content.innerHTML = html.join("")
+      } else {
+        this.counter.classList.add('invisible')
+        this.footer.classList.add('invisible')
+        this.content.innerHTML = `<div class="p-2"><img src="https://triad.imgix.net/os/i/basket.png?s=c28539ed8dcafa3533211257fc0bea16" alt="Empty Shopping Basket" class="ui medium image img-fluid mx-auto"><p class="text-center"><strong>Your shopping basket is empty.</strong></p></div>`
+      }
+
+      var d = new Date(),
+          months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+      document.getElementById('cart-date').innerHTML = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`
+
+      this.overlay.classList.add('d-none')
+    }).catch(err => console.log(err.message))
   }
 }

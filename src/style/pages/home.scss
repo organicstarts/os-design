@@ -50,77 +50,77 @@
     color: theme-color(gray);
 }
 
-.bg-featured {
-    position: relative;
-}
-.bg-featured::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
+// .bg-featured {
+//     position: relative;
+// }
+// .bg-featured::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     width: 100%;
+//     height: 100%;
 
-    @include Background(
-        "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=320&q=1&s=8fdd6301fcbeeb0073a4ea9626cf08ed",
-        "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=320&q=1&dpr=1.5&s=4fa0d4e49e274a7125ac25f5ecae1ecf",
-        "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=320&q=1&dpr=2&s=3c9811b4a7544714bcfd428155ba989d",
-        "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=320&q=1&dpr=3&s=6d208a1ff63f548379abedf93015d450",
-        "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=320&q=1&dpr=4&s=8379d3556404d5bc7d355695393fce81"
-    );
-    @include media-breakpoint-up(sm) {
-        @include Background(
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=560&q=1&s=af48c80aca4d11fadf6d1f5957c8d38c",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=560&q=1&dpr=1.5&s=2891396e5be7d462d638fcc1b3f40d16",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=560&q=1&dpr=2&s=e692da2a725d557a987c6322e631d01d",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=560&q=1&dpr=3&s=1ec6a02c3b3ce5de1eac5bc962f927fa",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=560&q=1&dpr=4&s=0b4a702006eb0e475fa6b4e86ddf1ce1"
-        );
-    }
-    @include media-breakpoint-up(md) {
-        @include Background(
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=768&q=1&s=0ece98be7dff2a32ebe0ba41c21a7b9e",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=768&q=1&dpr=1.5&s=927943b04a2b59c246ad667f7d0102d8",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=768&q=1&dpr=2&s=ee4a75289e4205e5c5c6cb95037f4538",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=768&q=1&dpr=3&s=5fffcf7c687ea58b01ddaa95a1d754a5",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=768&q=1&dpr=4&s=e616ccbdcbc70fe29b201646f395f09d"
-        );
-    }
-    @include media-breakpoint-up(lg) {
-        @include Background(
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1024&q=1&s=eedb5535b6a3ab3b26e2aef0f786117a",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1024&q=1&dpr=1.5&s=914e515511ec05052abccdcb782ccbe1",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1024&q=1&dpr=2&s=7bfb8fae251194aa781772a61d7ed208",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1024&q=1&dpr=3&s=c3178da870e31c4c7ba1eb2a89a46924",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1024&q=1&dpr=4&s=36eac5ffa3d0ed2e4b5af565ed2225f0"
-        );
-    }
-    @include media-breakpoint-up(xl) {
-        @include Background(
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1440&q=1&s=ae3295567b6b94ee5d05020841b37fbd",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1440&q=1&dpr=1.5&s=feecb9dacb77abe6db4bea11d3ceca6b",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1440&q=1&dpr=2&s=eb467a9c44f44b53ee964706783bdaa2",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1440&q=1&dpr=3&s=d5a3916d2faa723f6ac0510f1cd5b04c",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1440&q=1&dpr=4&s=38e653a7bd706ef4fb1161d375c87b6a"
-        );
-    }
-    @include media-breakpoint-up(xxl) {
-        @include Background(
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=2560&q=1&s=bcd6c52bb94e928c7154d410bf02a37b",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=2560&q=1&dpr=1.5&s=e726becda33fff66308f5f8dc6fce7f3",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=2560&q=1&dpr=2&s=75f02c5863f0a4dddbe6c61b9646e709",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=2560&q=1&dpr=3&s=739f454322cd8bedf4f5248241a42e3e",
-            "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=2560&q=1&dpr=4&s=e74d32ca5d3cdd4e41e53c5d6ffee8db"
-        );
-    }
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    opacity: 0.25;
-    z-index: 0;
-}
+//     @include Background(
+//         "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=320&q=1&s=8fdd6301fcbeeb0073a4ea9626cf08ed",
+//         "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=320&q=1&dpr=1.5&s=4fa0d4e49e274a7125ac25f5ecae1ecf",
+//         "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=320&q=1&dpr=2&s=3c9811b4a7544714bcfd428155ba989d",
+//         "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=320&q=1&dpr=3&s=6d208a1ff63f548379abedf93015d450",
+//         "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=320&q=1&dpr=4&s=8379d3556404d5bc7d355695393fce81"
+//     );
+//     @include media-breakpoint-up(sm) {
+//         @include Background(
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=560&q=1&s=af48c80aca4d11fadf6d1f5957c8d38c",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=560&q=1&dpr=1.5&s=2891396e5be7d462d638fcc1b3f40d16",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=560&q=1&dpr=2&s=e692da2a725d557a987c6322e631d01d",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=560&q=1&dpr=3&s=1ec6a02c3b3ce5de1eac5bc962f927fa",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=560&q=1&dpr=4&s=0b4a702006eb0e475fa6b4e86ddf1ce1"
+//         );
+//     }
+//     @include media-breakpoint-up(md) {
+//         @include Background(
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=768&q=1&s=0ece98be7dff2a32ebe0ba41c21a7b9e",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=768&q=1&dpr=1.5&s=927943b04a2b59c246ad667f7d0102d8",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=768&q=1&dpr=2&s=ee4a75289e4205e5c5c6cb95037f4538",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=768&q=1&dpr=3&s=5fffcf7c687ea58b01ddaa95a1d754a5",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=768&q=1&dpr=4&s=e616ccbdcbc70fe29b201646f395f09d"
+//         );
+//     }
+//     @include media-breakpoint-up(lg) {
+//         @include Background(
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1024&q=1&s=eedb5535b6a3ab3b26e2aef0f786117a",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1024&q=1&dpr=1.5&s=914e515511ec05052abccdcb782ccbe1",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1024&q=1&dpr=2&s=7bfb8fae251194aa781772a61d7ed208",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1024&q=1&dpr=3&s=c3178da870e31c4c7ba1eb2a89a46924",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1024&q=1&dpr=4&s=36eac5ffa3d0ed2e4b5af565ed2225f0"
+//         );
+//     }
+//     @include media-breakpoint-up(xl) {
+//         @include Background(
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1440&q=1&s=ae3295567b6b94ee5d05020841b37fbd",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1440&q=1&dpr=1.5&s=feecb9dacb77abe6db4bea11d3ceca6b",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1440&q=1&dpr=2&s=eb467a9c44f44b53ee964706783bdaa2",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1440&q=1&dpr=3&s=d5a3916d2faa723f6ac0510f1cd5b04c",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=1440&q=1&dpr=4&s=38e653a7bd706ef4fb1161d375c87b6a"
+//         );
+//     }
+//     @include media-breakpoint-up(xxl) {
+//         @include Background(
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=2560&q=1&s=bcd6c52bb94e928c7154d410bf02a37b",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=2560&q=1&dpr=1.5&s=e726becda33fff66308f5f8dc6fce7f3",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=2560&q=1&dpr=2&s=75f02c5863f0a4dddbe6c61b9646e709",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=2560&q=1&dpr=3&s=739f454322cd8bedf4f5248241a42e3e",
+//             "https://triad.imgix.net/os/i/home/featured-bg.jpeg?w=2560&q=1&dpr=4&s=e74d32ca5d3cdd4e41e53c5d6ffee8db"
+//         );
+//     }
+//     background-size: cover;
+//     background-position: center center;
+//     background-repeat: no-repeat;
+//     opacity: 0.25;
+//     z-index: 0;
+// }
 // .bg-featured::before::before {
 //     content: '';
 //     position: absolute;
@@ -250,6 +250,9 @@
         font-weight: 900;
         @include TextShadow(6);
     }
+    &.powder-nest:before,
+    &.powder-nest .pn-left,
+    &.powder-nest .pn-right,
     &.baby-care::before, 
     &.baby-care .suds,
     &.baby-care .bubbles-left,
@@ -280,52 +283,70 @@
         z-index: 0;
         background-repeat: no-repeat!important;
     }
-    &.baby-care .suds {
-        width: 110%;
-        height: 110%;
-        top: -5%;
-        left: -5%;
-        background: url("https://triad.imgix.net/os/i/home/categories/baby-care-cloud.png?s=da4d8ab356d686caaaa92b14b9cbdcbe");
-        background-size: contain;
-        background-position: center center;
+    &.powder-nest {
+        & .pn-left {
+            width: 50%;
+            height: 50%;
+            top: auto;
+            bottom: -5%;
+            left: -8%;
+            right: auto;
+            z-index: 4;
+            background: url("https://triad.imgix.net/os/i/home/pn-left.png?s=92d1acd78e249590df873454529418a0");
+            background-size: contain;
+            background-position: center center;
+        }
+        & .pn-right {
+            width: 80%;
+            height: 80%;
+            top: auto;
+            bottom: -5%;
+            left: auto;
+            right: -10%;
+            background: url("https://triad.imgix.net/os/i/home/pn-right.png?s=74ef6ef9fc1c85ed9f3bfcae379a37cb");
+            background-size: contain;
+            background-position: center center;
+        }
     }
-    &.baby-care .bubbles-left {
-        width: 125px;
-        height: 157px;
-        top: calc(50% - (157px / 2));
-        left: -10%;
-        background: url("https://triad.imgix.net/os/i/home/categories/baby-care-bubble-left.png?s=131d49cb528562948634531e72222ea9");
-        background-size: contain;
-        background-position: center center;
-    }
-    &.baby-care .bubbles-middle {
-        width: 100px;
-        height: 86px;
-        top: 50%;
-        left: calc(50% - (100px / 2));
-        background: url("https://triad.imgix.net/os/i/home/categories/baby-care-bubble-middle.png?s=3165b46f8fb00b0e229fb7e35a7faa25");
-        background-size: contain;
-        background-position: center center;
-    }
-    &.baby-care .bubbles-right {
-        width: 81px;
-        height: 122px;
-        top: calc(50% - (122px / 2));
-        left: auto;
-        right: -5%;
-        background: url("https://triad.imgix.net/os/i/home/categories/baby-care-bubble-right.png?s=598cd044506bc557498448d6fba24d9d");
-        background-size: contain;
-        background-position: right center;
-    }
-    &.baby-care .suds {
-        width: 110%;
-        height: 110%;
-        top: -5%;
-        left: -5%;
-        background: url("https://triad.imgix.net/os/i/home/categories/baby-care-cloud.png?s=da4d8ab356d686caaaa92b14b9cbdcbe");
-        background-size: contain;
-        background-position: bottom center;
-    }
+    &.baby-care {
+        & .suds {
+            width: 110%;
+            height: 110%;
+            top: -5%;
+            left: -5%;
+            background: url("https://triad.imgix.net/os/i/home/categories/baby-care-cloud.png?s=da4d8ab356d686caaaa92b14b9cbdcbe");
+            background-size: contain;
+            background-position: bottom center;
+        }
+        & .bubbles-left {
+            width: 125px;
+            height: 157px;
+            top: calc(50% - (157px / 2));
+            left: -5%;
+            background: url("https://triad.imgix.net/os/i/home/categories/baby-care-bubble-left.png?s=131d49cb528562948634531e72222ea9");
+            background-size: contain;
+            background-position: center center;
+        }
+        & .bubbles-middle {
+            width: 100px;
+            height: 86px;
+            top: 50%;
+            left: calc(50% - (100px / 2));
+            background: url("https://triad.imgix.net/os/i/home/categories/baby-care-bubble-middle.png?s=3165b46f8fb00b0e229fb7e35a7faa25");
+            background-size: contain;
+            background-position: center center;
+        }
+        & .bubbles-right {
+            width: 81px;
+            height: 122px;
+            top: calc(50% - (122px / 2));
+            left: auto;
+            right: -5%;
+            background: url("https://triad.imgix.net/os/i/home/categories/baby-care-bubble-right.png?s=598cd044506bc557498448d6fba24d9d");
+            background-size: contain;
+            background-position: right center;
+        }
+    } 
     &.baby-food .food {
         width: 110%;
         height: 110%;
@@ -335,97 +356,105 @@
         background-size: contain;
         background-position: bottom center;
     }
-    &.clothes .cotton-left {
-        width: 50%;
-        height: 50%;
-        top: auto;
-        bottom: -5%;
-        left: -10%;
-        right: auto;
-        background: url("https://triad.imgix.net/os/i/home/categories/clothes-left.png?s=eeaa8851a38621ba3aefb828810d329a");
-        background-size: contain;
-        background-position: center center;
+    &.clothes {
+        & .cotton-left {
+            width: 50%;
+            height: 50%;
+            top: auto;
+            bottom: -5%;
+            left: -10%;
+            right: auto;
+            background: url("https://triad.imgix.net/os/i/home/categories/clothes-left.png?s=eeaa8851a38621ba3aefb828810d329a");
+            background-size: contain;
+            background-position: center center;
+        }
+        & .cotton-right {
+            width: 80%;
+            height: 80%;
+            top: auto;
+            bottom: -5%;
+            left: auto;
+            right: -5%;
+            background: url("https://triad.imgix.net/os/i/home/categories/clothes-right.png?s=f213da5aa0aa481ecb9a564e90c9c7d1");
+            background-size: contain;
+            background-position: center center;
+        }
+    } 
+    &.toys {
+        & .toys-left {
+            width: 50%;
+            height: 50%;
+            top: auto;
+            bottom: -5%;
+            left: -5%;
+            right: auto;
+            z-index: 1;
+            background: url("https://triad.imgix.net/os/i/home/categories/toys-left.png?s=b106c9df93b6bfc4da239175f133b03f");
+            background-size: contain;
+            background-position: center center;
+        }
+        & .toys-right {
+            width: 80%;
+            height: 80%;
+            top: auto;
+            bottom: -5%;
+            left: auto;
+            right: -15%;
+            background: url("https://triad.imgix.net/os/i/home/categories/toys-right-v4.png?s=5eb472d5b9659781e98ea44a18de5258");
+            background-size: contain;
+            background-position: center center;
+        }
     }
-    &.clothes .cotton-right {
-        width: 80%;
-        height: 80%;
-        top: auto;
-        bottom: -5%;
-        left: auto;
-        right: -10%;
-        background: url("https://triad.imgix.net/os/i/home/categories/clothes-right.png?s=f213da5aa0aa481ecb9a564e90c9c7d1");
-        background-size: contain;
-        background-position: center center;
+    &.diapers {
+        & .diapers-left {
+            width: 50%;
+            height: 50%;
+            top: calc(50% - (50% / 4));
+            bottom: auto;
+            left: -5%;
+            right: auto;
+            z-index: 1;
+            background: url("https://triad.imgix.net/os/i/home/categories/diapers-left.png?s=5e43c3ee19545eb05e5bb8475afc9908");
+            background-size: contain;
+            background-position: center center;
+        }
+        & .diapers-right {
+            width: 60%;
+            height: 60%;
+            top: auto;
+            bottom: -10%;
+            left: auto;
+            right: -5%;
+            background: url("https://triad.imgix.net/os/i/home/categories/diapers-right.png?s=c8a134a3506ce226e0164222f96b90de");
+            background-size: contain;
+            background-position: center center;
+        }
     }
-    &.toys .toys-left {
-        width: 50%;
-        height: 50%;
-        top: auto;
-        bottom: -5%;
-        left: -5%;
-        right: auto;
-        z-index: 1;
-        background: url("https://triad.imgix.net/os/i/home/categories/toys-left.png?s=b106c9df93b6bfc4da239175f133b03f");
-        background-size: contain;
-        background-position: center center;
-    }
-    &.toys .toys-right {
-        width: 80%;
-        height: 80%;
-        top: auto;
-        bottom: -5%;
-        left: auto;
-        right: -15%;
-        background: url("https://triad.imgix.net/os/i/home/categories/toys-right-v4.png?s=5eb472d5b9659781e98ea44a18de5258");
-        background-size: contain;
-        background-position: center center;
-    }
-    &.diapers .diapers-left {
-        width: 50%;
-        height: 50%;
-        top: calc(50% - (50% / 4));
-        bottom: auto;
-        left: -5%;
-        right: auto;
-        z-index: 1;
-        background: url("https://triad.imgix.net/os/i/home/categories/diapers-left.png?s=5e43c3ee19545eb05e5bb8475afc9908");
-        background-size: contain;
-        background-position: center center;
-    }
-    &.diapers .diapers-right {
-        width: 60%;
-        height: 60%;
-        top: auto;
-        bottom: -10%;
-        left: auto;
-        right: -5%;
-        background: url("https://triad.imgix.net/os/i/home/categories/diapers-right.png?s=c8a134a3506ce226e0164222f96b90de");
-        background-size: contain;
-        background-position: center center;
-    }
-    &.mommy .mommy-left {
-        width: 100%;
-        height: 50%;
-        top: auto;
-        bottom: -5%;
-        left: -5%;
-        right: auto;
-        z-index: 0;
-        background: url("https://triad.imgix.net/os/i/home/categories/mommy-flowers.png?s=ba5bf2232d41efab2d1710e32fbbcb72");
-        background-size: contain;
-        background-position: bottom left;
-    }
-    &.mommy .mommy-right {
-        width: 60%;
-        height: 60%;
-        top: auto;
-        bottom: -5%;
-        left: auto;
-        right: -5%;
-        background: url("https://triad.imgix.net/os/i/home/categories/mommy-mug.png?s=ff87603a48ca879d8425f0ab5f284cba");
-        background-size: contain;
-        background-position: bottom right;
-    }
+    &.mommy {
+        & .mommy-left {
+            width: 100%;
+            height: 50%;
+            top: auto;
+            bottom: -5%;
+            left: -5%;
+            right: auto;
+            z-index: 0;
+            background: url("https://triad.imgix.net/os/i/home/categories/mommy-flowers.png?s=ba5bf2232d41efab2d1710e32fbbcb72");
+            background-size: contain;
+            background-position: bottom left;
+        }
+        & .mommy-right {
+            width: 60%;
+            height: 60%;
+            top: auto;
+            bottom: -5%;
+            left: auto;
+            right: -5%;
+            background: url("https://triad.imgix.net/os/i/home/categories/mommy-mug.png?s=ff87603a48ca879d8425f0ab5f284cba");
+            background-size: contain;
+            background-position: bottom right;
+        }
+    } 
 }
 
 .bg-pn {
@@ -458,12 +487,18 @@
     & .spoon {
         background: url("https://triad.imgix.net/pn/i/spoon-v2.png?s=4c1e2967878c9108a62bd0410af7fdd3");
         z-index: 2;
-        animation: pn-spoon 16s ease-in-out infinite;
+        animation: pn-spoon-half 16s ease-in-out infinite;
+        @include media-breakpoint-up(lg) {
+            animation: pn-spoon 16s ease-in-out infinite;
+        }
     }
     & .divider {
         background: url("https://triad.imgix.net/pn/i/divider-v2.png?s=ea85e6ff3c353a39f7ac3a6756956a65");
         z-index: 3;
-        animation: pn-divider 16s ease-in-out infinite;
+        animation: pn-divider-half 16s ease-in-out infinite;
+        @include media-breakpoint-up(lg) {
+            animation: pn-divider 16s ease-in-out infinite;
+        }
     }
     & .body-top {
         background: url("https://triad.imgix.net/pn/i/container-top.png?s=6d473905cfdc8e4a99c35884f7f5e36f");
@@ -488,6 +523,22 @@
     }
     to {
       top: -25%;
+    }
+}
+@keyframes pn-spoon-half {
+  from {
+    top: -5%;
+  }
+  to {
+    top: -35%;
+  }
+}
+@keyframes pn-divider-half {
+    from {
+      top: 0%;
+    }
+    to {
+      top: -12.5%;
     }
 }
 

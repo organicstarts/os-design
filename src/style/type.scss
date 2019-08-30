@@ -49,9 +49,19 @@
          font-family: $subheader-font;
      }
  }
+ 
+ .spread.most {
+    letter-spacing: 0.25rem;
+ }
+ .spread.more {
+    letter-spacing: 0.1rem;
+ }
+ .spread {
+    letter-spacing: 0.05rem;
+ }
 
  .small {
-    font-weight: 300;
+    font-weight: 400;
     color: rgba(33, 37, 41, 0.8); // Everything for small is always 80%
 }
 
@@ -152,8 +162,4 @@
     outline: inherit;
     box-shadow: inherit;
     vertical-align: inherit;
-  }
-
-  .fs-2 {
-      font-size: 2rem;
-  }
+}

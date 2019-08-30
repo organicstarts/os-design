@@ -50,6 +50,11 @@ class Public extends Master {
     })
   }
 
+  RemoveFromCart(el) {
+    const Carts = new Cart()
+    Carts.RemoveFromCart(el)
+  }
+
 }
 
 export const OrganicStart = new Public()

@@ -67,6 +67,9 @@
         margin: 0 auto;
         transition: opacity .3s ease-in-out!important;
     }
+    &.options:hover {
+        width: 180px;
+    }
     &:hover {
         width: 150px;
         & .hidden.content {

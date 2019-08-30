@@ -186,6 +186,7 @@ $slick-font-path: "../node_modules/slick-carousel/slick/fonts/";
 @import "~slick-carousel/slick/slick";
 @import "~slick-carousel/slick/slick-theme";
 
+@import '~sweetalert2/src/sweetalert2';
 
 $theme-color-shades: (
    'moss-neg-1': theme-color-level(moss, -1),
@@ -251,6 +252,37 @@ $theme-color-shades: (
  * 
  */
  
+ @each $name, $color in $semantic-colors {
+    .text-#{$name} {
+        color: #{$color}!important;
+    }
+    .text-sm-#{$name} {
+        @include media-breakpoint-up(sm) {
+            color: #{$color}!important;
+        }
+    }
+    .text-md-#{$name} {
+        @include media-breakpoint-up(md) {
+            color: #{$color}!important;
+        }
+    }
+    .text-lg-#{$name} {
+        @include media-breakpoint-up(lg) {
+            color: #{$color}!important;
+        }
+    }
+    .text-xl-#{$name} {
+        @include media-breakpoint-up(xl) {
+            color: #{$color}!important;
+        }
+    }
+    .bg-#{$name} {
+        background-color: #{$color}!important;
+    }
+    .border-#{$name} {
+        border-color: #{$color}!important;
+    }
+}
 
 @each $name, $color in $theme-color-shades {
     .text-#{$name} {
@@ -285,6 +317,9 @@ $theme-color-shades: (
 }
 
 @each $name, $color in $theme-colors {
+    .text-#{$name} {
+        color: #{$color}!important;
+    }
     .text-sm-#{$name} {
         @include media-breakpoint-up(sm) {
             color: #{$color}!important;
@@ -307,22 +342,12 @@ $theme-color-shades: (
     }
 }
 
-html,
-body {
-    height: 100vh;
-    overflow: visible;
-}
-body {
-    line-height: 1.6;
-}
 
-#wrapper {
-    overflow: hidden;
-    max-width: 100%;
-}
-
-#wrapper > main > header > div:nth-child(1), #wrapper > main > *:nth-child(1):not(header):not(.pt-0) {
-    padding-top: 10rem;
+@each $num, $size in $spacers {
+    .fs-#{$num} {
+        font-size: #{$size};
+        line-height: 1;
+    }
 }
 
 .flex-page {
@@ -352,18 +377,30 @@ body {
     position: relative;
 }
 
-img.logo {
+.logo {
     min-width: 12.5rem;
     width: 12.5rem;
     max-width: 12.5rem;
+    @include media-breakpoint-up(xl) {
+        min-width: 15rem;
+        width: 15rem;
+        max-width: 15rem;
+    }
     height: auto;
-}
-
-img.icon {
-    min-width: 3.125rem;
-    width: 3.125rem;
-    max-width: 3.125rem;
-    height: auto;
+    &.mobile {
+        position: absolute;
+        left: calc(50% - 6.25rem);
+        z-index: 2;
+        top: 6.66px;
+    }
+    &.icon {
+        min-width: 3.125rem;
+        width: 3.125rem;
+        max-width: 3.125rem;
+        height: auto;
+        top: -1.9rem;
+        position: absolute;
+    }
 }
 
 .cover {
@@ -421,6 +458,10 @@ img.icon {
     }
 }
 
+.border-none {
+    border: none!important;
+}
+
 .max-w-350 {
     max-width: 21.875rem;
 }
@@ -429,22 +470,9 @@ img.icon {
     max-width: 31.25rem;
 }
 
-.card-figure {
-    min-height: 50%; /* 15.625rem;*/
-}
-
-.card-image.lazyload, .card-image.lazyloading {
-    content: '';
-    display: inline-block;
-    width: 5rem;
-    height: 5rem;
-    background: #fff;
-    vertical-align: text-bottom;
-    border: 0.5rem solid #000;
-    border-right-color: transparent;
-    // stylelint-disable-next-line property-blacklist
-    border-radius: 50%;
-    animation: spinner-border .75s linear infinite;
+.alert {
+    border-radius: 0.5rem;
+    border: none;
 }
 
 .top.left.ribbon {
@@ -469,6 +497,39 @@ img.icon {
     }
 }
 
-.rounded-pill {
-    border-radius: 1rem!important;
+.swal2-popup {
+    border-radius: 2rem!important;
+}
+.swal2-styled.swal2-confirm {
+    background-color: map-get($semantic-colors, "green")!important;
+    border-radius: 2rem!important;
+    &.error-button {
+        background-color: map-get($semantic-colors, "red")!important;
+    }
+    &, &:focus, &:active {
+        outline: 0!important;
+        border: none!important;
+        box-shadow: none!important;
+    }
+}
+
+.product-thumbnail {
+    position: relative;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+    height: 50%;
+    padding: 1rem;
+}
+
+.product-thumbnail img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin: 0 auto;
+}
+
+.productView-image .easyzoom-flyout {
+    background: #fff!important;
 }

@@ -18,11 +18,29 @@ export default class Scrolls extends Master {
 
         $('[data-spy="scroll"]').each(function (i) {
 
-            var border = $(this).attr('id')
-            var delayed = $(this).attr('data-delayed')
-            var $target = $(`#${border}`)
+            var border = $(this).attr('id'),
+                delayed = $(this).attr('data-delayed'),
+                $target = $(`#${border}`),
+                $targetTop = $target.offset().top,
+                $targetBottom = $target.offset().top + $target.outerHeight(),
+                screenTop = window.scrollY,
+                screenBottom = window.scrollY + window.innerHeight
 
-            if (window.scrollY - 50 < $target.offset().top) { // Do not animate elements above view
+            if (
+                (
+                    (
+                        $targetBottom > (screenTop + 100 + (window.innerHeight / 4))
+                    ) && (
+                        $targetBottom < screenBottom
+                    )
+                ) || (
+                    (
+                        $targetTop > screenTop 
+                    ) && (
+                        $targetTop < (screenBottom - 100 - (window.innerHeight / 4))
+                    )
+                )
+            ) { // Do not animate elements above view
                 setTimeout(function () {
                     $(`#${border} [data-spy="item"]`).each(function (i) {
 
@@ -33,15 +51,15 @@ export default class Scrolls extends Master {
                         var staggered = $item.attr('data-staggered')
                         var timeout = $item.attr('data-timeout')
                         if ($target && animation) {
-                            if (window.scrollY >= $target.offset().top - ((window.innerHeight / 4) * 3)) {
+                            //if ((window.scrollY >= $target.offset().top - ((window.innerHeight / 4) * 3))  || (window.scrollY > $target.offset().top && window.scrollY < ($target.offset().top + $target.offsetHeight))) {
                                 if (staggered) {
                                     setTimeout(function () {
                                         $item.addClass(`animated ${animation}`).removeClass('invisible')
-                                    }, (timeout || 150) * i)
+                                    }, (timeout ? timeout : 300) * i)
                                 } else {
                                     $item.addClass(`animated ${animation}`).removeClass('invisible')
                                 }
-                            }
+                            //}
                         }
                     })
                 }, (event == 'ready' ? (delayed || 0) : 0))
