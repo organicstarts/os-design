@@ -102,8 +102,7 @@ export default class Cart extends Master {
     utils.api.cart.itemAdd(data, (err, response) => {
       if (!err) {
         this.Refresh()
-        this.sidebar.classList.remove('invisible') // FOUC Protection
-        this.sidebar.classList.toggle('offcanvas')
+        this.sidebar.classList.remove('invisible', 'offcanvas') // FOUC Protection
       } else {
         console.log('Send the following to tech@organicstart.com for a gift:\n' + err)
         this.Swal({
@@ -199,7 +198,7 @@ export default class Cart extends Master {
           months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
         this.cartDate.innerHTML = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`
       }
-      
+
       this.overlay.classList.add('d-none')
     }).catch(err => console.log(err.message))
   }
