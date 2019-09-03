@@ -37,7 +37,7 @@ export default class Cart extends Master {
                     <a href="#" class="link-unstyled rfc" data-product-id="${product.id}" onclick="oSx.RemoveFromCart(this);return false;"><small>REMOVE</small></a>
                   </div>
                   <div class="col-6 text-right m-0">
-                    <strong>$${product.salePrice}</strong>
+                    <a href="#" class="ui mini button p-1" onclick="oSx.RemoveOneFromCart(this);return false;" data-product-id="${product.id}" data-product-quantity="${product.quantity}">&#x2212;</a>&nbsp;${product.quantity}&nbsp;<a href="#" class="ui mini button p-1" onclick="oSx.AddOneToCart(this);return false;" data-product-id="${product.productId}" data-product-quantity="${product.quantity}">&#x2b;</a> <small>&times;</small> <strong>$${product.salePrice}</strong>
                   </div>
                 </div>
               </div>
@@ -72,7 +72,7 @@ export default class Cart extends Master {
           e.preventDefault()
           
           this.overlay.classList.remove('d-none')
-          parent.Add(atcId)
+          parent.Add(atcId, 1)
         })
       })
     }
@@ -88,29 +88,18 @@ export default class Cart extends Master {
     this.overlay.classList.add('d-none')
   }
 
-  RemoveFromCart(el) {
-    const rfcId = el.getAttribute('data-product-id')
-    this.overlay.classList.remove('d-none')
-    this.Remove(rfcId)
-  }
-
-  Add(id) {
-    //this.$overlay.show(); // ADD CART OVERLAY
-    const data = new FormData()
-    data.append("product_id", id);
-    data.append("qty", 1);
-    utils.api.cart.itemAdd(data, (err, response) => {
-      if (!err) {
-        this.Refresh()
-        this.sidebar.classList.remove('invisible', 'offcanvas') // FOUC Protection
-      } else {
-        console.log('Send the following to tech@organicstart.com for a gift:\n' + err)
-        this.Swal({
-          title: 'Internal Error',
-          text: 'Sorry, please try again or contact support.',
-          type: 'error',
-        })
-      }
+  Update(itemId, quantity) {
+    utils.api.cart.itemUpdate(itemId, quantity, (err, response) => {
+        if (response.data.status === 'succeed') {
+          this.Refresh()
+        } else {
+          console.log('Send the following to tech@organicstart.com for a gift:\n' + err)
+          this.Swal({
+            title: 'Internal Error',
+            text: 'Sorry, please try again or contact support.',
+            type: 'error',
+          })
+        }
     })
   }
 
@@ -127,6 +116,45 @@ export default class Cart extends Master {
           })
         }
     })
+  }
+
+  RemoveFromCart(el) {
+    const rfcId = el.getAttribute('data-product-id')
+    this.overlay.classList.remove('d-none')
+    this.Remove(rfcId)
+  }
+
+  RemoveOneFromCart(el) {
+    const rfcId = el.getAttribute('data-product-id'),
+          rfcQty = el.getAttribute('data-product-quantity')
+    this.overlay.classList.remove('d-none')
+    this.Update(rfcId, rfcQty - 1)
+  }
+
+  Add(id, quantity) {
+    //this.$overlay.show(); // ADD CART OVERLAY
+    const data = new FormData()
+    data.append("product_id", id);
+    data.append("qty", quantity);
+    utils.api.cart.itemAdd(data, (err, response) => {
+      if (!err) {
+        this.Refresh()
+        this.sidebar.classList.remove('invisible', 'offcanvas') // FOUC Protection
+      } else {
+        console.log('Send the following to tech@organicstart.com for a gift:\n' + err)
+        this.Swal({
+          title: 'Internal Error',
+          text: 'Sorry, please try again or contact support.',
+          type: 'error',
+        })
+      }
+    })
+  }
+
+  AddOneToCart(el) {
+    const rfcId = el.getAttribute('data-product-id')
+    this.overlay.classList.remove('d-none')
+    this.Add(rfcId, 1)
   }
 
   Refresh() {
