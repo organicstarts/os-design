@@ -329,3 +329,54 @@ $categories: (
         background-color: #ebebeb;
     }
 }
+
+.bg-mommy {
+    & .category-title:before {
+        height: 100%;
+        background-image: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75));
+    }
+    & .category-title {
+        background: theme-color(gray-300)!important;
+    }
+    & .category-breadcrumbs {
+        background: theme-color(gray-400)!important;
+    }
+    &:before {
+        opacity: 0.5;
+        @include ResponsiveBackground(           
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=320&q=80",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=320&q=60&dpr=1.5",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=320&q=40&dpr=2",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=320&q=20&dpr=3",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=320&q=10&dpr=4",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=560&q=80",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=560&q=60&dpr=1.5",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=560&q=40&dpr=2",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=560&q=20&dpr=3",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=560&q=10&dpr=4",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=768&q=80",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=768&q=60&dpr=1.5",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=768&q=40&dpr=2",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=768&q=20&dpr=3",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=768&q=10&dpr=4",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=1024&q=80",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=1024&q=60&dpr=1.5",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=1024&q=40&dpr=2",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=1024&q=20&dpr=3",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=1024&q=10&dpr=4",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=1440&q=80",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=1440&q=60&dpr=1.5",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=1440&q=40&dpr=2",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=1440&q=20&dpr=3",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=1440&q=10&dpr=4",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=2560&q=80",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=2560&q=60&dpr=1.5",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=2560&q=40&dpr=2",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=2560&q=20&dpr=3",
+            "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=2560&q=10&dpr=4"
+        );
+        background-size: cover;
+        background-position: 50% 75%;
+        background-repeat: no-repeat;
+    }
+}

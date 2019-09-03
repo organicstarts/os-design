@@ -18,12 +18,12 @@ export default class Menus extends Master {
 
             if (window.innerWidth <= 1024) {
                 const staggedElements = document.querySelectorAll('.staggered-fade-up')
-                super.forEachElements(staggedElements, (i, el) => {
+                this.forEachElements(staggedElements, (i, el) => {
                     el.classList.remove("staggered-fade-up")
                 })
             } else {
                 const staggedElements = document.querySelectorAll('.staggered-fade-up')
-                super.forEachElements(staggedElements, (i, el) => {
+                this.forEachElements(staggedElements, (i, el) => {
                     setTimeout(function () {
                         el.classList.add("animated", "fadeInDown")
                         el.classList.remove("staggered-fade-up")
@@ -34,7 +34,7 @@ export default class Menus extends Master {
 
         if (window.scrollY >= mainMenu.offsetHeight + 96) { // 96 Pixels is the default padding
             const staggedElements = document.querySelectorAll('.staggered-fade-up')
-            super.forEachElements(staggedElements, (i, el) => {
+            this.forEachElements(staggedElements, (i, el) => {
                 el.classList.remove("staggered-fade-up")
             })
 

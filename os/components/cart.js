@@ -62,7 +62,7 @@ export default class Cart extends Master {
         })
     }
 
-    const atcButtons = document.querySelectorAll('.card-atc')
+    const atcButtons = document.querySelectorAll('.instant-atc')
     if (atcButtons) {
       super.forEachElements(atcButtons, (i, el) => {
         const atcId = el.getAttribute('data-product-id')

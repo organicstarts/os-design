@@ -35,7 +35,7 @@ export default class Swipes extends Master {
   Products() {
     var elements = document.querySelectorAll('.product-carousel')
     if (elements) {
-      super.forEachElements(elements, (i, el) => {
+      this.forEachElements(elements, (i, el) => {
         var Flickity = require('flickity'),
             wrap = (el.getAttribute('data-wrap') === 'true'),
             align = el.getAttribute('data-align')
@@ -56,9 +56,7 @@ export default class Swipes extends Master {
   }
 
   Categories() {
-    const $ = require('jquery')
-
-    $('.category-carousel').slick({
+    this.jQuery('.category-carousel').slick({
       mobileFirst: true,
       autoplay: true,
       autoplaySpeed: 3000,

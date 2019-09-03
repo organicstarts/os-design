@@ -1,6 +1,7 @@
 import Master from "./components/index"
 import Menus from "./components/menus"
 import Modals from "./components/modals"
+import Cookies from "./components/cookies"
 import Swipes from "./components/swipes"
 import Products from "./components/products"
 import Scrolls from "./components/scrolls"
@@ -13,6 +14,7 @@ class Public extends Master {
     this.Swipes = new Swipes()
     this.Modals = new Modals()
     this.Products = new Products()
+    this.Cookies = new Cookies()
   }
 
   Start() {
