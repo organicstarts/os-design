@@ -13,6 +13,7 @@ export default class Cart extends Master {
     this.footer = document.querySelector('.cart-bottom')
     this.counter = document.getElementById("cartPill")
     this.content = document.getElementById("cartItems")
+    this.cartDate = document.getElementById('cart-date')
   }
 
   ParseData(products) {
@@ -193,10 +194,12 @@ export default class Cart extends Master {
         this.content.innerHTML = `<div class="p-2"><img src="https://triad.imgix.net/os/i/basket.png?s=c28539ed8dcafa3533211257fc0bea16" alt="Empty Shopping Basket" class="ui medium image img-fluid mx-auto"><p class="text-center"><strong>Your shopping basket is empty.</strong></p></div>`
       }
 
-      var d = new Date(),
+      if(this.cartDate) {
+        var d = new Date(),
           months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-      document.getElementById('cart-date').innerHTML = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`
-
+        this.cartDate.innerHTML = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`
+      }
+      
       this.overlay.classList.add('d-none')
     }).catch(err => console.log(err.message))
   }
