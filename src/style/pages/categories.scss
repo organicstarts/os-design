@@ -283,7 +283,7 @@ $categories: (
     & .overlay {
         opacity: 1;
         height: 150px;
-        background: linear-gradient(top, #fff, rgba(0,0,0,0));
+        background: linear-gradient(top, #fff, rgba(255,255,255,0));
         @include media-breakpoint-up(sm) {
             opacity: 0;
         }

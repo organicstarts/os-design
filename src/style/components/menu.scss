@@ -239,9 +239,6 @@
 .cart-sidebar {
     background: #fff;
     @include BoxShadow(24);
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
     position: fixed;
     right: 0;
     width: 80%;
