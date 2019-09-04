@@ -107,7 +107,8 @@ $enable-validation-icons: true;
 $enable-deprecation-messages: false;
 
 $grid-breakpoints: (
-  xs: 0,
+  xxs: 0,
+  xs: 340px,
   sm: 560px,
   md: 768px,
   lg: 1024px,
@@ -348,6 +349,15 @@ $theme-color-shades: (
         font-size: #{$size};
         line-height: 1;
     }
+    .mt-neg-#{$num} {
+        margin-top: -#{$size};
+    }
+    .ml-neg-#{$num} {
+        margin-left: -#{$size};
+    }
+    .mr-neg-#{$num} {
+        margin-right: -#{$size};
+    }
 }
 
 .flex-page {
@@ -444,8 +454,10 @@ $theme-color-shades: (
         @include media-breakpoint-up(xl) {
             width: calc((100vw / 7) - (3rem / 7));
         }*/
-        &:hover {
-            transform: translateY(-1rem);
+        @include media-breakpoint-up(md) {
+            &:hover {
+                transform: translateY(-1rem);
+            }
         }
         & .slide {
             width: 100%;
@@ -536,4 +548,8 @@ $theme-color-shades: (
 
 .rotate-neg-10 {
     transform: rotate(-10deg)!important;
+}
+
+.lh-1, .lh-1 p {
+    line-height: 1rem!important;
 }
