@@ -252,10 +252,7 @@
     right: 0;
     z-index: 99;
     opacity: 1;
-    will-change: opacity;
-    backface-visibility: visible;
     transform: translateX(0%);
-    animation: cart-slide-left 0.5s ease;
     transition: all 0.5s ease;
     @media (min-width: 1024px) and (min-height: 900px) {
         max-height: 768px;
@@ -264,16 +261,12 @@
         border-top-left-radius: 2rem;
         border-top-right-radius: 2rem;
         transform: translateY(0%);
-        animation: cart-slide-up 0.5s ease;
     }
     &.offcanvas {
         opacity: 0;
-        backface-visibility: hidden;
         transform: translateX(100%);
-        animation: slide-right 0.5s ease;
         @media (min-width: 1024px) and (min-height: 900px) {
             transform: translateY(100%);
-            animation: cart-slide-down 0.5s ease;
         }
     }
     & .cart-wrapper {
@@ -307,38 +300,6 @@
     & .cart-bottom {
         bottom: 0;
         top: auto;
-    }
-}
-@keyframes cart-slide-right {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-@keyframes cart-slide-left {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
-}
-@keyframes cart-slide-down {
-    0% {
-        transform: translateY(0%);
-    }
-    100% {
-        transform: translateY(100%);
-    }
-}
-@keyframes cart-slide-up {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0%);
     }
 }
 #cartPill {

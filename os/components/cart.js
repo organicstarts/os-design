@@ -57,7 +57,7 @@ export default class Cart extends Master {
     if (cartButtons) {
         super.forEachElements(cartButtons, (i, el) => {
             el.addEventListener('click', () => {
-              this.sidebar.classList.remove('invisible') // FOUC Protection
+              // this.sidebar.classList.remove('invisible') FOUC Protection
               this.sidebar.classList.toggle('offcanvas')
             })
         })
@@ -139,7 +139,7 @@ export default class Cart extends Master {
     utils.api.cart.itemAdd(data, (err, response) => {
       if (!err) {
         this.Refresh()
-        this.sidebar.classList.remove('invisible', 'offcanvas') // FOUC Protection
+        this.sidebar.classList.remove('offcanvas') // FOUC Protection
       } else {
         console.log('Send the following to tech@organicstart.com for a gift:\n' + err)
         this.Swal({
