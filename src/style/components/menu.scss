@@ -250,6 +250,14 @@
     height: 100vh;
     top: 0;
     overflow: hidden;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    z-index: 99;
+    opacity: 1;
+    transform: translateX(0%);
+    animation: cart-slide-left 0.5s ease;
+    transition: all 0.5s ease;
     @media (min-width: 1024px) and (min-height: 900px) {
         max-height: 768px;
         top: auto;
@@ -259,14 +267,6 @@
         transform: translateY(0%);
         animation: cart-slide-up 0.5s ease;
     }
-    bottom: 0;
-    left: auto;
-    right: 0;
-    z-index: 99;
-    opacity: 1;
-    transform: translateX(0%);
-    animation: cart-slide-left 0.5s ease;
-    transition: all 0.5s ease;
     &.offcanvas {
         opacity: 0;
         transform: translateX(100%);
@@ -290,7 +290,6 @@
         background: #fff;
         display: block;
         position: fixed;
-        opacity: 1;
         height: auto;
         width: 100%;
         min-width: 240px;
@@ -312,46 +311,38 @@
 }
 @keyframes cart-slide-right {
     0% {
-        opacity: 1;
         transform: translateX(0%);
     }
     100% {
-        opacity: 0;
         transform: translateX(100%);
     }
 }
 @keyframes cart-slide-left {
     0% {
-        opacity: 0;
         transform: translateX(100%);
     }
     100% {
-        opacity: 1;
         transform: translateX(0%);
     }
 }
 @keyframes cart-slide-down {
     0% {
-        opacity: 1;
         transform: translateY(0%);
     }
     100% {
-        opacity: 0;
         transform: translateY(100%);
     }
 }
 @keyframes cart-slide-up {
     0% {
-        opacity: 0;
         transform: translateY(100%);
     }
     100% {
-        opacity: 1;
         transform: translateY(0%);
     }
 }
 #cartPill {
-    left: 150%;
+    left: 100%;
     border-radius: 99rem;
     padding: 0.25rem 0.5rem;
 }
