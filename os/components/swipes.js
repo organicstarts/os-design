@@ -55,6 +55,25 @@ export default class Swipes extends Master {
     }
   }
 
+  Brands() {
+    var elements = document.querySelectorAll('.brand-carousel')
+    if (elements) {
+      this.forEachElements(elements, (i, el) => {
+        var Flickity = require('flickity')
+        new Flickity(el, {
+          adaptiveHeight: false,
+          autoPlay: 5000,
+          cellAlign: 'center',
+          cellSelector: '.brand-slide',
+          contain: false,
+          lazyLoad: true,
+          pageDots: false,
+          wrapAround: false
+        })
+      })
+    }
+  }
+
   Categories() {
     this.jQuery('.category-carousel').slick({
       mobileFirst: true,
@@ -119,6 +138,22 @@ export default class Swipes extends Master {
         }
       ]
     })
+  }
+
+  Subcategories() {
+    var elements = document.querySelectorAll('.sub-carousel')
+    if (elements) {
+      this.forEachElements(elements, (i, el) => {
+        var Flickity = require('flickity')
+        new Flickity(el, {
+          cellAlign: 'left',
+          freeScroll: true,
+          prevNextButtons: false,
+          pageDots: false,
+          contain: true
+        })
+      })
+    }
   }
 
 }

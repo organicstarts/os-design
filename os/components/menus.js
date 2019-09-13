@@ -5,55 +5,68 @@ export default class Menus extends Master {
 
     constructor() {
         super();
+
+        this.state = 'splash';
+        this.mainMenu = document.getElementById("mainMenu")
+        this.mobileMenu = document.getElementById('mainMobileMenu')
     }
 
-    Main() {
-        const mainMenu = document.getElementById("mainMenu")
-
-        mainMenu.classList.remove("invisible")
-        
-        if (window.scrollY <= mainMenu.offsetHeight - 32) { // 32 Pixels is the difference in top padding between default and slide-down
-            mainMenu.classList.add("position-absolute")
-            mainMenu.classList.remove("bg-white", "fixed-top", "slide-down")
-
-            if (window.innerWidth <= 1024) {
-                const staggedElements = document.querySelectorAll('.staggered-fade-up')
-                this.forEachElements(staggedElements, (i, el) => {
-                    el.classList.remove("staggered-fade-up")
-                })
-            } else {
-                const staggedElements = document.querySelectorAll('.staggered-fade-up')
-                this.forEachElements(staggedElements, (i, el) => {
-                    setTimeout(function () {
-                        el.classList.add("animated", "fadeInDown")
-                        el.classList.remove("staggered-fade-up")
-                    }, 150 * i)
-                })
+    Scrolling(dir) {
+        if(dir == 'up') {
+            if (window.scrollY == 0 && this.state != 'splash') { // 32 Pixels is the difference in top padding between default and slide-down
+                this.mainMenu.classList.add("splash", "on-canvas")
+                this.mainMenu.classList.remove("invisible", "drawer", "off-canvas")
+                this.state = 'splash'
+            } else if(window.scrollY >= this.mainMenu.offsetHeight + 32 && this.state != 'drawer') {
+                this.mainMenu.classList.add("drawer", "on-canvas")
+                this.mainMenu.classList.remove("invisible", "splash", "off-canvas")
+                this.state = 'drawer'
+            }
+        } else {
+            if (window.scrollY >= this.mainMenu.offsetHeight + 32 && this.state != 'offcanvas') {
+                this.mainMenu.classList.add("off-canvas")
+                this.mainMenu.classList.remove("on-canvas")
+                this.state = 'offcanvas'
             }
         }
+        //} else {
+        //   this.mainMenu.classList.remove("splash", "drawer", "off-canvas")
+        //}
+    }
 
-        if (window.scrollY >= mainMenu.offsetHeight + 96) { // 96 Pixels is the default padding
-            const staggedElements = document.querySelectorAll('.staggered-fade-up')
-            this.forEachElements(staggedElements, (i, el) => {
+    AnimateItems() {
+        // Show Menu Items with Animation
+        const staggedElements = document.querySelectorAll('.staggered-fade-up')
+        this.forEachElements(staggedElements, (i, el) => {
+            setTimeout(function () {
+                el.classList.add("animated", "fadeInDown")
                 el.classList.remove("staggered-fade-up")
-            })
+            }, 150 * i)
+        })
+    }
 
-            mainMenu.classList.remove("position-absolute")
-            mainMenu.classList.add("bg-white", "fixed-top", "slide-down")
-        }
+    ShowItems() {
+        // Show Menu Items without Animation
+        const staggedElements = document.querySelectorAll('.staggered-fade-up')
+        this.forEachElements(staggedElements, (i, el) => {
+            el.classList.remove("staggered-fade-up")
+        })
     }
 
     Init(mobile) {
-        // Todo: Account Drawer
-        //document.getElementById('AccountLink').href = mobile ? '#accountMenu' : '/account.php'
-        
-        if (mobile) {
-            document.getElementById('mainMobileMenu').classList.remove('d-none')
-            // Todo: Account Drawer
-            //document.getElementById('accountMenu').classList.remove('d-none')
+        // Show Menu Items with Animation
+        const staggedElements = document.querySelectorAll('.staggered-fade-up')
+        this.forEachElements(staggedElements, (i, el) => {
+            setTimeout(function () {
+                el.classList.add("animated", "fadeInDown")
+                el.classList.remove("staggered-fade-up")
+            }, 150 * i)
+        })
 
-            //Mmenu.configs.classNames.selected = "active"
-            //Mmenu.configs.offCanvas.page.selector = "#wrapper"
+        if (mobile) {
+            //Mobile Only
+
+            this.mobileMenu.classList.remove('d-none')
 
             new Mmenu("#mainMobileMenu", {
                 navbar: false,
@@ -66,37 +79,19 @@ export default class Menus extends Master {
 
                 ]
             })
-
-            // Todo: Account Drawer
-            // new Mmenu("#accountMenu", {
-            //     navbar: false,
-            //     "extensions": [
-            //         "border-none",
-            //         "fx-listitems-drop",
-            //         "fullscreen",
-            //         "pagedim-black",
-            //         "position-front",
-            //         "position-bottom",
-            //         "theme-white"
-
-            //     ]
-            // })
+        } else {
+            // Desktop Only
 
         }
-
-        // document.getElementById('cartMenu').classList.remove('d-none')
-        // new Mmenu("#cartMenu", {
-        //     navbar: false,
-        //     "extensions": [
-        //         "border-none",
-        //         "fx-listitems-drop",
-        //         //"pagedim-black",
-        //         "position-front",
-        //         "position-right",
-        //         "theme-white"
-        //     ]
-        // })
-
-        this.Main()
+        
+        if (window.scrollY <= this.mainMenu.offsetHeight * 2) { // 32 Pixels is the difference in top padding between default and slide-down
+            this.mainMenu.classList.add("on-canvas")
+            this.mainMenu.classList.remove("invisible", "drawer", "off-canvas")
+            this.state = 'splash';
+        } else {
+            this.mainMenu.classList.add("drawer", "on-canvas")
+            this.mainMenu.classList.remove("invisible", "splash", "off-canvas")
+            this.state = 'drawer';
+        }
     }
 }

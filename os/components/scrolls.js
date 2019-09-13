@@ -3,7 +3,7 @@ import Master from "./index"
 export default class Scrolls extends Master {
 
     constructor() {
-        super();
+        super()
     }
 
     Init() {

@@ -11,6 +11,7 @@ class Public extends Master {
 
   constructor() {
     super()
+
     this.Swipes = new Swipes()
     this.Modals = new Modals()
     this.Products = new Products()
@@ -22,33 +23,39 @@ class Public extends Master {
           Scrolly = new Scrolls(),
           Carts = new Cart()
 
-    var Breakpoints = {
-      Mobile: 425,
-      Tablet: 768,
-      Laptop: 1024,
-      LargeLaptop: 1440,
-      Desktop: 2560
-    }
-
     this.jQuery(document).ready(() => {
+
+      // Initialize the Main Menu
+      Menu.Init(this.isTablet)
+
+      // Initilize Swipes (Flickity and Slick)
       this.Swipes.Products()
+
+      // Initilize the Cart
+      Carts.Init()
       
-      if (window.innerWidth > Breakpoints.Mobile) {
+      // Mobile Only
+      if (!this.isMobile) {
         Scrolly.Init()
         Scrolly.Animate('ready')
-
-        this.jQuery(window).scroll(() => {
-          Scrolly.Animate('scroll')
-        })
       }
 
-      Menu.Init(window.innerWidth > Breakpoints.Tablet ? false : true)
+      var y = 0
 
-      Carts.Init()
-    })
+      /// On Scrolling...
+      window.addEventListener('scroll', () => {
+        var dir
+        if (window.scrollY > y){
+          dir = 'down'
+       } else {
+          dir = 'up'
+       }
+       y = (window.scrollY || document.documentElement.scrollTop) <= 0 ? 0 : (window.scrollY || document.documentElement.scrollTop)
 
-    this.jQuery(window).scroll(() => {
-      Menu.Main()
+        Menu.Scrolling(dir)
+        
+        Scrolly.Animate('scroll')
+      })
     })
   }
 
