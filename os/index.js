@@ -52,8 +52,10 @@ class Public extends Master {
        }
        y = (window.scrollY || document.documentElement.scrollTop) <= 0 ? 0 : (window.scrollY || document.documentElement.scrollTop)
 
-        Menu.Scrolling(dir)
-        
+        if (!this.isMobile) {
+          Menu.Scrolling(dir)
+        }
+
         Scrolly.Animate('scroll')
       })
     })

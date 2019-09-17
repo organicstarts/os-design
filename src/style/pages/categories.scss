@@ -6,21 +6,26 @@ $categories: (
     'toys',
     'mommy'
 );
-.category-title:before, .overlay, .floater {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-@each $category in $categories {
-    .bg-#{$category}:before {
+$subcategories: (
+    '21',
+    '33',
+    '34',
+    '169'
+);
+
+.bg-21,
+.bg-33,
+.bg-34,
+.bg-48, 
+.bg-59,
+.bg-62,
+.bg-115,
+.bg-117,
+.bg-142,
+.bg-169 {
+    position: relative;
+    overflow: hidden;
+    &:before, .category-title:before, .overlay, .floater {
         content: '';
         position: absolute;
         top: 0;
@@ -33,157 +38,47 @@ $categories: (
         background-size: cover;
         background-repeat: no-repeat;
     }
-    .bg-#{$category} {
-        position: relative;
-        overflow: hidden;
+    & {
+        .category-title {
+            background: theme-color(gray-300)!important;
+            & .title-category {
+                color: theme-color(gray-800);
+                &.primary {
+                    color: theme-color(gray-900);
+                    text-shadow: 0 0 1rem theme-color(gray-500);
+                }
+            }
+            & .title-subcategory {
+                color: theme-color(gray-700);
+                &.primary {
+                    color: theme-color(gray-800);
+                    text-shadow: 0 0 0.5rem theme-color(gray-400);
+                    & small {
+                        color: theme-color(gray-800);
+                    }
+                }
+            }
+        }
+        .category-breadcrumbs {
+            background: theme-color(gray-400)!important;
+        }
     }
 }
+
 .category-breadcrumbs .breadcrumb-item .breadcrumb-label {
     color: theme-color(gray-800)!important;
 }
-.bg-diapers {
-    padding-top: 10rem;
-    & .category-title {
-        background: linear-gradient(top, #fff, #efefef);
-        //background: theme-color(gray-300)!important;
-    }
-    & .category-breadcrumbs {
-        background: theme-color(gray-400)!important;
-    }
-    & .overlay {
-        opacity: 1;
-        height: 300px;
-        background: linear-gradient(top, #fff, rgba(0,0,0,0));
-    }
-    & .floater {
-        @include ResponsiveBackground(
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=320&q=80&s=78e9856e9377502ccfa592db1079b766",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=320&q=60&dpr=1.5&s=7274e812cb9170657ce792b2cac93990",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=320&q=40&dpr=2&s=0c76e3dfa96a2bc79d734ae3b86f71aa",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=320&q=20&dpr=3&s=259b36c35047cbea1005df6e38166682",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=320&q=10&dpr=4&s=aaf86b13160069bcec57b55b67a1708c",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=560&q=80&s=8c235bd9ba42b7e44b91d24e8a737fe4",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=560&q=60&dpr=1.5&s=a8a4cfc4e2b70a760bb0c8e7e5101358",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=560&q=40&dpr=2&s=c4c9f24b1cb24a13ff0a3109c9fc8ecf",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=560&q=20&dpr=3&s=64b3189f85cc7d8410f7b42d14940a9a",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=560&q=10&dpr=4&s=5f28a9992f18b096bf7ce7a31d3ba7ac",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=768&q=80&s=110560d0c44c680ee89c76d33150288c",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=768&q=60&dpr=1.5&s=5acc3d6c99343d58f07c25a3a4fd42e7",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=768&q=40&dpr=2&s=40d4c2e2137d19eef155375b238f52f4",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=768&q=20&dpr=3&s=9ed95d27d02c631fbbea7ced8989e782",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=768&q=10&dpr=4&s=832dcad738d2f9a7a38087dc738c1ff6",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1024&q=80&s=f5d036a0b968a26d7a5c2ae1d4a08c34",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1024&q=60&dpr=1.5&s=7e44242dcb9c44c13ee7ad13bca44d8a",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1024&q=40&dpr=2&s=ad1b375d6e2affdb1face660b9a27cea",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1024&q=20&dpr=3&s=eb07347c5df92bb3b9fda58e708adfdb",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1024&q=10&dpr=4&s=e01336ea0b75d3451c97d92f734225d3",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1440&q=80&s=1565e08f2b8fa9bb0dced5fad1790edb",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1440&q=60&dpr=1.5&s=1d9632933c07a683024a3068989674c2",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1440&q=40&dpr=2&s=0472945057dec67465c8a1be20e3a449",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1440&q=20&dpr=3&s=739f3da70622f8187de053f77a65c1b0",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1440&q=10&dpr=4&s=345279a8df6581cf5b0c12a6c92fe271",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=2560&q=80&s=31807f6bb60738e60cf4139ac7224f04",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=2560&q=60&dpr=1.5&s=8a56e12054be466b594d7d9d3f6a2528",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=2560&q=40&dpr=2&s=5ad8783157a29e36932efece4b6a961f",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=2560&q=20&dpr=3&s=ef3eec2e1f397c1fb6c425b1524dc41f",
-            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=2560&q=10&dpr=4&s=4bdc9a676c509094935c3ecb35a50377"
-        );
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: left center;
-        @include media-breakpoint-up(md) {
-            background-position: center 82.5%;
-        }
-    }
-    &:before {
-        opacity: 0.8;
-        background-color: #efefef;
-    }
-    /*
+
+.bg-48 {
     & .category-title:before {
-        height: 300px;
-        background-image: linear-gradient(top, #fff, rgba(255, 255, 255, 0));
-    }
-    & .category-title {
-        background: theme-color(gray-300)!important;
-    }
-    & .category-breadcrumbs {
-        background: theme-color(gray-400)!important;
-    }
-    &:before {
-        opacity: 0.75;
-        background: url('https://as2.ftcdn.net/jpg/01/27/04/39/500_F_127043979_DnDeUbUyPPD5zkgVbzp4KIJS0OrCDpRH.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: left center;
-        @include media-breakpoint-up(md) {
-            background-position: center 82.5%;
-        }
-    }*/
-}
-.bg-toys {
-    & .category-title:before {
-        height: 300px;
-        background-image: linear-gradient(top, #fff, rgba(255, 255, 255, 0));
-    }
-    & .category-title {
-        background: theme-color(gray-300)!important;
-    }
-    & .category-breadcrumbs {
-        background: theme-color(gray-400)!important;
+        height: 100%;
+        background-image: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
     }
     &:before {
         opacity: 0.5;
-        @include ResponsiveBackground(
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=320&q=80&s=b1c6a6e00f64e1fa88872c2034eeafb5",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=320&q=60&dpr=1.5&s=43271d9dc2eb834c62361f65823d329e",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=320&q=40&dpr=2&s=27962806abe61247d34506996bee76f0",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=320&q=20&dpr=3&s=a40a0abe4500aeff0ec429cf2565802b",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=320&q=10&dpr=4&s=dbbaa8221e408a867e1aff32b718c96f",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=560&q=80&s=e06999d34c5b81a18555ca06f4626663",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=560&q=60&dpr=1.5&s=75b7ec4126f83d052c109c8943514036",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=560&q=40&dpr=2&s=0b1cff647f87ed2263168d277072afed",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=560&q=20&dpr=3&s=1c792a12c446b44496ce607bbf43a732",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=560&q=10&dpr=4&s=e9240f85d4a37e05f0b7ea48987eb3fe",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=768&q=80&s=d74512e093311cb3326d983f968cc2a3",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=768&q=60&dpr=1.5&s=ad12453386958b680a8d9662c966c087",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=768&q=40&dpr=2&s=171e3d8704ec7d4323cd26bd95f7bc53",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=768&q=20&dpr=3&s=b06b3ee54f749e6050dcaa582ea78186",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=768&q=10&dpr=4&s=ad2514b332fab9be3d43b8cb460fe607",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1024&q=80&s=7a4ed00915f62ee25e98e8943b34cc41",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1024&q=60&dpr=1.5&s=cbbf5d55c5725591c4cfef8404e36a76",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1024&q=40&dpr=2&s=a4b58134c02bf587222e5c4ccedf8e40",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1024&q=20&dpr=3&s=b9a7ec163ceb589adfd2015a92773d3f",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1024&q=10&dpr=4&s=e815ebf202b2ee491115f6ba3d2dcd15",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1440&q=80&s=976daa3c65ca2dd10d3dfc2b5e1dada4",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1440&q=60&dpr=1.5&s=8beee7923376abee5aae214822836d8d",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1440&q=40&dpr=2&s=3424d7fe8be01abf2a4e99af8fe016bf",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1440&q=20&dpr=3&s=1d5497d46a949f0fdfda726536508a22",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1440&q=10&dpr=4&s=eac2012008a031984aacb766967db0ad",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=2560&q=80&s=ed45987272f58d4872732bac8eaf43d8",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=2560&q=60&dpr=1.5&s=cf4d8b1b4f6ec878c20792cac67f22d7",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=2560&q=40&dpr=2&s=b8a623adaaf89b15d04de7472bcfd49f",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=2560&q=20&dpr=3&s=20ec68ebb6207b5e2546da5e683b2d6b",
-            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=2560&q=10&dpr=4&s=e083edb8806586967cbc939246695623"
-        );
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-}
-.bg-baby-care {
-    & .category-title:before {
-        height: 300px;
-        background-image: linear-gradient(top, #fff, rgba(255, 255, 255, 0));
-    }
-    & .category-title {
-        background: theme-color(gray-300)!important;
-    }
-    & .category-breadcrumbs {
-        background: theme-color(gray-400)!important;
-    }
-    &:before {
-        opacity: 0.5;
+        @include media-breakpoint-up(lg) {
+            opacity: 0.75;
+        }
         @include ResponsiveBackground(
             "https://triad.imgix.net/os/i/categories/baby-care.jpeg?flip=h&w=320&q=80&s=eb8ec548de912d136c4b81a31aa7b20c",
             "https://triad.imgix.net/os/i/categories/baby-care.jpeg?flip=h&w=320&q=60&dpr=1.5&s=11908416ebcbc22ce2f53cc645ca093c",
@@ -216,24 +111,19 @@ $categories: (
             "https://triad.imgix.net/os/i/categories/baby-care.jpeg?flip=h&w=2560&q=20&dpr=3&s=507a8bb9b5797b506b53d7efdd09aed0",
             "https://triad.imgix.net/os/i/categories/baby-care.jpeg?flip=h&w=2560&q=10&dpr=4&s=d9a863f01de2d1a74d3c32cdc5e571cd"
         );
-        background-size: cover;
         background-position: center center;
-        background-repeat: no-repeat;
     }
 }
-.bg-baby-food {
+.bg-117 {
     & .category-title:before {
-        height: 300px;
-        background-image: linear-gradient(top, #fff, rgba(255, 255, 255, 0));
-    }
-    & .category-title {
-        background: theme-color(gray-300)!important;
-    }
-    & .category-breadcrumbs {
-        background: theme-color(gray-400)!important;
+        height: 100%;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.9) 15%, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 100%);
     }
     &:before {
         opacity: 0.5;
+        @include media-breakpoint-up(lg) {
+            opacity: 0.75;
+        }
         @include ResponsiveBackground(
             "https://triad.imgix.net/os/i/categories/baby-food.jpeg?w=320&q=80&s=23162c490c1c80249ae232c4c55b7abb",
             "https://triad.imgix.net/os/i/categories/baby-food.jpeg?w=320&q=60&dpr=1.5&s=99d504ab37dcbb5beb5b3e4985652d1b",
@@ -266,19 +156,13 @@ $categories: (
             "https://triad.imgix.net/os/i/categories/baby-food.jpeg?w=2560&q=20&dpr=3&s=2786e200f8275f65b33eb6a68b8a6312",
             "https://triad.imgix.net/os/i/categories/baby-food.jpeg?w=2560&q=10&dpr=4&s=828ac708836ce52f96ae9e85d65aed70"
         );
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
+        background-position: 50% 60%;
     }
 }
-.bg-clothes {
-    padding-top: 10rem;
+.bg-115 {
     & .category-title {
+        padding-top: 10rem;
         background: linear-gradient(top, #fff, #ebebeb);
-        //background: theme-color(gray-300)!important;
-    }
-    & .category-breadcrumbs {
-        background: theme-color(gray-400)!important;
     }
     & .overlay {
         opacity: 1;
@@ -329,20 +213,116 @@ $categories: (
         background-color: #ebebeb;
     }
 }
-
-.bg-mommy {
+.bg-142 {
+    & .category-title {
+        padding-top: 10rem;
+        background: linear-gradient(top, #fff, #efefef);
+    }
+    & .overlay {
+        opacity: 1;
+        height: 300px;
+        background: linear-gradient(top, #fff, rgba(0,0,0,0));
+    }
+    & .floater {
+        @include ResponsiveBackground(
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=320&q=80&s=78e9856e9377502ccfa592db1079b766",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=320&q=60&dpr=1.5&s=7274e812cb9170657ce792b2cac93990",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=320&q=40&dpr=2&s=0c76e3dfa96a2bc79d734ae3b86f71aa",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=320&q=20&dpr=3&s=259b36c35047cbea1005df6e38166682",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=320&q=10&dpr=4&s=aaf86b13160069bcec57b55b67a1708c",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=560&q=80&s=8c235bd9ba42b7e44b91d24e8a737fe4",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=560&q=60&dpr=1.5&s=a8a4cfc4e2b70a760bb0c8e7e5101358",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=560&q=40&dpr=2&s=c4c9f24b1cb24a13ff0a3109c9fc8ecf",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=560&q=20&dpr=3&s=64b3189f85cc7d8410f7b42d14940a9a",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=560&q=10&dpr=4&s=5f28a9992f18b096bf7ce7a31d3ba7ac",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=768&q=80&s=110560d0c44c680ee89c76d33150288c",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=768&q=60&dpr=1.5&s=5acc3d6c99343d58f07c25a3a4fd42e7",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=768&q=40&dpr=2&s=40d4c2e2137d19eef155375b238f52f4",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=768&q=20&dpr=3&s=9ed95d27d02c631fbbea7ced8989e782",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=768&q=10&dpr=4&s=832dcad738d2f9a7a38087dc738c1ff6",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1024&q=80&s=f5d036a0b968a26d7a5c2ae1d4a08c34",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1024&q=60&dpr=1.5&s=7e44242dcb9c44c13ee7ad13bca44d8a",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1024&q=40&dpr=2&s=ad1b375d6e2affdb1face660b9a27cea",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1024&q=20&dpr=3&s=eb07347c5df92bb3b9fda58e708adfdb",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1024&q=10&dpr=4&s=e01336ea0b75d3451c97d92f734225d3",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1440&q=80&s=1565e08f2b8fa9bb0dced5fad1790edb",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1440&q=60&dpr=1.5&s=1d9632933c07a683024a3068989674c2",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1440&q=40&dpr=2&s=0472945057dec67465c8a1be20e3a449",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1440&q=20&dpr=3&s=739f3da70622f8187de053f77a65c1b0",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=1440&q=10&dpr=4&s=345279a8df6581cf5b0c12a6c92fe271",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=2560&q=80&s=31807f6bb60738e60cf4139ac7224f04",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=2560&q=60&dpr=1.5&s=8a56e12054be466b594d7d9d3f6a2528",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=2560&q=40&dpr=2&s=5ad8783157a29e36932efece4b6a961f",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=2560&q=20&dpr=3&s=ef3eec2e1f397c1fb6c425b1524dc41f",
+            "https://triad.imgix.net/os/i/categories/diapers-v2.png?flip=h&w=2560&q=10&dpr=4&s=4bdc9a676c509094935c3ecb35a50377"
+        );
+        background-position: left center;
+        @include media-breakpoint-up(md) {
+            background-position: center 82.5%;
+        }
+    }
+    &:before {
+        opacity: 0.8;
+        background-color: #efefef;
+    }
+}
+.bg-59 {
+    & .category-title:before {
+        height: 100%;
+        background-image: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+    }
+    &:before {
+        opacity: 0.5;
+        @include media-breakpoint-up(lg) {
+            opacity: 0.75;
+        }
+        @include ResponsiveBackground(
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=320&q=80&s=b1c6a6e00f64e1fa88872c2034eeafb5",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=320&q=60&dpr=1.5&s=43271d9dc2eb834c62361f65823d329e",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=320&q=40&dpr=2&s=27962806abe61247d34506996bee76f0",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=320&q=20&dpr=3&s=a40a0abe4500aeff0ec429cf2565802b",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=320&q=10&dpr=4&s=dbbaa8221e408a867e1aff32b718c96f",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=560&q=80&s=e06999d34c5b81a18555ca06f4626663",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=560&q=60&dpr=1.5&s=75b7ec4126f83d052c109c8943514036",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=560&q=40&dpr=2&s=0b1cff647f87ed2263168d277072afed",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=560&q=20&dpr=3&s=1c792a12c446b44496ce607bbf43a732",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=560&q=10&dpr=4&s=e9240f85d4a37e05f0b7ea48987eb3fe",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=768&q=80&s=d74512e093311cb3326d983f968cc2a3",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=768&q=60&dpr=1.5&s=ad12453386958b680a8d9662c966c087",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=768&q=40&dpr=2&s=171e3d8704ec7d4323cd26bd95f7bc53",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=768&q=20&dpr=3&s=b06b3ee54f749e6050dcaa582ea78186",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=768&q=10&dpr=4&s=ad2514b332fab9be3d43b8cb460fe607",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1024&q=80&s=7a4ed00915f62ee25e98e8943b34cc41",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1024&q=60&dpr=1.5&s=cbbf5d55c5725591c4cfef8404e36a76",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1024&q=40&dpr=2&s=a4b58134c02bf587222e5c4ccedf8e40",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1024&q=20&dpr=3&s=b9a7ec163ceb589adfd2015a92773d3f",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1024&q=10&dpr=4&s=e815ebf202b2ee491115f6ba3d2dcd15",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1440&q=80&s=976daa3c65ca2dd10d3dfc2b5e1dada4",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1440&q=60&dpr=1.5&s=8beee7923376abee5aae214822836d8d",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1440&q=40&dpr=2&s=3424d7fe8be01abf2a4e99af8fe016bf",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1440&q=20&dpr=3&s=1d5497d46a949f0fdfda726536508a22",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=1440&q=10&dpr=4&s=eac2012008a031984aacb766967db0ad",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=2560&q=80&s=ed45987272f58d4872732bac8eaf43d8",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=2560&q=60&dpr=1.5&s=cf4d8b1b4f6ec878c20792cac67f22d7",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=2560&q=40&dpr=2&s=b8a623adaaf89b15d04de7472bcfd49f",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=2560&q=20&dpr=3&s=20ec68ebb6207b5e2546da5e683b2d6b",
+            "https://triad.imgix.net/os/i/categories/toys.jpeg?flip=h&w=2560&q=10&dpr=4&s=e083edb8806586967cbc939246695623"
+        );
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+}
+.bg-62 {
     & .category-title:before {
         height: 100%;
         background-image: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75));
     }
-    & .category-title {
-        background: theme-color(gray-300)!important;
-    }
-    & .category-breadcrumbs {
-        background: theme-color(gray-400)!important;
-    }
     &:before {
         opacity: 0.5;
+        @include media-breakpoint-up(lg) {
+            opacity: 0.75;
+        }
         @include ResponsiveBackground(           
             "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=320&q=80",
             "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=320&q=60&dpr=1.5",
@@ -375,8 +355,88 @@ $categories: (
             "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=2560&q=20&dpr=3",
             "https://triad.imgix.net/os/i/categories/mommy.jpeg?w=2560&q=10&dpr=4"
         );
-        background-size: cover;
         background-position: 50% 75%;
-        background-repeat: no-repeat;
+    }
+}
+
+
+@each $id in $subcategories {
+    .bg-#{$id} {
+        &:before {
+            @include ResponsiveBackground(           
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=320&q=80",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=320&q=60&dpr=1.5",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=320&q=40&dpr=2",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=320&q=20&dpr=3",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=320&q=10&dpr=4",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=560&q=80",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=560&q=60&dpr=1.5",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=560&q=40&dpr=2",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=560&q=20&dpr=3",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=560&q=10&dpr=4",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=768&q=80",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=768&q=60&dpr=1.5",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=768&q=40&dpr=2",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=768&q=20&dpr=3",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=768&q=10&dpr=4",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=1024&q=80",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=1024&q=60&dpr=1.5",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=1024&q=40&dpr=2",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=1024&q=20&dpr=3",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=1024&q=10&dpr=4",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=1440&q=80",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=1440&q=60&dpr=1.5",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=1440&q=40&dpr=2",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=1440&q=20&dpr=3",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=1440&q=10&dpr=4",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=2560&q=80",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=2560&q=60&dpr=1.5",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=2560&q=40&dpr=2",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=2560&q=20&dpr=3",
+                "https://triad.imgix.net/os/i/categories/#{$id}.jpeg?w=2560&q=10&dpr=4"
+            );
+        }
+    }
+}
+
+.bg-21 {
+    & .category-title:before {
+        height: 100%;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9) 100%);
+    }
+    &:before {
+        opacity: 0.5;
+        @include media-breakpoint-up(lg) {
+            opacity: 0.75;
+        }
+        background-position: 50% 25%;
+    }
+}
+
+.bg-33 {
+    & .category-title:before {
+        height: 100%;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9) 100%);
+    }
+    &:before {
+        opacity: 0.5;
+        @include media-breakpoint-up(lg) {
+            opacity: 0.75;
+        }
+        background-position: 50% 75%;
+    }
+}
+
+.bg-169 {
+    & .category-title:before {
+        height: 100%;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9) 100%);
+    }
+    &:before {
+        opacity: 0.5;
+        @include media-breakpoint-up(lg) {
+            opacity: 0.75;
+        }
+        background-position: 50% 38%;
     }
 }

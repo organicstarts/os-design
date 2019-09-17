@@ -141,7 +141,7 @@ export default class Swipes extends Master {
   }
 
   Subcategories() {
-    var elements = document.querySelectorAll('.sub-carousel')
+    var elements = document.querySelectorAll('.nav-sub')
     if (elements) {
       this.forEachElements(elements, (i, el) => {
         var Flickity = require('flickity')

@@ -159,7 +159,7 @@
                     }
 
                     // Different Background Images
-                    &.baby-care {
+                    /*&.baby-care {
                         & .dropdown-item:not(.button) {
                             color: #fff;
                         }
@@ -189,14 +189,24 @@
                                 transform: rotate(-130deg) scale(3);
                             }
                         }
+                    }*/
+                    &.baby-care .dropdown-image, &.baby-care [class^="dropdown-image-"], &.baby-care [class*=" dropdown-image-"] {
+                        background-position: 50% 10%;
+                        @include Background(
+                            "https://triad.imgix.net/os/i/nav/baby-care.jpeg?w=400&q=80",
+                            "https://triad.imgix.net/os/i/nav/baby-care.jpeg?w=400&q=60&dpr=1.5",
+                            "https://triad.imgix.net/os/i/nav/baby-care.jpeg?w=400&q=40&dpr=2",
+                            "https://triad.imgix.net/os/i/nav/baby-care.jpeg?w=400&q=20&dpr=3",
+                            "https://triad.imgix.net/os/i/nav/baby-care.jpeg?w=400&q=10&dpr=4"
+                        );
                     }
                     &.baby-food .dropdown-image, &.baby-food [class^="dropdown-image-"], &.baby-food [class*=" dropdown-image-"] {
                         @include Background(
-                            "https://triad.imgix.net/os/i/nav/baby-food.jpeg?w=360&q=80&s=6c3c2a7f2b45ca791388db895fed6d98",
-                            "https://triad.imgix.net/os/i/nav/baby-food.jpeg?w=360&q=60&dpr=1.5&s=602d2eeb2db11f65dda98bd16b800526",
-                            "https://triad.imgix.net/os/i/nav/baby-food.jpeg?w=360&q=40&dpr=2&s=1ed7a84b3e48903ef580d00c7f536bef",
-                            "https://triad.imgix.net/os/i/nav/baby-food.jpeg?w=360&q=20&dpr=3&s=9269fca0bae61b315fc9f99b25a9d43d",
-                            "https://triad.imgix.net/os/i/nav/baby-food.jpeg?w=360&q=10&dpr=4&s=f497a34a6207129cd18fb5bb21de797a"
+                            "https://triad.imgix.net/os/i/nav/new-baby-food.jpeg?w=360&q=80&s=6c3c2a7f2b45ca791388db895fed6d98",
+                            "https://triad.imgix.net/os/i/nav/new-baby-food.jpeg?w=360&q=60&dpr=1.5&s=602d2eeb2db11f65dda98bd16b800526",
+                            "https://triad.imgix.net/os/i/nav/new-baby-food.jpeg?w=360&q=40&dpr=2&s=1ed7a84b3e48903ef580d00c7f536bef",
+                            "https://triad.imgix.net/os/i/nav/new-baby-food.jpeg?w=360&q=20&dpr=3&s=9269fca0bae61b315fc9f99b25a9d43d",
+                            "https://triad.imgix.net/os/i/nav/new-baby-food.jpeg?w=360&q=10&dpr=4&s=f497a34a6207129cd18fb5bb21de797a"
                         );
                     }
                     &.clothes .dropdown-image, &.clothes [class^="dropdown-image-"], &.clothes [class*=" dropdown-image-"] {
@@ -308,12 +318,9 @@
         top: auto;
     }
 }
+
 #cartPill {
     left: 100%;
     border-radius: 99rem;
     padding: 0.25rem 0.5rem;
-}
-.max-h-100 {
-    width: auto;
-    max-height: 100px;
 }
