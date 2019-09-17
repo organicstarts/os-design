@@ -427,6 +427,20 @@ $subcategories: (
     }
 }
 
+.bg-34 {
+    & .category-title:before {
+        height: 100%;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9) 100%);
+    }
+    &:before {
+        opacity: 0.5;
+        @include media-breakpoint-up(lg) {
+            opacity: 0.75;
+        }
+        background-position: center center;
+    }
+}
+
 .bg-169 {
     & .category-title:before {
         height: 100%;
