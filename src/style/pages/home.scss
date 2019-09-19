@@ -33,7 +33,7 @@
     background-size: cover;
     background-position: 0px 25%;
 }
-.home.jumbotron::before {
+.home.jumbotron:before {
     content: '';
     position: absolute;
     top: 0;
@@ -42,8 +42,7 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background: #fff;
-    opacity: 0.15;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0), #fff);
     z-index: 0;
 }
 .home.jumbotron h1 {
@@ -344,7 +343,7 @@
     & .spoon {
         background: url("https://triad.imgix.net/pn/i/spoon-v2.png?s=4c1e2967878c9108a62bd0410af7fdd3");
         z-index: 2;
-        animation: pn-spoon-half 16s ease-in-out infinite;
+        animation: pn-spoon-half 8s ease-in-out infinite;
         @include media-breakpoint-up(lg) {
             animation: pn-spoon 16s ease-in-out infinite;
         }
@@ -352,7 +351,7 @@
     & .divider {
         background: url("https://triad.imgix.net/pn/i/divider-v2.png?s=ea85e6ff3c353a39f7ac3a6756956a65");
         z-index: 3;
-        animation: pn-divider-half 16s ease-in-out infinite;
+        animation: pn-divider-half 8s ease-in-out infinite;
         @include media-breakpoint-up(lg) {
             animation: pn-divider 16s ease-in-out infinite;
         }
