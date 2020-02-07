@@ -7,7 +7,7 @@ import Products from "./components/products"
 import Scrolls from "./components/scrolls"
 import Cart from "./components/cart"
 
-class Public extends Master {
+export class Public extends Master {
 
   constructor() {
     super()
@@ -26,7 +26,7 @@ class Public extends Master {
     this.jQuery(document).ready(() => {
 
       // Initialize the Main Menu
-      Menu.Init(this.isTablet)
+      //Menu.Init(this.isTablet)
 
       // Initilize Swipes (Flickity and Slick)
       this.Swipes.Products()
@@ -78,4 +78,4 @@ class Public extends Master {
 
 }
 
-export const OrganicStart = new Public()
+//export const OrganicStart = new Public()
